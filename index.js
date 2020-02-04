@@ -77,7 +77,7 @@ app.post('/webhook', (req, res) => {
         let webhook_event = entry.messaging[0];
         console.log(webhook_event);
         if(webhook_event.message){
-          var userInput = webhook_event.message.text
+          var userInput = webhook_event.message.text;
           var quickdata = webhook_event.message.quick_reply.payload;
         }
         if(webhook_event.postback){
