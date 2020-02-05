@@ -271,7 +271,7 @@ app.post('/webhook', (req, res) => {
           send(welcomeMessage);
         }
         //end of customize 
-         if (userInput == 'Hotel' || userButton == "hotel" ){
+         if (userInput == 'Hotel' || quickdata == "hotel" ){
           let welcomeMessage = {
            "recipient":{
             "id":webhook_event.sender.id
@@ -317,7 +317,7 @@ app.post('/webhook', (req, res) => {
         
       } 
       //end of customize by hotel
-       if (userInput == 'Height Class' || quickdata == "height class hotel" ){
+       if (userInput == 'Height Class' || userButton == "height class hotel" ){
           let welcomeMessage = {
            "recipient":{
             "id":webhook_event.sender.id
