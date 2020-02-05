@@ -123,7 +123,7 @@ app.post('/webhook', (req, res) => {
 
           send(welcomeMessage);
         }
-
+        //end of packages
         
          if (userInput == 'cyp' || quickdata =='cyp' ){
           let welcomeMessage = {
@@ -162,7 +162,7 @@ app.post('/webhook', (req, res) => {
         send(welcomeMessage);
           
         } 
-        //end of quick reply 
+        //end of Choose your packages
          
          if (userInput == 'cya' || quickdata == "cya" ){
           let welcomeMessage = {
@@ -199,14 +199,7 @@ app.post('/webhook', (req, res) => {
           }
         }
         send(welcomeMessage);
-        /*
-          requestify.post(`https://graph.facebook.com/v5.0/me/messages?access_token=${pageaccesstoken}`, 
-          welcomeMessage
-          ).then(response=>{
-            console.log(response)
-          }).fail(error=> {
-            console.log(error)
-          })*/
+        
       } 
         //end of choose your activity
         
@@ -241,6 +234,37 @@ app.post('/webhook', (req, res) => {
           
         } 
         //end of detil
+         if (userInput == 'Customize Your Packages' || quickdata == 'cyps' ){
+          let welcomeMessage = {
+            "recipient":{
+              "id":webhook_event.sender.id
+            },
+            "messaging_type": "RESPONSE",
+            "message":{
+              "text": " Packages:",
+              "quick_replies":[
+              {
+                "content_type":"text",
+                "title":"Choose your packages",
+                "payload":"cyp",
+                "image_url":"http://example.com/img/red.png"
+              },{
+                "content_type":"text",
+                "title":"Choose your activity",
+                "payload":"cya",
+                "image_url":"http://example.com/img/green.png"
+              },{
+                "content_type":"text",
+                "title":"detail",
+                "payload":"detail",
+                "image_url":"http://example.com/img/green.png"
+              }
+              ]
+            }
+          } 
+
+          send(welcomeMessage);
+        }
 
 
          
