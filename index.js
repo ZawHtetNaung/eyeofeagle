@@ -368,7 +368,7 @@ app.post('/webhook', (req, res) => {
       //end of payment by book hotel
         
          
-         if (userInput == 'cya' || quickdata == "cya" ){
+        /*if (userInput == 'cya' || quickdata == "cya" ){
           let welcomeMessage = {
            "recipient":{
             "id":webhook_event.sender.id
@@ -404,7 +404,7 @@ app.post('/webhook', (req, res) => {
         }
         send(welcomeMessage);
         
-      } 
+      } */
         //end of choose your activity
          if (userInput == 'Choose my activity' || userButton == 'cya' ){
           let welcomeMessage = {
