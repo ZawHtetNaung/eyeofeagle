@@ -241,22 +241,27 @@ app.post('/webhook', (req, res) => {
             },
             "messaging_type": "RESPONSE",
             "message":{
-              "text": " Packages:",
+              "text": " Customize Your Packages:",
               "quick_replies":[
               {
                 "content_type":"text",
-                "title":"Choose your packages",
-                "payload":"cyp",
+                "title":"Hotel",
+                "payload":"hotel",
                 "image_url":"http://example.com/img/red.png"
               },{
                 "content_type":"text",
-                "title":"Choose your activity",
-                "payload":"cya",
+                "title":"Transportation",
+                "payload":"transportation",
                 "image_url":"http://example.com/img/green.png"
               },{
                 "content_type":"text",
-                "title":"detail",
-                "payload":"detail",
+                "title":"Guide",
+                "payload":"guide",
+                "image_url":"http://example.com/img/green.png"
+              },{
+                "content_type":"text",
+                "title":"Restaurants",
+                "payload":"restaurants",
                 "image_url":"http://example.com/img/green.png"
               }
               ]
@@ -265,7 +270,7 @@ app.post('/webhook', (req, res) => {
 
           send(welcomeMessage);
         }
-
+        //end of customize 
 
          
 
