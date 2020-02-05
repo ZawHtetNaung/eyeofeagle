@@ -77,6 +77,7 @@ app.post('/webhook', (req, res) => {
         // will only ever contain one message, so we get index 0
         let webhook_event = entry.messaging[0];
         console.log(webhook_event);
+
         if(webhook_event.message){
           if(webhook_event.message.quick_reply){
           var quickdata = webhook_event.message.quick_reply.payload;
@@ -120,55 +121,10 @@ app.post('/webhook', (req, res) => {
             }
           } 
 
-          requestify.post(`https://graph.facebook.com/v5.0/me/messages?access_token=${pageaccesstoken}`, 
-          welcomeMessage
-          ).then(response=>{
-            console.log(response)
-          }).fail(error=> {
-            console.log(error)
-          })
+          send(welcomeMessage);
         }
 
-        /*
-
-         if(userInput==='Choose your packages' || userButton==='Choose your packages' ){
-          let welcomeMessage = {
-            "recipient":{
-              "id":webhook_event.sender.id
-            },
-            "messaging_type": "RESPONSE",
-            "message":{
-              "text": " Packages:",
-              "quick_replies":[
-              {
-                "content_type":"text",
-                "title":"Choose your packages",
-                "payload":"Choose",
-                "image_url":"http://example.com/img/red.png"
-              },{
-                "content_type":"text",
-                "title":"Choose your activity",
-                "payload":"cya",
-                "image_url":"http://example.com/img/green.png"
-              },{
-                "content_type":"text",
-                "title":"detail",
-                "payload":"detail",
-                "image_url":"http://example.com/img/green.png"
-              }
-              ]
-            }
-          } 
-
-          requestify.post(`https://graph.facebook.com/v5.0/me/messages?access_token=${pageaccesstoken}`, 
-          welcomeMessage
-          ).then(response=>{
-            console.log(response)
-          }).fail(error=> {
-            console.log(error)
-          })
-        }*/
-        	//quick reply one start 
+        
          if (userInput == 'cyp' || quickdata =='cyp' ){
           let welcomeMessage = {
            "recipient":{
@@ -204,13 +160,7 @@ app.post('/webhook', (req, res) => {
           }
         }
         send(welcomeMessage);
-          /*requestify.post(`https://graph.facebook.com/v5.0/me/messages?access_token=${pageaccesstoken}`, 
-          welcomeMessage
-          ).then(response=>{
-            console.log(response)
-          }).fail(error=> {
-            console.log(error)
-          })*/
+          
         } 
         //end of quick reply 
          
