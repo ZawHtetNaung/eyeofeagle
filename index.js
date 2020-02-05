@@ -101,8 +101,8 @@ app.post('/webhook', (req, res) => {
               "quick_replies":[
               {
                 "content_type":"text",
-                "title":"Choose yo packages",
-                "payload":"Choose your packages",
+                "title":"Choose your packages",
+                "payload":"cyp",
                 "image_url":"http://example.com/img/red.png"
               },{
                 "content_type":"text",
@@ -211,7 +211,7 @@ app.post('/webhook', (req, res) => {
         } 
         //end of quick reply 
          
-         if (userInput == 'cya' ){
+         if (userInput == 'cya' || userButton == "cya" ){
           let welcomeMessage = {
            "recipient":{
             "id":webhook_event.sender.id
