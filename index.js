@@ -163,78 +163,7 @@ app.post('/webhook', (req, res) => {
           
         } 
         //end of Choose your packages
-         
-         if (userInput == 'cya' || quickdata == "cya" ){
-          let welcomeMessage = {
-           "recipient":{
-            "id":webhook_event.sender.id
-          },
-          "message":{
-            "attachment":{
-              "type":"template",
-              "payload":{
-                "template_type":"generic",
-                "elements":[
-                {
-                  "title":"Pagoda",
-                  "image_url":"https://homepages.cae.wisc.edu/~ece533/images/boat.png",
-                  "subtitle":"Activity",
-                  "default_action": {
-                    "type": "web_url",
-                    "url": "https://petersfancybrownhats.com/view?item=103",
-                    "webview_height_ratio": "tall",
-                  },
-                  "buttons":[
-                  {
-                    "type":"postback",
-                    "title":"Pagoda",
-                    "payload":"choose your activity"
-                  }
-
-                  ]      
-                }
-                ]
-              }
-            }
-          }
-        }
-        send(welcomeMessage);
-        
-      } 
-        //end of choose your activity
-        
-        if (quickdata == 'detail' ){
-          let welcomeMessage = {
-           "recipient":{
-            "id":webhook_event.sender.id
-          },
-          "message":{
-            "attachment":{
-              "type":"template",
-              "payload":{
-                "template_type":"generic",
-                "elements":[
-                {
-                  "title":"About",
-                  "image_url":"https://homepages.cae.wisc.edu/~ece533/images/boat.png",
-                  "subtitle":"You can choose your favourite package and activity and then other best way is you can customize your package",
-                  "default_action": {
-                    "type": "web_url",
-                    "url": "https://petersfancybrownhats.com/view?item=103",
-                    "webview_height_ratio": "tall",
-                  },
-                 
-                }
-                ]
-              }
-            }
-          }
-        }
-        send(welcomeMessage);
-          
-        } 
-        //end of detil
-         if (userInput == 'Customize Your Packages' || userButton == 'cyps' ){
+        if (userInput == 'Customize Your Packages' || userButton == 'cyps' ){
           let welcomeMessage = {
             "recipient":{
               "id":webhook_event.sender.id
@@ -347,7 +276,7 @@ app.post('/webhook', (req, res) => {
                       ]      
                     },
                     {
-                      "title":"Hotel in Inle",
+                      "title":"Hotel in Kalaw",
                       "image_url":"https://homepages.cae.wisc.edu/~ece533/images/boat.png",
                       "subtitle":"You can book here",
                       "default_action": {
@@ -365,7 +294,7 @@ app.post('/webhook', (req, res) => {
                       ]      
                     },
                     {
-                      "title":"Hotel in Inle",
+                      "title":"Hotel in Taung Gyi",
                       "image_url":"https://homepages.cae.wisc.edu/~ece533/images/boat.png",
                       "subtitle":"You can book here",
                       "default_action": {
@@ -437,7 +366,79 @@ app.post('/webhook', (req, res) => {
         
       } 
       //end of payment by book hotel
+        
+         
+         if (userInput == 'cya' || quickdata == "cya" ){
+          let welcomeMessage = {
+           "recipient":{
+            "id":webhook_event.sender.id
+          },
+          "message":{
+            "attachment":{
+              "type":"template",
+              "payload":{
+                "template_type":"generic",
+                "elements":[
+                {
+                  "title":"Pagoda",
+                  "image_url":"https://homepages.cae.wisc.edu/~ece533/images/boat.png",
+                  "subtitle":"Activity",
+                  "default_action": {
+                    "type": "web_url",
+                    "url": "https://petersfancybrownhats.com/view?item=103",
+                    "webview_height_ratio": "tall",
+                  },
+                  "buttons":[
+                  {
+                    "type":"postback",
+                    "title":"Pagoda",
+                    "payload":"choose your activity"
+                  }
 
+                  ]      
+                }
+                ]
+              }
+            }
+          }
+        }
+        send(welcomeMessage);
+        
+      } 
+        //end of choose your activity
+        
+        if (quickdata == 'detail' ){
+          let welcomeMessage = {
+           "recipient":{
+            "id":webhook_event.sender.id
+          },
+          "message":{
+            "attachment":{
+              "type":"template",
+              "payload":{
+                "template_type":"generic",
+                "elements":[
+                {
+                  "title":"About",
+                  "image_url":"https://homepages.cae.wisc.edu/~ece533/images/boat.png",
+                  "subtitle":"You can choose your favourite package and activity and then other best way is you can customize your package",
+                  "default_action": {
+                    "type": "web_url",
+                    "url": "https://petersfancybrownhats.com/view?item=103",
+                    "webview_height_ratio": "tall",
+                  },
+                 
+                }
+                ]
+              }
+            }
+          }
+        }
+        send(welcomeMessage);
+          
+        } 
+        //end of detil
+         
 
 
          
