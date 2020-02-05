@@ -217,7 +217,7 @@ app.post('/webhook', (req, res) => {
         } 
         //end of quick reply 
          
-         if (userInput == 'cya' || userButton == "cya" ){
+         if (userInput == 'cya' || quickdata == "cya" ){
           let welcomeMessage = {
            "recipient":{
             "id":webhook_event.sender.id
