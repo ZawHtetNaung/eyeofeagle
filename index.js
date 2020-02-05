@@ -77,12 +77,12 @@ app.post('/webhook', (req, res) => {
         // will only ever contain one message, so we get index 0
         let webhook_event = entry.messaging[0];
         console.log(webhook_event);
-        if(webhook_event.message){
+        if(webhook_event.message.text){
           var userInput = webhook_event.message.text;
           //console.log("webhook message obj",webhook_event.message.quick_reply);
           //var quickdata = webhook_event.message.quick_reply;
         }
-        if(){
+        if(webhook_event.message.quick_reply){
           var quickdata = webhook_event.message.quick_reply;
         }
         if(webhook_event.postback){
