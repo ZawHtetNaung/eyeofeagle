@@ -188,7 +188,7 @@ app.post('/webhook', (req, res) => {
                   {
                     "type":"postback",
                     "title":"Pagoda",
-                    "payload":"cyps"
+                    "payload":"choose your activity"
                   }
 
                   ]      
@@ -234,7 +234,7 @@ app.post('/webhook', (req, res) => {
           
         } 
         //end of detil
-         if (userInput == 'Customize Your Packages' || quickdata == 'cyps' ){
+         if (userInput == 'Customize Your Packages' || userButton == 'cyps' ){
           let welcomeMessage = {
             "recipient":{
               "id":webhook_event.sender.id
