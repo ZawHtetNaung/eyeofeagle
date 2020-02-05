@@ -128,6 +128,8 @@ app.post('/webhook', (req, res) => {
           })
         }
 
+        /*
+
          if(userInput==='Choose your packages' || userButton==='Choose your packages' ){
           let welcomeMessage = {
             "recipient":{
@@ -164,7 +166,7 @@ app.post('/webhook', (req, res) => {
           }).fail(error=> {
             console.log(error)
           })
-        }
+        }*/
         	//quick reply one start 
          if (userInput == 'cyp' || userButton =='cyp' ){
           let welcomeMessage = {
