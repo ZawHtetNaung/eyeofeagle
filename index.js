@@ -355,6 +355,53 @@ app.post('/webhook', (req, res) => {
         
       } 
       //end of customize by hotel booking
+       if (userInput == 'Book' || userButton == "book hotel" ){
+          let welcomeMessage = {
+           "recipient":{
+            "id":webhook_event.sender.id
+          },
+          "message":{
+            "attachment":{
+              "type":"template",
+              "payload":{
+                "template_type":"generic",
+                "elements":[
+                {
+                  "title":"Payment",
+                  
+                  "subtitle":"Choose your payment",
+                  "default_action": {
+                    "type": "web_url",
+                    "url": "https://petersfancybrownhats.com/view?item=103",
+                    "webview_height_ratio": "tall",
+                  },
+                  "buttons":[
+                  {
+                    "type":"postback",
+                    "title":"Part of Payment",
+                    "payload":"part of payment"
+                  },{
+                    "type":"postback",
+                    "title":"All of the Payment",
+                    "payload":"all payment"
+                  },{
+                    "type":"postback",
+                    "title":"Cancel",
+                    "payload":"cancel"
+                  }
+
+                  ]      
+                }
+                ]
+              }
+            }
+          }
+        }
+        send(welcomeMessage);
+        
+      } 
+      //end of payment by book hotel
+
 
 
          
