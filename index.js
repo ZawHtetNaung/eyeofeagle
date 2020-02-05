@@ -255,7 +255,7 @@ app.post('/webhook', (req, res) => {
                 "image_url":"http://example.com/img/green.png"
               },{
                 "content_type":"text",
-                "title":"Guide",
+                "title":"Guides",
                 "payload":"guide",
                 "image_url":"http://example.com/img/green.png"
               },{
@@ -271,6 +271,52 @@ app.post('/webhook', (req, res) => {
           send(welcomeMessage);
         }
         //end of customize 
+         if (userInput == 'Hotel' || quickdata == "hotel" ){
+          let welcomeMessage = {
+           "recipient":{
+            "id":webhook_event.sender.id
+          },
+          "message":{
+            "attachment":{
+              "type":"template",
+              "payload":{
+                "template_type":"generic",
+                "elements":[
+                {
+                  "title":"Hotel",
+                  "image_url":"https://homepages.cae.wisc.edu/~ece533/images/boat.png",
+                  "subtitle":"Choose the hotel what you want",
+                  "default_action": {
+                    "type": "web_url",
+                    "url": "https://petersfancybrownhats.com/view?item=103",
+                    "webview_height_ratio": "tall",
+                  },
+                  "buttons":[
+                  {
+                    "type":"postback",
+                    "title":"Height Class",
+                    "payload":"height class hotel"
+                  },{
+                    "type":"postback",
+                    "title":"Medium",
+                    "payload":"medium hotel"
+                  },{
+                    "type":"postback",
+                    "title":"Low Budget",
+                    "payload":"low budget hotel"
+                  }
+
+                  ]      
+                }
+                ]
+              }
+            }
+          }
+        }
+        send(welcomeMessage);
+        
+      } 
+      //end of customize by hotel
 
          
 
