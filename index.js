@@ -80,6 +80,7 @@ app.post('/webhook', (req, res) => {
         if(webhook_event.message){
           if(webhook_event.message.quick_reply){
           var quickdata = webhook_event.message.quick_reply.payload;
+          console.log("quickdata:", quickdata);
           }else{
             var userInput = webhook_event.message.text;
           }          
