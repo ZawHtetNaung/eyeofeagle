@@ -7,8 +7,9 @@ const
   requestify = require('requestify'),
   app = express().use(bodyParser.json()); // creates express http server
 
-  const pageaccesstoken = 'EAAlHWK8zlGABABlzdLnXYN7zpK6OQfYTcXthfAXBPSZBm1HsaO8ReHnHz9N0WbcpXe9afh0pPRDbxqyWHMGNsl3qeLZCtQLW6YKgZAMiGi0nKGgtUaSXopEtegmm1aR65EgibjQZBt1PZCfiXZANChg6flnliBdYvopTh1GQQf7bLK8zcqMGsI'
+  const pageaccesstoken = 'EAAlHWK8zlGABAHFMuwu5ZAXIXZCNcSlpZBbBOYI7zg2qGx1ZB1cWRJQM1QjM5UYzTBaLpPiHt4lEpk1ZAteXOo5J1H3lhVQT2mjvzZAyNWQUYz5ShP0UsIV5E6aVuRKXlMGfSZCX5OJiIJcMstlVlpc0W4KlbaBtotEJq9XlM9QVUZBbrCNq57SE'
 
+  /*
   requestify.post(`https://graph.facebook.com/v5.0/me/messenger_profile?access_token=${pageaccesstoken}`, 
   {
     "get_started": {
@@ -28,7 +29,7 @@ const
   console.log(response)
 }).fail( error => {
   console.log(error)
-})
+})*/
 
   // Sets server port and logs message on success
 app.listen(process.env.PORT || 1337, () => console.log('webhook is listening'));
@@ -78,11 +79,13 @@ app.post('/webhook', (req, res) => {
         console.log(webhook_event);
         if(webhook_event.message){
           var userInput = webhook_event.message.text;
-          var quickdata = webhook_event.message.quick_reply.payload;
+          var quickdata = webhook_event.message.quick_reply;
         }
         if(webhook_event.postback){
           var userButton = webhook_event.postback.payload
         }
+        console.log("type ",userInput);
+        console.log("postback ",userButton);
         if (userInput == 'Hi' || userButton == 'Hi' ){
           let welcomeMessage = {
             "recipient":{
@@ -94,8 +97,8 @@ app.post('/webhook', (req, res) => {
               "quick_replies":[
               {
                 "content_type":"text",
-                "title":"Choose your packages",
-                "payload":"cyp",
+                "title":"Choose yo packages",
+                "payload":"Choose your packages",
                 "image_url":"http://example.com/img/red.png"
               },{
                 "content_type":"text",
@@ -120,7 +123,8 @@ app.post('/webhook', (req, res) => {
             console.log(error)
           })
         }
-        if(userButton==='cyp' || userButton==='cyp'){
+
+         if(userInput==='Choose your packages' || userButton==='Choose your packages' ){
           let welcomeMessage = {
             "recipient":{
               "id":webhook_event.sender.id
@@ -132,7 +136,7 @@ app.post('/webhook', (req, res) => {
               {
                 "content_type":"text",
                 "title":"Choose your packages",
-                "payload":"cyp",
+                "payload":"Choose",
                 "image_url":"http://example.com/img/red.png"
               },{
                 "content_type":"text",
@@ -158,7 +162,7 @@ app.post('/webhook', (req, res) => {
           })
         }
         	//quick reply one start 
-         if (quickdata == 'cyp' ){
+         if (userInput == 'cyp' || userButton =='cyp' ){
           let welcomeMessage = {
            "recipient":{
             "id":webhook_event.sender.id
