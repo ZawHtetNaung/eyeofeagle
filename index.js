@@ -406,7 +406,7 @@ app.post('/webhook', (req, res) => {
         
       } */
         //end of choose your activity
-         if (userInput == 'Choose my activity' || userButton == 'cya' ){
+         if (userInput == 'Choose my activity' || quickdata == 'cya' ){
           let welcomeMessage = {
             "recipient":{
               "id":webhook_event.sender.id
