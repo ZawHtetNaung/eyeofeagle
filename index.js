@@ -93,8 +93,7 @@ app.post('/webhook', (req, res) => {
         if(webhook_event.postback){
           var userButton = webhook_event.postback.payload
         }
-        console.log("type ",userInput);
-        console.log("postback ",userButton);
+        
         if (userInput == 'Hi' || userButton == 'Hi' ){
           let welcomeMessage = {
             "recipient":{
@@ -173,7 +172,7 @@ app.post('/webhook', (req, res) => {
           })
         }*/
         	//quick reply one start 
-         if (userInput == 'cyp' || userButton =='cyp' ){
+         if (userInput == 'cyp' || quickdata =='cyp' ){
           let welcomeMessage = {
            "recipient":{
             "id":webhook_event.sender.id
