@@ -328,24 +328,60 @@ app.post('/webhook', (req, res) => {
               "payload":{
                 "template_type":"generic",
                 "elements":[
-                {
-                  "title":"Hotel in Inle",
-                  "image_url":"https://homepages.cae.wisc.edu/~ece533/images/boat.png",
-                  "subtitle":"You can book here",
-                  "default_action": {
-                    "type": "web_url",
-                    "url": "https://petersfancybrownhats.com/view?item=103",
-                    "webview_height_ratio": "tall",
-                  },
-                  "buttons":[
-                  {
-                    "type":"postback",
-                    "title":"Book",
-                    "payload":"book hotel"
-                  }
+                    {
+                      "title":"Hotel in Inle",
+                      "image_url":"https://homepages.cae.wisc.edu/~ece533/images/boat.png",
+                      "subtitle":"You can book here",
+                      "default_action": {
+                        "type": "web_url",
+                        "url": "https://petersfancybrownhats.com/view?item=103",
+                        "webview_height_ratio": "tall",
+                      },
+                      "buttons":[
+                      {
+                        "type":"postback",
+                        "title":"Book",
+                        "payload":"book hotel"
+                      }
 
-                  ]      
-                }
+                      ]      
+                    },
+                    {
+                      "title":"Hotel in Inle",
+                      "image_url":"https://homepages.cae.wisc.edu/~ece533/images/boat.png",
+                      "subtitle":"You can book here",
+                      "default_action": {
+                        "type": "web_url",
+                        "url": "https://petersfancybrownhats.com/view?item=103",
+                        "webview_height_ratio": "tall",
+                      },
+                      "buttons":[
+                      {
+                        "type":"postback",
+                        "title":"Book",
+                        "payload":"book hotel"
+                      }
+
+                      ]      
+                    },
+                    {
+                      "title":"Hotel in Inle",
+                      "image_url":"https://homepages.cae.wisc.edu/~ece533/images/boat.png",
+                      "subtitle":"You can book here",
+                      "default_action": {
+                        "type": "web_url",
+                        "url": "https://petersfancybrownhats.com/view?item=103",
+                        "webview_height_ratio": "tall",
+                      },
+                      "buttons":[
+                      {
+                        "type":"postback",
+                        "title":"Book",
+                        "payload":"book hotel"
+                      }
+
+                      ]      
+                    }
                 ]
               }
             }
