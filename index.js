@@ -406,6 +406,43 @@ app.post('/webhook', (req, res) => {
         
       } 
         //end of choose your activity
+         if (userInput == 'Choose my activity' || userButton == 'cya' ){
+          let welcomeMessage = {
+            "recipient":{
+              "id":webhook_event.sender.id
+            },
+            "messaging_type": "RESPONSE",
+            "message":{
+              "text": " Choose Your Activity:",
+              "quick_replies":[
+              {
+                "content_type":"text",
+                "title":"Pagoda",
+                "payload":"activity of pagoda",
+                "image_url":"http://example.com/img/red.png"
+              },{
+                "content_type":"text",
+                "title":"Hiking",
+                "payload":"hiking",
+                "image_url":"http://example.com/img/green.png"
+              },{
+                "content_type":"text",
+                "title":"Adventures",
+                "payload":"adventures",
+                "image_url":"http://example.com/img/green.png"
+              },{
+                "content_type":"text",
+                "title":"Mountains",
+                "payload":"mountains",
+                "image_url":"http://example.com/img/green.png"
+              }
+              ]
+            }
+          } 
+
+          send(welcomeMessage);
+        }
+        //end of qucik reply for activity
         
         if (quickdata == 'detail' ){
           let welcomeMessage = {
