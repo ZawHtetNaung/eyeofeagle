@@ -240,7 +240,7 @@ app.post('/webhook', (req, res) => {
                   "buttons":[
                   {
                     "type":"postback",
-                    "title":"Height Class",
+                    "title":"High Class",
                     "payload":"height class hotel"
                   },{
                     "type":"postback",
