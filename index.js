@@ -360,7 +360,7 @@ app.post('/webhook', (req, res) => {
                   "buttons":[
                   {
                     "type":"postback",
-                    "title":"Part of Payment",
+                    "title":"Pay Deposit",
                     "payload":"part of payment"
                   },{
                     "type":"postback",
