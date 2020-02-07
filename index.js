@@ -153,6 +153,23 @@ app.post('/webhook', (req, res) => {
                   }
 
                   ]      
+                },{
+                  "title":"Pagoda",
+                  "image_url":"https://homepages.cae.wisc.edu/~ece533/images/boat.png",
+                  "subtitle":"package",
+                  "default_action": {
+                    "type": "web_url",
+                    "url": "https://petersfancybrownhats.com/view?item=103",
+                    "webview_height_ratio": "tall",
+                  },
+                  "buttons":[
+                  {
+                    "type":"postback",
+                    "title":"Customize Your Packages",
+                    "payload":"cyps"
+                  }
+
+                  ]      
                 }
                 ]
               }
@@ -417,7 +434,7 @@ app.post('/webhook', (req, res) => {
               "quick_replies":[
               {
                 "content_type":"text",
-                "title":"Pagoda",
+                "title":"Pagodas",
                 "payload":"activity of pagoda",
                 "image_url":"http://example.com/img/red.png"
               },{
