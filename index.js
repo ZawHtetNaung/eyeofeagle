@@ -316,7 +316,25 @@ app.post('/webhook', (req, res) => {
                   }
 
                   ]      
+                },   {
+                  "title":"Flight",
+                  "image_url":"https://static.tripzilla.com/thumb/7/6/65398_700x.jpg",
+                  "subtitle":"Choose the transportation what you want",
+                  "default_action": {
+                    "type": "web_url",
+                    "url": "https://petersfancybrownhats.com/view?item=103",
+                    "webview_height_ratio": "tall",
+                  },
+                  "buttons":[
+                  {
+                    "type":"postback",
+                    "title":"Flight",
+                    "payload":"flight"
+                  }
+
+                  ]      
                 }
+
                 ]
               }
             }
@@ -326,6 +344,7 @@ app.post('/webhook', (req, res) => {
         
       } 
      // end of customize by transportation
+
        if (userInput == 'Height Class' || userButton == "height class hotel" ){
           let welcomeMessage = {
            "recipient":{
