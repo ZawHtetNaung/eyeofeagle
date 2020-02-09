@@ -137,7 +137,7 @@ app.post('/webhook', (req, res) => {
                 "template_type":"generic",
                 "elements":[
                 {
-                  "title":"Pagoda",
+                  "title":"Pagodas",
                   "image_url":"https://cdn.getyourguide.com/img/tour_img-1174626-148.jpg",
                   "subtitle":"package",
                   "default_action": {
@@ -154,7 +154,7 @@ app.post('/webhook', (req, res) => {
 
                   ]      
                 },{
-                  "title":"Beach",
+                  "title":"Beaches",
                   "image_url":"https://www.sonicstartravel.com/car_rental/uploads/article/article_17102805421002.jpg",
                   "subtitle":"package",
                   "default_action": {
@@ -280,6 +280,56 @@ app.post('/webhook', (req, res) => {
         
       } 
       //end of customize by hotel
+       if (userInput == 'Transportation' || quickdata == "transportation" ){
+          let welcomeMessage = {
+           "recipient":{
+            "id":webhook_event.sender.id
+          },
+          "message":{
+            "attachment":{
+              "type":"template",
+              "payload":{
+                "template_type":"generic",
+                "elements":[
+                {
+                  "title":"Transportation",
+                  "image_url":"https://www.indochinatour.com/blog/wp-content/uploads/2020/01/Transportation-during-Cambodia-Myanmar-and-Laos.jpg",
+                  "subtitle":"Choose the transportation what you want",
+                  "default_action": {
+                    "type": "web_url",
+                    "url": "https://petersfancybrownhats.com/view?item=103",
+                    "webview_height_ratio": "tall",
+                  },
+                  "buttons":[
+                  {
+                    "type":"postback",
+                    "title":"Car",
+                    "payload":"car"
+                  },{
+                    "type":"postback",
+                    "title":"Train",
+                    "payload":"train"
+                  },{
+                    "type":"postback",
+                    "title":"Ship",
+                    "payload":"ship"
+                  },{
+                    "type":"postback",
+                    "title":"Flight",
+                    "payload":"flight"
+                  }
+
+                  ]      
+                }
+                ]
+              }
+            }
+          }
+        }
+        send(welcomeMessage);
+        
+      } 
+     // end of customize by transportation
        if (userInput == 'Height Class' || userButton == "height class hotel" ){
           let welcomeMessage = {
            "recipient":{
