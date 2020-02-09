@@ -219,7 +219,7 @@ app.post('/webhook', (req, res) => {
               },{
                 "content_type":"text",
                 "title":"Guides",
-                "payload":"guide",
+                "payload":"guides",
                 "image_url":"http://example.com/img/green.png"
               },{
                 "content_type":"text",
@@ -370,6 +370,17 @@ app.post('/webhook', (req, res) => {
         
       } 
      // end of customize by transportation
+      if (userInput == 'Guides' || userButton == "guides" ){
+          let welcomeMessage = {
+            {
+            "type": "web_url",
+            "url": "<URL_TO_OPEN_IN_WEBVIEW>",
+            "title": "<BUTTON_TEXT>",
+            }
+          }
+        }
+        //end of customize by guides link
+
 
        if (userInput == 'Height Class' || userButton == "height class hotel" ){
           let welcomeMessage = {
