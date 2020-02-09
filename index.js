@@ -313,10 +313,6 @@ app.post('/webhook', (req, res) => {
                     "type":"postback",
                     "title":"Ship",
                     "payload":"ship"
-                  },{
-                    "type":"postback",
-                    "title":"Flight",
-                    "payload":"flight"
                   }
 
                   ]      
