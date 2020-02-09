@@ -219,7 +219,7 @@ app.post('/webhook', (req, res) => {
               },{
                 "content_type":"text",
                 "title":"Guides",
-                "payload":"guides",
+                "payload":"guide",
                 "image_url":"http://example.com/img/green.png"
               },{
                 "content_type":"text",
@@ -375,7 +375,7 @@ app.post('/webhook', (req, res) => {
             {
             "type": "web_url",
             "url": "<URL_TO_OPEN_IN_WEBVIEW>",
-            "title": "Choose Your Guides",
+            "title": "<BUTTON_TEXT>",
             }
           }
         }
