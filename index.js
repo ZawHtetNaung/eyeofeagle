@@ -375,7 +375,7 @@ app.post('/webhook', (req, res) => {
             {
             "type": "web_url",
             "url": "<URL_TO_OPEN_IN_WEBVIEW>",
-            "title": "<BUTTON_TEXT>",
+            "title": "Choose Your Guides",
             }
           }
         }
