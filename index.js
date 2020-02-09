@@ -371,8 +371,6 @@ app.post('/webhook', (req, res) => {
       } 
      // end of customize by transportation
      
-        //end of customize by guides link
-
 
        if (userInput == 'Height Class' || userButton == "height class hotel" ){
           let welcomeMessage = {
