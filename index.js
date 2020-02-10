@@ -292,7 +292,7 @@ app.post('/webhook', (req, res) => {
                 "template_type":"generic",
                 "elements":[
                 {
-                  "title":"Transportation",
+                  "title":"Car",
                   "image_url":"https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcS9_6xLJh2OhELLHP-msYiU3Rzuyxb9Pv9HHyAF1LVg9NUu5TE2",
                   "subtitle":"Choose the transportation what you want",
                   "default_action": {
@@ -303,17 +303,13 @@ app.post('/webhook', (req, res) => {
                   "buttons":[
                   {
                     "type":"postback",
-                    "title":"Car",
-                    "payload":"car"
+                    "title":"Customize",
+                    "payload":"customizecar"
                   }
 
                   ]      
                 },{
-<<<<<<< HEAD:node_modules/index.js
                   "title":"Train",
-=======
-                  "title":"Transportation",
->>>>>>> c60fa44f9419280f601600684023649f10f0fd11:index.js
                   "image_url":"https://static.tripzilla.com/thumb/7/6/65398_700x.jpg",
                   "subtitle":"Choose the transportation what you want",
                   "default_action": {
@@ -324,24 +320,14 @@ app.post('/webhook', (req, res) => {
                   "buttons":[
                   {
                     "type":"postback",
-<<<<<<< HEAD:node_modules/index.js
                     "title":"Customize",
                     "payload":"customizetrain"
-=======
-                    "title":"Train",
-                    "payload":"train"
->>>>>>> c60fa44f9419280f601600684023649f10f0fd11:index.js
                   }
 
                   ]      
                 },{
-<<<<<<< HEAD:node_modules/index.js
                   "title":"Ship",
                   "image_url":"https://static01.nyt.com/images/2017/05/20/world/01myanmar-train-2/01myanmar-train-2-jumbo.jpg",
-=======
-                  "title":"Transportation",
-                  "image_url":"https://d23n7ahjfnjotp.cloudfront.net/imgs/mobileheaderipad/ship_521_myanmar_1024x416_mobhdr.jpg",
->>>>>>> c60fa44f9419280f601600684023649f10f0fd11:index.js
                   "subtitle":"Choose the transportation what you want",
                   "default_action": {
                     "type": "web_url",
@@ -351,13 +337,8 @@ app.post('/webhook', (req, res) => {
                   "buttons":[
                   {
                     "type":"postback",
-<<<<<<< HEAD:node_modules/index.js
                     "title":"Customize",
                     "payload":"customizeship"
-=======
-                    "title":"Ship",
-                    "payload":"ship"
->>>>>>> c60fa44f9419280f601600684023649f10f0fd11:index.js
                   }
 
                   ]      
@@ -373,13 +354,8 @@ app.post('/webhook', (req, res) => {
                   "buttons":[
                   {
                     "type":"postback",
-<<<<<<< HEAD:node_modules/index.js
                     "title":"Customize",
                     "payload":"customizeflight"
-=======
-                    "title":"Flight",
-                    "payload":"flight"
->>>>>>> c60fa44f9419280f601600684023649f10f0fd11:index.js
                   }
 
                   ]      
@@ -544,7 +520,6 @@ app.post('/webhook', (req, res) => {
                     "title":"Pagoda",
                     "payload":"choose your activity"
                   }
-<<<<<<< HEAD:node_modules/index.js
 
                   ]      
                 }
@@ -591,54 +566,6 @@ app.post('/webhook', (req, res) => {
             }
           } 
 
-=======
-
-                  ]      
-                }
-                ]
-              }
-            }
-          }
-        }
-        send(welcomeMessage);
-        
-      } */
-        //end of choose your activity
-         if (userInput == 'Choose my activity' || quickdata == 'cya' ){
-          let welcomeMessage = {
-            "recipient":{
-              "id":webhook_event.sender.id
-            },
-            "messaging_type": "RESPONSE",
-            "message":{
-              "text": " Choose Your Activity:",
-              "quick_replies":[
-              {
-                "content_type":"text",
-                "title":"Pagodas",
-                "payload":"activity of pagoda",
-                "image_url":"http://example.com/img/red.png"
-              },{
-                "content_type":"text",
-                "title":"Hiking",
-                "payload":"hiking",
-                "image_url":"http://example.com/img/green.png"
-              },{
-                "content_type":"text",
-                "title":"Adventures",
-                "payload":"adventures",
-                "image_url":"http://example.com/img/green.png"
-              },{
-                "content_type":"text",
-                "title":"Mountains",
-                "payload":"mountains",
-                "image_url":"http://example.com/img/green.png"
-              }
-              ]
-            }
-          } 
-
->>>>>>> c60fa44f9419280f601600684023649f10f0fd11:index.js
           send(welcomeMessage);
         }
         //end of qucik reply for activity
@@ -670,11 +597,7 @@ app.post('/webhook', (req, res) => {
             }
           }
         }
-<<<<<<< HEAD:node_modules/index.js
         send(welcomeMessage) ;
-=======
-        send(welcomeMessage);
->>>>>>> c60fa44f9419280f601600684023649f10f0fd11:index.js
           
         } 
         //end of detil
