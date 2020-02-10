@@ -544,7 +544,7 @@ app.post('/webhook', (req, res) => {
                 "template_type":"generic",
                 "elements":[
                 {
-                  "title":"Pagoda",
+                  "title":"Bagan",
                   "image_url":"https://www.nickkembel.com/wp-content/uploads/2019/09/shwesandaw-pagoda-bagan.jpg",
                   "subtitle":"Activity",
                   "default_action": {
@@ -556,7 +556,7 @@ app.post('/webhook', (req, res) => {
                   {
                     "type":"postback",
                     "title":"Choose your packages",
-                    "payload":"cyppagoda"
+                    "payload":"cypbagan"
                   }
 
                   ]      
