@@ -310,7 +310,7 @@ app.post('/webhook', (req, res) => {
                   ]      
                 },{
                   "title":"Train",
-                  "image_url":"https://static.tripzilla.com/thumb/7/6/65398_700x.jpg",
+                  "image_url":"https://static01.nyt.com/images/2017/05/20/world/01myanmar-train-2/01myanmar-train-2-jumbo.jpg",
                   "subtitle":"Choose the transportation what you want",
                   "default_action": {
                     "type": "web_url",
@@ -327,7 +327,7 @@ app.post('/webhook', (req, res) => {
                   ]      
                 },{
                   "title":"Ship",
-                  "image_url":"https://static01.nyt.com/images/2017/05/20/world/01myanmar-train-2/01myanmar-train-2-jumbo.jpg",
+                  "image_url":"https://d23n7ahjfnjotp.cloudfront.net/imgs/mobileheaderipad/ship_521_myanmar_1024x416_mobhdr.jpg",
                   "subtitle":"Choose the transportation what you want",
                   "default_action": {
                     "type": "web_url",
