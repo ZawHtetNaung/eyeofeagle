@@ -532,7 +532,7 @@ app.post('/webhook', (req, res) => {
           send(welcomeMessage);
         }
         //end of qucik reply for activity
-        if (userInput == 'Choose your activity' || quickdata == "cyapagoda" ){
+        if (userInput == 'Choose your activity' || quickdata == "activity of pagoda" ){
           let welcomeMessage = {
            "recipient":{
             "id":webhook_event.sender.id
