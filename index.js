@@ -560,6 +560,23 @@ app.post('/webhook', (req, res) => {
                   }
 
                   ]      
+                },  {
+                  "title":"Inle",
+                  "image_url":"https://www.tripsavvy.com/thmb/F_jVBYfJVJCVMiuNp-zsq43Adog=/3865x2576/filters:no_upscale():max_bytes(150000):strip_icc()/phaung-daw-oo-pagoda--inle-lake--myanmar--836634414-5b0a3bbe8023b9003678f8c7.jpg",
+                  "subtitle":"Activity",
+                  "default_action": {
+                    "type": "web_url",
+                    "url": "https://petersfancybrownhats.com/view?item=103",
+                    "webview_height_ratio": "tall",
+                  },
+                  "buttons":[
+                  {
+                    "type":"postback",
+                    "title":"Choose your packages",
+                    "payload":"cypinle"
+                  }
+
+                  ]      
                 }
                 ]
               }
