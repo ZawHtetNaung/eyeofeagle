@@ -577,6 +577,23 @@ app.post('/webhook', (req, res) => {
                   }
 
                   ]      
+                },{
+                  "title":"Bago",
+                  "image_url":"https://previews.123rf.com/images/sepavo/sepavo1601/sepavo160100017/50218055-bago-myanmar-at-kambawzathardi-golden-palace-.jpg",
+                  "subtitle":"Activity",
+                  "default_action": {
+                    "type": "web_url",
+                    "url": "https://petersfancybrownhats.com/view?item=103",
+                    "webview_height_ratio": "tall",
+                  },
+                  "buttons":[
+                  {
+                    "type":"postback",
+                    "title":"Choose your packages",
+                    "payload":"cypbago"
+                  }
+
+                  ]      
                 }
                 ]
               }
