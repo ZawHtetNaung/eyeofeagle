@@ -521,8 +521,8 @@ app.post('/webhook', (req, res) => {
                 "image_url":"http://example.com/img/green.png"
               },{
                 "content_type":"text",
-                "title":"Mountains",
-                "payload":"activity of mountains",
+                "title":"Waterfall",
+                "payload":"activity of waterfall",
                 "image_url":"http://example.com/img/green.png"
               }
               ]
