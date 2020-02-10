@@ -512,17 +512,17 @@ app.post('/webhook', (req, res) => {
               },{
                 "content_type":"text",
                 "title":"Hiking",
-                "payload":"hiking",
+                "payload":"activity of hiking",
                 "image_url":"http://example.com/img/green.png"
               },{
                 "content_type":"text",
                 "title":"Adventures",
-                "payload":"adventures",
+                "payload":"activity of adventures",
                 "image_url":"http://example.com/img/green.png"
               },{
                 "content_type":"text",
                 "title":"Mountains",
-                "payload":"mountains",
+                "payload":"activity of mountains",
                 "image_url":"http://example.com/img/green.png"
               }
               ]
@@ -532,7 +532,7 @@ app.post('/webhook', (req, res) => {
           send(welcomeMessage);
         }
         //end of qucik reply for activity
-        if (userInput == 'Choose your activity' || quickdata == "activity of pagoda" ){
+        if (userInput == 'Pagodas' || quickdata == "activity of pagoda" ){
           let welcomeMessage = {
            "recipient":{
             "id":webhook_event.sender.id
@@ -603,7 +603,80 @@ app.post('/webhook', (req, res) => {
         send(welcomeMessage);
         
       } 
-        //end of choose your activity
+        //end of customize activity for pagodas
+        if (userInput == 'Hiking' || quickdata == "activity of hiking" ){
+          let welcomeMessage = {
+           "recipient":{
+            "id":webhook_event.sender.id
+          },
+          "message":{
+            "attachment":{
+              "type":"template",
+              "payload":{
+                "template_type":"generic",
+                "elements":[
+                {
+                  "title":"Kalaw",
+                  "image_url":"https://images.squarespace-cdn.com/content/v1/5005c43024ac90096800ff2d/1490436625536-EM1L7N08PT62B5JK98WS/ke17ZwdGBToddI8pDm48kDFd-zkWuSQbD2rhL7rk6Kh7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z5QPOohDIaIeljMHgDF5CVlOqpeNLcJ80NK65_fV7S1UcR2Y7LpJqS8RvbDfsBcx_lQtT37MY1GbJzzrnia8tQKV1D9ytEOYPF5EokCoVRdEg/viewpoint+kalaw+trek+Ywar+Thit",
+                  "subtitle":"Activity",
+                  "default_action": {
+                    "type": "web_url",
+                    "url": "https://petersfancybrownhats.com/view?item=103",
+                    "webview_height_ratio": "tall",
+                  },
+                  "buttons":[
+                  {
+                    "type":"postback",
+                    "title":"Choose your packages",
+                    "payload":"cypkalaw"
+                  }
+
+                  ]      
+                },{
+                  "title":"Tan Taung Gyi",
+                  "image_url":"https://upload.wikimedia.org/wikipedia/commons/7/77/Than_Daung_Gyi%2C_Myanmar_%28Burma%29_-_panoramio_%284%29.jpg",
+                  "subtitle":"Activity",
+                  "default_action": {
+                    "type": "web_url",
+                    "url": "https://petersfancybrownhats.com/view?item=103",
+                    "webview_height_ratio": "tall",
+                  },
+                  "buttons":[
+                  {
+                    "type":"postback",
+                    "title":"Choose your packages",
+                    "payload":"cyptantaunggyi"
+                  }
+
+                  ]      
+                },{
+                  "title":"Chin Mountains",
+                  "image_url":"https://media2.trover.com/T/5afac155025f622c7001c77b/fixedw_large_4x.jpg",
+                  "subtitle":"Activity",
+                  "default_action": {
+                    "type": "web_url",
+                    "url": "https://petersfancybrownhats.com/view?item=103",
+                    "webview_height_ratio": "tall",
+                  },
+                  "buttons":[
+                  {
+                    "type":"postback",
+                    "title":"Choose your packages",
+                    "payload":"cypchinmountain"
+                  }
+
+                  ]      
+                }
+                ]
+              }
+            }
+          }
+        }
+        send(welcomeMessage);
+        
+      } 
+      //end of customize activity for hiking
+
         
         if (quickdata == 'detail' ){
           let welcomeMessage = {
