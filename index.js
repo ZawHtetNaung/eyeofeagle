@@ -494,44 +494,7 @@ app.post('/webhook', (req, res) => {
       //end of payment by book hotel
         
          
-        /*if (userInput == 'cya' || quickdata == "cya" ){
-          let welcomeMessage = {
-           "recipient":{
-            "id":webhook_event.sender.id
-          },
-          "message":{
-            "attachment":{
-              "type":"template",
-              "payload":{
-                "template_type":"generic",
-                "elements":[
-                {
-                  "title":"Pagoda",
-                  "image_url":"https://homepages.cae.wisc.edu/~ece533/images/boat.png",
-                  "subtitle":"Activity",
-                  "default_action": {
-                    "type": "web_url",
-                    "url": "https://petersfancybrownhats.com/view?item=103",
-                    "webview_height_ratio": "tall",
-                  },
-                  "buttons":[
-                  {
-                    "type":"postback",
-                    "title":"Pagoda",
-                    "payload":"choose your activity"
-                  }
-
-                  ]      
-                }
-                ]
-              }
-            }
-          }
-        }
-        send(welcomeMessage);
         
-      } */
-        //end of choose your activity
          if (userInput == 'Choose my activity' || quickdata == 'cya' ){
           let welcomeMessage = {
             "recipient":{
@@ -569,6 +532,44 @@ app.post('/webhook', (req, res) => {
           send(welcomeMessage);
         }
         //end of qucik reply for activity
+        if (userInput == 'cya' || quickdata == "cya" ){
+          let welcomeMessage = {
+           "recipient":{
+            "id":webhook_event.sender.id
+          },
+          "message":{
+            "attachment":{
+              "type":"template",
+              "payload":{
+                "template_type":"generic",
+                "elements":[
+                {
+                  "title":"Pagoda",
+                  "image_url":"https://www.nickkembel.com/wp-content/uploads/2019/09/shwesandaw-pagoda-bagan.jpg",
+                  "subtitle":"Activity",
+                  "default_action": {
+                    "type": "web_url",
+                    "url": "https://petersfancybrownhats.com/view?item=103",
+                    "webview_height_ratio": "tall",
+                  },
+                  "buttons":[
+                  {
+                    "type":"postback",
+                    "title":"Pagoda",
+                    "payload":"choose your packages"
+                  }
+
+                  ]      
+                }
+                ]
+              }
+            }
+          }
+        }
+        send(welcomeMessage);
+        
+      } 
+        //end of choose your activity
         
         if (quickdata == 'detail' ){
           let welcomeMessage = {
