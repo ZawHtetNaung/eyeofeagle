@@ -226,7 +226,7 @@ app.post('/webhook', (req, res) => {
                   {
                     "type":"postback",
                     "title":"Customize Your Packages",
-                    "payload":"cuyppagoda"
+                    "payload":"cuyppagodas"
                   }
 
                   ]      
@@ -274,7 +274,7 @@ app.post('/webhook', (req, res) => {
           
         } 
         //end of Customize your packages
-        if (userInput == 'Customize Your packages' || quickdata =='cuyppagoda' ){
+        if (userInput == 'Customize My packages in Pagodas' || quickdata =='cuyppagodas' ){
           let welcomeMessage = {
            "recipient":{
             "id":webhook_event.sender.id
@@ -346,7 +346,7 @@ app.post('/webhook', (req, res) => {
           
         } 
         //end of show your packages
-        if (userInput == 'Customize Your Packages' || userButton == 'cyps' ){
+        if (userInput == 'Customize My package Pagoda in Yangon' || userButton == 'cuyppagodasinyangon' ){
           let welcomeMessage = {
             "recipient":{
               "id":webhook_event.sender.id
