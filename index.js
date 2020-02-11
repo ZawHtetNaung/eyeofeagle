@@ -129,7 +129,81 @@ app.post('/webhook', (req, res) => {
           send(welcomeMessage);
         }
         //end of question
-         if (userInput == 'Yes' || quickdata == 'yes' ){
+        if (userInput == 'Yes' || quickdata == 'yes' ){
+          let welcomeMessage = {
+            "recipient":{
+              "id":webhook_event.sender.id
+            },
+            "messaging_type": "RESPONSE",
+            "message":{
+              "text": "Are you ok with that trip?",
+              "quick_replies":[
+              {
+                "content_type":"text",
+                "title":"Ok",
+                "payload":"ok",
+                "image_url":"http://example.com/img/red.png"
+              },{
+                "content_type":"text",
+                "title":"Not Ok",
+                "payload":"notok",
+                "image_url":"http://example.com/img/green.png"
+              },{
+                "content_type":"text",
+                "title":"What can I do for me ",
+                "payload":"cya",
+                "image_url":"http://example.com/img/green.png"
+              },{
+                "content_type":"text",
+                "title":"Want to know about your tour?",
+                "payload":"wakayt",
+                "image_url":"http://example.com/img/green.png"
+              }
+              ]
+            }
+          } 
+
+          send(welcomeMessage);
+        }
+        //end of sec question
+        if (userInput == 'Not ok' || quickdata == 'notok' ){
+          let welcomeMessage = {
+            "recipient":{
+              "id":webhook_event.sender.id
+            },
+            "messaging_type": "RESPONSE",
+            "message":{
+              "text": "Why?",
+              "quick_replies":[
+              {
+                "content_type":"text",
+                "title":"Due to your package",
+                "payload":"duetoyourpackage",
+                "image_url":"http://example.com/img/red.png"
+              },{
+                "content_type":"text",
+                "title":"don't know place",
+                "payload":"don'tknowplace",
+                "image_url":"http://example.com/img/green.png"
+              },{
+                "content_type":"text",
+                "title":"don't like concernpackage ",
+                "payload":"don'tlikeconernpackage",
+                "image_url":"http://example.com/img/green.png"
+              },{
+                "content_type":"text",
+                "title":"I want ot create package",
+                "payload":"iwanttocreatepackage",
+                "image_url":"http://example.com/img/green.png"
+              }
+              ]
+            }
+          } 
+
+          send(welcomeMessage);
+        }
+        //end of third question
+         if (userInput == 'Because my package' || quickdata == 'because my package' ){
           let welcomeMessage = {
             "recipient":{
               "id":webhook_event.sender.id
@@ -157,6 +231,11 @@ app.post('/webhook', (req, res) => {
                 "content_type":"text",
                 "title":"Pyin Oo Lwin",
                 "payload":"pyinoolwin",
+                "image_url":"http://example.com/img/green.png"
+              },{
+                "content_type":"text",
+                "title":"Other",
+                "payload":"other",
                 "image_url":"http://example.com/img/green.png"
               }
               ]
