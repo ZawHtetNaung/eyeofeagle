@@ -346,7 +346,7 @@ app.post('/webhook', (req, res) => {
           
         } 
         //end of show your packages
-        if (userInput == 'Customize My package Pagoda in Yangon' || userButton == 'cuyppagodasinyangon' ){
+        if (userInput == 'Customize My package Pagoda in Yangon' || quickdata == 'cuyppagodasinyangon' ){
           let welcomeMessage = {
             "recipient":{
               "id":webhook_event.sender.id
