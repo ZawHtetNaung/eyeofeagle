@@ -202,7 +202,7 @@ app.post('/webhook', (req, res) => {
           
         } 
         //end of Choose your packages
-        if (userInput == 'Customize Your packages' || quickdata =='cuyp' ){
+        if (userInput == 'Customize Your package' || quickdata =='cuyp' ){
           let welcomeMessage = {
            "recipient":{
             "id":webhook_event.sender.id
@@ -226,7 +226,7 @@ app.post('/webhook', (req, res) => {
                   {
                     "type":"postback",
                     "title":"Customize Your Packages",
-                    "payload":"cyps"
+                    "payload":"cuyppagoda"
                   }
 
                   ]      
@@ -243,7 +243,7 @@ app.post('/webhook', (req, res) => {
                   {
                     "type":"postback",
                     "title":"Customize Your Packages",
-                    "payload":"cyps"
+                    "payload":"cuypbeaches"
                   }
 
                   ]      
@@ -260,7 +260,7 @@ app.post('/webhook', (req, res) => {
                   {
                     "type":"postback",
                     "title":"Customize Your Packages",
-                    "payload":"cyps"
+                    "payload":"cuypeachofstate"
                   }
 
                   ]      
@@ -274,6 +274,78 @@ app.post('/webhook', (req, res) => {
           
         } 
         //end of Customize your packages
+        if (userInput == 'Customize Your packages' || quickdata =='cuyppagoda' ){
+          let welcomeMessage = {
+           "recipient":{
+            "id":webhook_event.sender.id
+          },
+          "message":{
+            "attachment":{
+              "type":"template",
+              "payload":{
+                "template_type":"generic",
+                "elements":[
+                {
+                  "title":"Pagodas in Yangon",
+                  "image_url":"https://cdn.getyourguide.com/img/tour_img-1174626-148.jpg",
+                  "subtitle":"package",
+                  "default_action": {
+                    "type": "web_url",
+                    "url": "https://petersfancybrownhats.com/view?item=103",
+                    "webview_height_ratio": "tall",
+                  },
+                  "buttons":[
+                  {
+                    "type":"postback",
+                    "title":"Customize Your Packages",
+                    "payload":"cyppagodasinyangon"
+                  }
+
+                  ]      
+                },{
+                  "title":"Pagodas in Bago",
+                  "image_url":"https://www.sonicstartravel.com/car_rental/uploads/article/article_17102805421002.jpg",
+                  "subtitle":"package",
+                  "default_action": {
+                    "type": "web_url",
+                    "url": "https://petersfancybrownhats.com/view?item=103",
+                    "webview_height_ratio": "tall",
+                  },
+                  "buttons":[
+                  {
+                    "type":"postback",
+                    "title":"Customize Your Packages",
+                    "payload":"cyppagodainbago"
+                  }
+
+                  ]      
+                },{
+                  "title":"Pagoda in Mandalay",
+                  "image_url":"https://www.uncharted-horizons-myanmar.com/sites/uncharted-horizons-myanmar.com/files/styles/tour/public/tour-images/chinstate-48.jpg?itok=cfo4S4q0",
+                  "subtitle":"package",
+                  "default_action": {
+                    "type": "web_url",
+                    "url": "https://petersfancybrownhats.com/view?item=103",
+                    "webview_height_ratio": "tall",
+                  },
+                  "buttons":[
+                  {
+                    "type":"postback",
+                    "title":"Customize Your Packages",
+                    "payload":"cyppagodainmandalay"
+                  }
+
+                  ]      
+                }
+                ]
+              }
+            }
+          }
+        }
+        send(welcomeMessage);
+          
+        } 
+        //end of show your packages
         if (userInput == 'Customize Your Packages' || userButton == 'cyps' ){
           let welcomeMessage = {
             "recipient":{
