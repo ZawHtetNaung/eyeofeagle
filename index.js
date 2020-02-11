@@ -99,7 +99,7 @@ app.post('/webhook', (req, res) => {
             },
             "messaging_type": "RESPONSE",
             "message":{
-              "text": "Are you on trip?",
+              "text": "Hi Are you on trip?",
               "quick_replies":[
               {
                 "content_type":"text",
@@ -129,6 +129,43 @@ app.post('/webhook', (req, res) => {
           send(welcomeMessage);
         }
         //end of question
+         if (userInput == 'Yes' || quickdata == 'yes' ){
+          let welcomeMessage = {
+            "recipient":{
+              "id":webhook_event.sender.id
+            },
+            "messaging_type": "RESPONSE",
+            "message":{
+              "text": "Now where are you?",
+              "quick_replies":[
+              {
+                "content_type":"text",
+                "title":"Yangon",
+                "payload":"yangon",
+                "image_url":"http://example.com/img/red.png"
+              },{
+                "content_type":"text",
+                "title":"Bago",
+                "payload":"bago",
+                "image_url":"http://example.com/img/green.png"
+              },{
+                "content_type":"text",
+                "title":"Mandalay",
+                "payload":"mandalay",
+                "image_url":"http://example.com/img/green.png"
+              },{
+                "content_type":"text",
+                "title":"Pyin Oo Lwin",
+                "payload":"pyinoolwin",
+                "image_url":"http://example.com/img/green.png"
+              }
+              ]
+            }
+          } 
+
+          send(welcomeMessage);
+        }
+        //end of yes answer
         if (userInput == 'Packages' || userButton == 'packages' ){
           let welcomeMessage = {
             "recipient":{
