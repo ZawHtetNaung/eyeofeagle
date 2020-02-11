@@ -113,13 +113,13 @@ app.post('/webhook', (req, res) => {
                 "image_url":"http://example.com/img/green.png"
               },{
                 "content_type":"text",
-                "title":"detail",
-                "payload":"detail",
+                "title":"Choose your activity",
+                "payload":"cya",
                 "image_url":"http://example.com/img/green.png"
               },{
                 "content_type":"text",
-                "title":"Choose your activity",
-                "payload":"cya",
+                "title":"detail",
+                "payload":"detail",
                 "image_url":"http://example.com/img/green.png"
               }
               ]
