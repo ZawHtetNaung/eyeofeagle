@@ -315,12 +315,12 @@ app.post('/webhook', (req, res) => {
                   {
                     "type":"postback",
                     "title":"Customize Your Packages",
-                    "payload":"cyppagodainbago"
+                    "payload":"cyppagodasinbago"
                   }
 
                   ]      
                 },{
-                  "title":"Pagoda in Mandalay",
+                  "title":"Pagodas in Mandalay",
                   "image_url":"https://upload.wikimedia.org/wikipedia/commons/3/3d/Mahamuni_Image.JPG",
                   "subtitle":"package",
                   "default_action": {
@@ -355,25 +355,31 @@ app.post('/webhook', (req, res) => {
             "message":{
               "text": " Customize Your Packages:",
               "quick_replies":[
+               {
+                "content_type":"text",
+                "title":"Pagodas in Yangon",
+                "payload":"pagodasinyangon",
+                "image_url":"http://example.com/img/red.png"
+              },
               {
                 "content_type":"text",
-                "title":"Hotel",
-                "payload":"hotel",
+                "title":"Hotel in Yangon",
+                "payload":"hotelinyangon",
                 "image_url":"http://example.com/img/red.png"
               },{
                 "content_type":"text",
-                "title":"Transportation",
-                "payload":"transportation",
+                "title":"Transportation in Yangon",
+                "payload":"transportationinyangon",
                 "image_url":"http://example.com/img/green.png"
               },{
                 "content_type":"text",
-                "title":"Guides",
-                "payload":"guide",
+                "title":"Guides in Yangon",
+                "payload":"guidesinyangon",
                 "image_url":"http://example.com/img/green.png"
               },{
                 "content_type":"text",
-                "title":"Restaurants",
-                "payload":"restaurants",
+                "title":"Restaurants in Yangon",
+                "payload":"restaurantsinyangon",
                 "image_url":"http://example.com/img/green.png"
               }
               ]
