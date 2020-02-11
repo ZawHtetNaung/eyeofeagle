@@ -108,8 +108,8 @@ app.post('/webhook', (req, res) => {
                 "image_url":"http://example.com/img/red.png"
               },{
                 "content_type":"text",
-                "title":"Choose your activity",
-                "payload":"cya",
+                "title":"Customize Your Package",
+                "payload":"cuyp",
                 "image_url":"http://example.com/img/green.png"
               },{
                 "content_type":"text",
@@ -118,8 +118,8 @@ app.post('/webhook', (req, res) => {
                 "image_url":"http://example.com/img/green.png"
               },{
                 "content_type":"text",
-                "title":"Customize Your Package",
-                "payload":"cuyp",
+                "title":"Choose your activity",
+                "payload":"cya",
                 "image_url":"http://example.com/img/green.png"
               }
               ]
