@@ -99,7 +99,44 @@ app.post('/webhook', (req, res) => {
             },
             "messaging_type": "RESPONSE",
             "message":{
-              "text": " Packages:",
+              "text": "Are you on trip?",
+              "quick_replies":[
+              {
+                "content_type":"text",
+                "title":"Yes",
+                "payload":"yes",
+                "image_url":"http://example.com/img/red.png"
+              },{
+                "content_type":"text",
+                "title":"No",
+                "payload":"no",
+                "image_url":"http://example.com/img/green.png"
+              },{
+                "content_type":"text",
+                "title":"Just Check It",
+                "payload":"cya",
+                "image_url":"http://example.com/img/green.png"
+              },{
+                "content_type":"text",
+                "title":"Want to know about your tour?",
+                "payload":"wakayt",
+                "image_url":"http://example.com/img/green.png"
+              }
+              ]
+            }
+          } 
+
+          send(welcomeMessage);
+        }
+        //end of question
+        if (userInput == 'Packages' || userButton == 'packages' ){
+          let welcomeMessage = {
+            "recipient":{
+              "id":webhook_event.sender.id
+            },
+            "messaging_type": "RESPONSE",
+            "message":{
+              "text": "Packages:",
               "quick_replies":[
               {
                 "content_type":"text",
@@ -128,7 +165,7 @@ app.post('/webhook', (req, res) => {
 
           send(welcomeMessage);
         }
-        //end of packages
+        //end of started
         
          if (userInput == 'Choose Your Package' || quickdata =='cyp' ){
           let welcomeMessage = {
@@ -388,7 +425,7 @@ app.post('/webhook', (req, res) => {
 
           send(welcomeMessage);
         }
-        //end of customize 
+        //end of customize package by pagodas 
          if (userInput == 'Hotel' || quickdata == "hotel" ){
           let welcomeMessage = {
            "recipient":{
