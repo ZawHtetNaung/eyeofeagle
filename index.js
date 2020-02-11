@@ -304,7 +304,7 @@ app.post('/webhook', (req, res) => {
                   ]      
                 },{
                   "title":"Pagodas in Bago",
-                  "image_url":"https://www.sonicstartravel.com/car_rental/uploads/article/article_17102805421002.jpg",
+                  "image_url":"https://imageofmyanmartravel.com/wp-content/uploads/2019/04/Imageofmyanmar_four-buddha-images.jpg",
                   "subtitle":"package",
                   "default_action": {
                     "type": "web_url",
@@ -321,7 +321,7 @@ app.post('/webhook', (req, res) => {
                   ]      
                 },{
                   "title":"Pagoda in Mandalay",
-                  "image_url":"https://www.uncharted-horizons-myanmar.com/sites/uncharted-horizons-myanmar.com/files/styles/tour/public/tour-images/chinstate-48.jpg?itok=cfo4S4q0",
+                  "image_url":"https://upload.wikimedia.org/wikipedia/commons/3/3d/Mahamuni_Image.JPG",
                   "subtitle":"package",
                   "default_action": {
                     "type": "web_url",
