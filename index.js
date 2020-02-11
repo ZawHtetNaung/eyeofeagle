@@ -332,7 +332,7 @@ app.post('/webhook', (req, res) => {
                   {
                     "type":"postback",
                     "title":"Customize Your Packages",
-                    "payload":"cyppagodasinmandalay"
+                    "payload":"cuyppagodasinmandalay"
                   }
 
                   ]      
