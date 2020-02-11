@@ -116,6 +116,11 @@ app.post('/webhook', (req, res) => {
                 "title":"detail",
                 "payload":"detail",
                 "image_url":"http://example.com/img/green.png"
+              },{
+                "content_type":"text",
+                "title":"Customize Your Package",
+                "payload":"cuyp",
+                "image_url":"http://example.com/img/green.png"
               }
               ]
             }
@@ -125,7 +130,79 @@ app.post('/webhook', (req, res) => {
         }
         //end of packages
         
-         if (userInput == 'cyp' || quickdata =='cyp' ){
+         if (userInput == 'Choose Your Package' || quickdata =='cyp' ){
+          let welcomeMessage = {
+           "recipient":{
+            "id":webhook_event.sender.id
+          },
+          "message":{
+            "attachment":{
+              "type":"template",
+              "payload":{
+                "template_type":"generic",
+                "elements":[
+                {
+                  "title":"Pagodas",
+                  "image_url":"https://cdn.getyourguide.com/img/tour_img-1174626-148.jpg",
+                  "subtitle":"package",
+                  "default_action": {
+                    "type": "web_url",
+                    "url": "https://petersfancybrownhats.com/view?item=103",
+                    "webview_height_ratio": "tall",
+                  },
+                  "buttons":[
+                  {
+                    "type":"postback",
+                    "title":"Book",
+                    "payload":"book"
+                  }
+
+                  ]      
+                },{
+                  "title":"Beaches",
+                  "image_url":"https://www.sonicstartravel.com/car_rental/uploads/article/article_17102805421002.jpg",
+                  "subtitle":"package",
+                  "default_action": {
+                    "type": "web_url",
+                    "url": "https://petersfancybrownhats.com/view?item=103",
+                    "webview_height_ratio": "tall",
+                  },
+                  "buttons":[
+                  {
+                    "type":"postback",
+                    "title":"Book",
+                    "payload":"book"
+                  }
+
+                  ]      
+                },{
+                  "title":"Each of state",
+                  "image_url":"https://www.uncharted-horizons-myanmar.com/sites/uncharted-horizons-myanmar.com/files/styles/tour/public/tour-images/chinstate-48.jpg?itok=cfo4S4q0",
+                  "subtitle":"package",
+                  "default_action": {
+                    "type": "web_url",
+                    "url": "https://petersfancybrownhats.com/view?item=103",
+                    "webview_height_ratio": "tall",
+                  },
+                  "buttons":[
+                  {
+                    "type":"postback",
+                    "title":"Book",
+                    "payload":"book"
+                  }
+
+                  ]      
+                }
+                ]
+              }
+            }
+          }
+        }
+        send(welcomeMessage);
+          
+        } 
+        //end of Choose your packages
+        if (userInput == 'Customize Your packages' || quickdata =='cuyp' ){
           let welcomeMessage = {
            "recipient":{
             "id":webhook_event.sender.id
@@ -196,7 +273,7 @@ app.post('/webhook', (req, res) => {
         send(welcomeMessage);
           
         } 
-        //end of Choose your packages
+        //end of Customize your packages
         if (userInput == 'Customize Your Packages' || userButton == 'cyps' ){
           let welcomeMessage = {
             "recipient":{
