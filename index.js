@@ -274,7 +274,7 @@ app.post('/webhook', (req, res) => {
           
         } 
         //end of Customize your packages
-        if (userInput == 'Customize My packages in Pagodas' || quickdata =='cuyppagodas' ){
+        if (userInput == 'Customize My packages in Pagodas' || userButton =='cuyppagodas' ){
           let welcomeMessage = {
            "recipient":{
             "id":webhook_event.sender.id
