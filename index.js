@@ -177,13 +177,13 @@ app.post('/webhook', (req, res) => {
               "quick_replies":[
               {
                 "content_type":"text",
-                "title":"Due to your package",
-                "payload":"duetoyourpackage",
+                "title":"Due to my package",
+                "payload":"duetomypackage",
                 "image_url":"http://example.com/img/red.png"
               },{
                 "content_type":"text",
-                "title":"don't know place",
-                "payload":"don'tknowplace",
+                "title":"Do not know place",
+                "payload":"donotknowplace",
                 "image_url":"http://example.com/img/green.png"
               },{
                 "content_type":"text",
@@ -203,7 +203,7 @@ app.post('/webhook', (req, res) => {
           send(welcomeMessage);
         }
         //end of third question
-         if (userInput == 'Because my package' || quickdata == 'because my package' ){
+         if (userInput == 'Do not know place' || quickdata == 'donotknowplace' ){
           let welcomeMessage = {
             "recipient":{
               "id":webhook_event.sender.id
