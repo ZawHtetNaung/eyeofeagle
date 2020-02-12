@@ -314,7 +314,7 @@ app.post('/webhook', (req, res) => {
           send(welcomeMessage);
         }
         //end of do not know package by yes answer
-        if (userInput == 'want to create' || userButton == 'wanttocreate' ){
+        if (userInput == 'want to create' || quickdata == 'wanttocreate' ){
           let welcomeMessage = {
             "recipient":{
               "id":webhook_event.sender.id
