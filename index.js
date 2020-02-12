@@ -240,6 +240,38 @@ app.post('/webhook', (req, res) => {
           send(welcomeMessage);
         }
         //end of due to my package by yes answer
+        if (userInput == 'want to create new one' || quickdata == 'wanttocreatenewone' ){
+          let welcomeMessage = {
+            "recipient":{
+              "id":webhook_event.sender.id
+            },
+            "messaging_type": "RESPONSE",
+            "message":{
+              "text": "want to create new packages by yourself",
+              "quick_replies":[
+              {
+                "content_type":"text",
+                "title":"Yes",
+                "payload":"yesbycreatenewpackage",
+                "image_url":"http://example.com/img/red.png"
+              },{
+                "content_type":"text",
+                "title":"No",
+                "payload":"nobycreatenewpackage",
+                "image_url":"http://example.com/img/green.png"
+              },{
+                "content_type":"text",
+                "title":"Choose another plan ",
+                "payload":"chooseanotherplan",
+                "image_url":"http://example.com/img/green.png"
+              }
+              ]
+            }
+          } 
+
+          send(welcomeMessage);
+        }
+        //end of want to create new one by yes answer
          if (userInput == 'Do not know place' || quickdata == 'donotknowplace' ){
           let welcomeMessage = {
             "recipient":{
