@@ -251,13 +251,13 @@ app.post('/webhook', (req, res) => {
               "quick_replies":[
               {
                 "content_type":"text",
-                "title":"Yes",
-                "payload":"yesbycreatenewpackage",
+                "title":"want to create",
+                "payload":"wanttocreate",
                 "image_url":"http://example.com/img/red.png"
               },{
                 "content_type":"text",
-                "title":"No",
-                "payload":"nobycreatenewpackage",
+                "title":"do not want",
+                "payload":"donotwant",
                 "image_url":"http://example.com/img/green.png"
               },{
                 "content_type":"text",
