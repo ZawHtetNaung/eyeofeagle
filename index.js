@@ -99,7 +99,7 @@ app.post('/webhook', (req, res) => {
             },
             "messaging_type": "RESPONSE",
             "message":{
-              "text": "Hi Are you on trip?",
+              "text": "Hi! Are you on trip?",
               "quick_replies":[
               {
                 "content_type":"text",
@@ -203,6 +203,43 @@ app.post('/webhook', (req, res) => {
           send(welcomeMessage);
         }
         //end of third question
+        if (userInput == 'Due to my package' || quickdata == 'duetomypackage' ){
+          let welcomeMessage = {
+            "recipient":{
+              "id":webhook_event.sender.id
+            },
+            "messaging_type": "RESPONSE",
+            "message":{
+              "text": "What wrong with your package?",
+              "quick_replies":[
+              {
+                "content_type":"text",
+                "title":"want to create new one",
+                "payload":"wanttocreatenewone",
+                "image_url":"http://example.com/img/red.png"
+              },{
+                "content_type":"text",
+                "title":"Do not like each package",
+                "payload":"donotlikeeachpackage",
+                "image_url":"http://example.com/img/green.png"
+              },{
+                "content_type":"text",
+                "title":"want to join your package ",
+                "payload":"wanttojoinyourpackage",
+                "image_url":"http://example.com/img/green.png"
+              },{
+                "content_type":"text",
+                "title":"want to change my package",
+                "payload":"wantochangemypackage",
+                "image_url":"http://example.com/img/green.png"
+              }
+              ]
+            }
+          } 
+
+          send(welcomeMessage);
+        }
+        //end of due to my package by yes answer
          if (userInput == 'Do not know place' || quickdata == 'donotknowplace' ){
           let welcomeMessage = {
             "recipient":{
@@ -244,7 +281,7 @@ app.post('/webhook', (req, res) => {
 
           send(welcomeMessage);
         }
-        //end of yes answer
+        //end of do not know package by yes answer
         if (userInput == 'Packages' || userButton == 'packages' ){
           let welcomeMessage = {
             "recipient":{
@@ -281,7 +318,7 @@ app.post('/webhook', (req, res) => {
 
           send(welcomeMessage);
         }
-        //end of started
+        //end of packages
         
          if (userInput == 'Choose Your Package' || quickdata =='cyp' ){
           let welcomeMessage = {
