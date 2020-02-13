@@ -611,7 +611,7 @@ app.post('/webhook', (req, res) => {
           send(welcomeMessage);
         }
         //end of customize package by pagodas 
-         if (userInput == 'Pagodas in Yangon' || userButton == "pagodasinyangon" ){
+         if (userInput == 'Pagodas in Yangon' || quickdata == "pagodasinyangon" ){
           let welcomeMessage = {
            "recipient":{
             "id":webhook_event.sender.id
