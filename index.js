@@ -611,6 +611,52 @@ app.post('/webhook', (req, res) => {
           send(welcomeMessage);
         }
         //end of customize package by pagodas 
+         if (userInput == 'Hotel in yangon' || quickdata == "hotelinyangon" ){
+          let welcomeMessage = {
+           "recipient":{
+            "id":webhook_event.sender.id
+          },
+          "message":{
+            "attachment":{
+              "type":"template",
+              "payload":{
+                "template_type":"generic",
+                "elements":[
+                {
+                  "title":"Hotel",
+                  "image_url":"https://homepages.cae.wisc.edu/~ece533/images/boat.png",
+                  "subtitle":"Choose the hotel what you want",
+                  "default_action": {
+                    "type": "web_url",
+                    "url": "https://petersfancybrownhats.com/view?item=103",
+                    "webview_height_ratio": "tall",
+                  },
+                  "buttons":[
+                  {
+                    "type":"postback",
+                    "title":"High Class",
+                    "payload":"height class hotel in yangon"
+                  },{
+                    "type":"postback",
+                    "title":"Medium",
+                    "payload":"medium hotel in yangon"
+                  },{
+                    "type":"postback",
+                    "title":"Low Budget",
+                    "payload":"low budget hotel in yangon"
+                  }
+
+                  ]      
+                }
+                ]
+              }
+            }
+          }
+        }
+        send(welcomeMessage);
+        
+      } 
+      //end of customize by hotel in yangon
          if (userInput == 'Hotel' || quickdata == "hotel" ){
           let welcomeMessage = {
            "recipient":{
@@ -823,7 +869,7 @@ app.post('/webhook', (req, res) => {
         
       } 
       //end of customize by hotel booking
-       if (userInput == 'Book' || userButton == "book hotel" ){
+       if (userInput == 'Book hotel' || userButton == "book hotel" ){
           let welcomeMessage = {
            "recipient":{
             "id":webhook_event.sender.id
