@@ -611,6 +611,96 @@ app.post('/webhook', (req, res) => {
           send(welcomeMessage);
         }
         //end of customize package by pagodas 
+         if (userInput == 'Pagodas in Yangon' || userButton == "pagodasinyangon" ){
+          let welcomeMessage = {
+           "recipient":{
+            "id":webhook_event.sender.id
+          },
+          "message":{
+            "attachment":{
+              "type":"template",
+              "payload":{
+                "template_type":"generic",
+                "elements":[
+                {
+                  "title":"Shwedagon",
+                  "image_url":"https://osugamyanmartravels.com/wp-content/uploads/2018/04/shwedagon-pagoda-yangon-burma-myanmar.jpg",
+                  "subtitle":"Choose the transportation what you want",
+                  "default_action": {
+                    "type": "web_url",
+                    "url": "https://petersfancybrownhats.com/view?item=103",
+                    "webview_height_ratio": "tall",
+                  },
+                  "buttons":[
+                  {
+                    "type":"postback",
+                    "title":"Book",
+                    "payload":"bookshwedagon"
+                  }
+
+                  ]      
+                },{
+                  "title":"Sule",
+                  "image_url":"https://res.cloudinary.com/fleetnation/image/private/c_fit,w_1120/g_south,l_text:style_gothic2:%C2%A9%20Frank%20Bienewald%20,o_20,y_10/g_center,l_watermark4,o_25,y_50/v1545300898/svhcrxyne1pgny6hcy41.jpg",
+                  "subtitle":"Choose the transportation what you want",
+                  "default_action": {
+                    "type": "web_url",
+                    "url": "https://petersfancybrownhats.com/view?item=103",
+                    "webview_height_ratio": "tall",
+                  },
+                  "buttons":[
+                  {
+                    "type":"postback",
+                    "title":"Book",
+                    "payload":"booksule"
+                  }
+
+                  ]      
+                },{
+                  "title":"Kyauk Taw Gyi",
+                  "image_url":"https://yangonlife.com.mm/sites/yangonlife.com.mm/files/styles/detail_page_main_image/public/article_images/IMG_6800.jpg?itok=xuQuCJ-l",
+                  "subtitle":"Choose the transportation what you want",
+                  "default_action": {
+                    "type": "web_url",
+                    "url": "https://petersfancybrownhats.com/view?item=103",
+                    "webview_height_ratio": "tall",
+                  },
+                  "buttons":[
+                  {
+                    "type":"postback",
+                    "title":"Book",
+                    "payload":"bookkyauktawgyi"
+                  }
+
+                  ]      
+                },{
+                  "title":"Yay ll Kyauk Tan",
+                  "image_url":"https://yangonlife.com.mm/sites/yangonlife.com.mm/files/article_images/IMG_1381.JPG",
+                  "subtitle":"Choose the transportation what you want",
+                  "default_action": {
+                    "type": "web_url",
+                    "url": "https://petersfancybrownhats.com/view?item=103",
+                    "webview_height_ratio": "tall",
+                  },
+                  "buttons":[
+                  {
+                    "type":"postback",
+                    "title":"Book",
+                    "payload":"bookyayllkyauktan"
+                  }
+
+                  ]      
+                }
+
+                ]
+              }
+            }
+          }
+        }
+        send(welcomeMessage);
+        
+      } 
+     //end of customize by pagodas in yangon
          if (userInput == 'Hotel in yangon' || quickdata == "hotelinyangon" ){
           let welcomeMessage = {
            "recipient":{
