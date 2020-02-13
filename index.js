@@ -624,7 +624,7 @@ app.post('/webhook', (req, res) => {
                 "elements":[
                 {
                   "title":"Hotel",
-                  "image_url":"https://homepages.cae.wisc.edu/~ece533/images/boat.png",
+                  "image_url":"https://r-cf.bstatic.com/images/hotel/max1024x768/181/181775739.jpg",
                   "subtitle":"Choose the hotel what you want",
                   "default_action": {
                     "type": "web_url",
@@ -657,52 +657,7 @@ app.post('/webhook', (req, res) => {
         
       } 
       //end of customize by hotel in yangon
-         if (userInput == 'Hotel' || quickdata == "hotel" ){
-          let welcomeMessage = {
-           "recipient":{
-            "id":webhook_event.sender.id
-          },
-          "message":{
-            "attachment":{
-              "type":"template",
-              "payload":{
-                "template_type":"generic",
-                "elements":[
-                {
-                  "title":"Hotel",
-                  "image_url":"https://homepages.cae.wisc.edu/~ece533/images/boat.png",
-                  "subtitle":"Choose the hotel what you want",
-                  "default_action": {
-                    "type": "web_url",
-                    "url": "https://petersfancybrownhats.com/view?item=103",
-                    "webview_height_ratio": "tall",
-                  },
-                  "buttons":[
-                  {
-                    "type":"postback",
-                    "title":"High Class",
-                    "payload":"height class hotel"
-                  },{
-                    "type":"postback",
-                    "title":"Medium",
-                    "payload":"medium hotel"
-                  },{
-                    "type":"postback",
-                    "title":"Low Budget",
-                    "payload":"low budget hotel"
-                  }
-
-                  ]      
-                }
-                ]
-              }
-            }
-          }
-        }
-        send(welcomeMessage);
         
-      } 
-      //end of customize by hotel
        if (userInput == 'Transportation' || quickdata == "transportation" ){
           let welcomeMessage = {
            "recipient":{
@@ -795,7 +750,7 @@ app.post('/webhook', (req, res) => {
      // end of customize by transportation
      
 
-       if (userInput == 'Height Class' || userButton == "height class hotel" ){
+       if (userInput == 'Height Class in Yangon' || userButton == "height class hotel in yangon" ){
           let welcomeMessage = {
            "recipient":{
             "id":webhook_event.sender.id
@@ -807,8 +762,8 @@ app.post('/webhook', (req, res) => {
                 "template_type":"generic",
                 "elements":[
                     {
-                      "title":"Hotel in Inle",
-                      "image_url":"https://homepages.cae.wisc.edu/~ece533/images/boat.png",
+                      "title":"Sedona",
+                      "image_url":"https://pix10.agoda.net/hotelImages/104/10489/10489_16102610240048128541.jpg?s=1024x768",
                       "subtitle":"You can book here",
                       "default_action": {
                         "type": "web_url",
@@ -819,14 +774,14 @@ app.post('/webhook', (req, res) => {
                       {
                         "type":"postback",
                         "title":"Book",
-                        "payload":"book hotel"
+                        "payload":"booksedona"
                       }
 
                       ]      
                     },
                     {
-                      "title":"Hotel in Kalaw",
-                      "image_url":"https://homepages.cae.wisc.edu/~ece533/images/boat.png",
+                      "title":"Lotte",
+                      "image_url":"https://media-cdn.tripadvisor.com/media/photo-m/1280/18/2d/24/2a/lotte-hotel-yangon.jpg",
                       "subtitle":"You can book here",
                       "default_action": {
                         "type": "web_url",
@@ -837,14 +792,14 @@ app.post('/webhook', (req, res) => {
                       {
                         "type":"postback",
                         "title":"Book",
-                        "payload":"book hotel"
+                        "payload":"booklotte"
                       }
 
                       ]      
                     },
                     {
-                      "title":"Hotel in Taung Gyi",
-                      "image_url":"https://homepages.cae.wisc.edu/~ece533/images/boat.png",
+                      "title":"Inya Lake",
+                      "image_url":"https://pix10.agoda.net/hotelImages/7459165/0/719512cfb65fdc4a659f8484edb9b921.jpg?s=1024x768",
                       "subtitle":"You can book here",
                       "default_action": {
                         "type": "web_url",
@@ -855,7 +810,7 @@ app.post('/webhook', (req, res) => {
                       {
                         "type":"postback",
                         "title":"Book",
-                        "payload":"book hotel"
+                        "payload":"bookinyalake"
                       }
 
                       ]      
@@ -868,7 +823,53 @@ app.post('/webhook', (req, res) => {
         send(welcomeMessage);
         
       } 
-      //end of customize by hotel booking
+      //end of customize by hotel booking in yangon
+       if (userInput == 'Hotel' || quickdata == "hotel" ){
+          let welcomeMessage = {
+           "recipient":{
+            "id":webhook_event.sender.id
+          },
+          "message":{
+            "attachment":{
+              "type":"template",
+              "payload":{
+                "template_type":"generic",
+                "elements":[
+                {
+                  "title":"Hotel",
+                  "image_url":"https://homepages.cae.wisc.edu/~ece533/images/boat.png",
+                  "subtitle":"Choose the hotel what you want",
+                  "default_action": {
+                    "type": "web_url",
+                    "url": "https://petersfancybrownhats.com/view?item=103",
+                    "webview_height_ratio": "tall",
+                  },
+                  "buttons":[
+                  {
+                    "type":"postback",
+                    "title":"High Class",
+                    "payload":"height class hotel"
+                  },{
+                    "type":"postback",
+                    "title":"Medium",
+                    "payload":"medium hotel"
+                  },{
+                    "type":"postback",
+                    "title":"Low Budget",
+                    "payload":"low budget hotel"
+                  }
+
+                  ]      
+                }
+                ]
+              }
+            }
+          }
+        }
+        send(welcomeMessage);
+        
+      } 
+      //end of customize by hotel
        if (userInput == 'Book hotel' || userButton == "book hotel" ){
           let welcomeMessage = {
            "recipient":{
