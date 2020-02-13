@@ -321,7 +321,7 @@ app.post('/webhook', (req, res) => {
             },
             "messaging_type": "RESPONSE",
             "message":{
-              "text": "Here It is! This is our packages and you whatever what you create that can create what you want! There is you can chooose and buy the whole packags, you can create or customize your packages and final is you can choose your activity and then I will suggest you",
+              "text": "Here It is! This is our packages and you whatever what you create that can create what you want! There is you can choose and buy the whole packags, you can create or customize your packages and final is you can choose your activity and then I will suggest you",
               "quick_replies":[
               {
                 "content_type":"text",
