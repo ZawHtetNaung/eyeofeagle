@@ -165,7 +165,7 @@ app.post('/webhook', (req, res) => {
 
           send(welcomeMessage);
         }
-        //end of sec question
+        //end of yes answer
          if (userInput == 'Ok' || quickdata == 'ok' ){
           let welcomeMessage = {
             "recipient":{
