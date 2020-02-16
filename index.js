@@ -166,6 +166,43 @@ app.post('/webhook', (req, res) => {
           send(welcomeMessage);
         }
         //end of sec question
+         if (userInput == 'Ok' || quickdata == 'ok' ){
+          let welcomeMessage = {
+            "recipient":{
+              "id":webhook_event.sender.id
+            },
+            "messaging_type": "RESPONSE",
+            "message":{
+              "text": "If you aren't ok you can create package by your self, you can choose youractivity by your self and then I will suggest and you don't know your place where you are. So you can your location and I will be show the package and you can chooose each package. ",
+              "quick_replies":[
+             {
+                "content_type":"text",
+                "title":"Show your packages",
+                "payload":"cyp",
+                "image_url":"http://example.com/img/red.png"
+              },{
+                "content_type":"text",
+                "title":"Customize Your Package",
+                "payload":"cuyp",
+                "image_url":"http://example.com/img/green.png"
+              },{
+                "content_type":"text",
+                "title":"Choose your activity",
+                "payload":"cya",
+                "image_url":"http://example.com/img/green.png"
+              },{
+                "content_type":"text",
+                "title":"detail",
+                "payload":"detail",
+                "image_url":"http://example.com/img/green.png"
+              }
+              ]
+            }
+          } 
+
+          send(welcomeMessage);
+        }
+        //end of ok by yes answer
         if (userInput == 'Not ok' || quickdata == 'notok' ){
           let welcomeMessage = {
             "recipient":{
@@ -202,7 +239,7 @@ app.post('/webhook', (req, res) => {
 
           send(welcomeMessage);
         }
-        //end of third question
+        //end of not ok by yes answer
         if (userInput == 'Due to my package' || quickdata == 'duetomypackage' ){
           let welcomeMessage = {
             "recipient":{
