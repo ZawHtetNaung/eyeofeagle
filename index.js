@@ -151,12 +151,12 @@ app.post('/webhook', (req, res) => {
               },{
                 "content_type":"text",
                 "title":"What can I do for me ",
-                "payload":"cya",
+                "payload":"whatcanidoforme",
                 "image_url":"http://example.com/img/green.png"
               },{
                 "content_type":"text",
                 "title":"Want to know about your tour?",
-                "payload":"wakayt",
+                "payload":"wtkayt",
                 "image_url":"http://example.com/img/green.png"
               }
               ]
@@ -173,7 +173,7 @@ app.post('/webhook', (req, res) => {
             },
             "messaging_type": "RESPONSE",
             "message":{
-              "text": "If you aren't ok you can create package by your self, you can choose youractivity by your self and then I will suggest and you don't know your place where you are. So you can your location and I will be show the package and you can chooose each package. ",
+              "text": "If you aren't ok you can create package by your self, you can choose youractivity by your self and then I will suggest and you don't know your place where you are. So you can send your location and I will be show the package and you can choose each package. ",
               "quick_replies":[
              {
                 "content_type":"text",
@@ -240,6 +240,80 @@ app.post('/webhook', (req, res) => {
           send(welcomeMessage);
         }
         //end of not ok by yes answer
+        if (userInput == 'What can I do for me' || quickdata == 'whatcanidoforme' ){
+          let welcomeMessage = {
+            "recipient":{
+              "id":webhook_event.sender.id
+            },
+            "messaging_type": "RESPONSE",
+            "message":{
+              "text": "I can do whatever you want about the tour packages. I can show the packages, you can create your own packages, you can choose your activity and I will suggest this.",
+              "quick_replies":[
+             {
+                "content_type":"text",
+                "title":"Show your packages",
+                "payload":"cyp",
+                "image_url":"http://example.com/img/red.png"
+              },{
+                "content_type":"text",
+                "title":"Customize Your Package",
+                "payload":"cuyp",
+                "image_url":"http://example.com/img/green.png"
+              },{
+                "content_type":"text",
+                "title":"Choose your activity",
+                "payload":"cya",
+                "image_url":"http://example.com/img/green.png"
+              },{
+                "content_type":"text",
+                "title":"detail",
+                "payload":"detail",
+                "image_url":"http://example.com/img/green.png"
+              }
+              ]
+            }
+          } 
+
+          send(welcomeMessage);
+        }
+        //end of what can I do for me by yes answer
+        if (userInput == 'want to know about your tour' || quickdata == 'wtkayt' ){
+          let welcomeMessage = {
+            "recipient":{
+              "id":webhook_event.sender.id
+            },
+            "messaging_type": "RESPONSE",
+            "message":{
+              "text": "Our tour isn't just like other packages because our tours and packages can create the new one by yourself, you can choose your activity and I will suggest this. ",
+              "quick_replies":[
+             {
+                "content_type":"text",
+                "title":"Show your packages",
+                "payload":"cyp",
+                "image_url":"http://example.com/img/red.png"
+              },{
+                "content_type":"text",
+                "title":"Customize Your Package",
+                "payload":"cuyp",
+                "image_url":"http://example.com/img/green.png"
+              },{
+                "content_type":"text",
+                "title":"Choose your activity",
+                "payload":"cya",
+                "image_url":"http://example.com/img/green.png"
+              },{
+                "content_type":"text",
+                "title":"detail",
+                "payload":"detail",
+                "image_url":"http://example.com/img/green.png"
+              }
+              ]
+            }
+          } 
+
+          send(welcomeMessage);
+        }
+        //end of want to know about your tours by yes answer
         if (userInput == 'Due to my package' || quickdata == 'duetomypackage' ){
           let welcomeMessage = {
             "recipient":{
