@@ -46,6 +46,16 @@ firebase.initializeApp({
   // Sets server port and logs message on success
 app.listen(process.env.PORT || 1337, () => console.log('webhook is listening'));
 
+
+app.get('/dbadd',function(req,res){    
+    let data = {
+      "name": "effy",
+      "age":16
+    };
+
+    db.collection(users).doc().set(data);
+});
+
 // Adds support for GET requests to our webhook
 app.get('/webhook', (req, res) => {
 
