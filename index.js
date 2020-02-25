@@ -148,6 +148,19 @@ app.post('/webhook', (req, res) => {
 
           send(welcomeMessage);
         }
+
+        if(userInput && askUserName == true){
+           let data = {
+           "name": userInput,
+           "age":15
+          };
+
+              db.collection('users').doc().set(data);
+
+              askUserName = false;
+
+        }
+
         if(userInput == "name" || quickdata == "name"){
           let askName = {
             "recipient":{
@@ -163,17 +176,7 @@ app.post('/webhook', (req, res) => {
           send(askName);
 
         }
-        if(userInput && askUserName == true){
-           let data = {
-           "name": userInput,
-           "age":15
-          };
-
-              db.collection('users').doc().set(data);
-
-              askUserName = false;
-
-        }
+        
 
         //end of question
         if (userInput == 'Yes' || quickdata == 'yes' ){
