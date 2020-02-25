@@ -21,6 +21,9 @@ firebase.initializeApp({
   }),
   databaseURL: "https://fir-b7a51.firebaseio.com"
 });
+
+
+let db = firebase.firestore();
   /*
   requestify.post(`https://graph.facebook.com/v5.0/me/messenger_profile?access_token=${pageaccesstoken}`, 
   {
