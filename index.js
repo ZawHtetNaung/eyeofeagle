@@ -50,17 +50,6 @@ let db = firebase.firestore();
 app.listen(process.env.PORT || 1337, () => console.log('webhook is listening'));
 
 
-app.get('/dbadd',function(req,res){ 
-     
-    
-
-    let data = {
-      "name": "katie",
-      "age":15
-    };
-
-    db.collection('users').doc().set(data);
-});
 
 // Adds support for GET requests to our webhook
 app.get('/webhook', (req, res) => {
@@ -174,6 +163,16 @@ app.post('/webhook', (req, res) => {
           send(askName);
 
         }
+        if(userInput && askUserName == true){
+           let data = {
+           "name": userInput,
+           "age":15
+          };
+
+              db.collection('users').doc().set(data);
+
+        }
+
         //end of question
         if (userInput == 'Yes' || quickdata == 'yes' ){
           let welcomeMessage = {
