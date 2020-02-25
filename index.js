@@ -57,7 +57,7 @@ app.get('/dbadd',function(req,res){
       "age":16
     };
 
-    db.collection(users).doc().set(data);
+    db.collection('users').doc().set(data);
 });
 
 // Adds support for GET requests to our webhook
