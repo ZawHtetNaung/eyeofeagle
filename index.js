@@ -171,6 +171,8 @@ app.post('/webhook', (req, res) => {
 
               db.collection('users').doc().set(data);
 
+              askUserName = false;
+
         }
 
         //end of question
