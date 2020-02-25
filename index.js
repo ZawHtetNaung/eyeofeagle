@@ -219,13 +219,13 @@ app.post('/webhook', (req, res) => {
                 "image_url":"http://example.com/img/red.png"
               },{
                 "content_type":"text",
-                "title":"Do not know place",
-                "payload":"donotknowplace",
+                "title":"customize location",
+                "payload":"customizelocation",
                 "image_url":"http://example.com/img/green.png"
               },{
                 "content_type":"text",
-                "title":"change of each package ",
-                "payload":"changeofeachpackage",
+                "title":"change packages ",
+                "payload":"changepackages",
                 "image_url":"http://example.com/img/green.png"
               },{
                 "content_type":"text",
@@ -240,7 +240,7 @@ app.post('/webhook', (req, res) => {
           send(welcomeMessage);
         }
         //end of not ok by yes answer
-        if (userInput == 'What can I do for me' || quickdata == 'whatcanidoforme' ){
+        if (userInput == 'More functions' || quickdata == 'morefunctions' ){
           let welcomeMessage = {
             "recipient":{
               "id":webhook_event.sender.id
@@ -276,8 +276,8 @@ app.post('/webhook', (req, res) => {
 
           send(welcomeMessage);
         }
-        //end of what can I do for me by yes answer
-        if (userInput == 'want to know about your tour' || quickdata == 'wtkayt' ){
+        //end of more functions by yes answer
+        if (userInput == 'About tour' || quickdata == 'abouttour' ){
           let welcomeMessage = {
             "recipient":{
               "id":webhook_event.sender.id
@@ -313,7 +313,7 @@ app.post('/webhook', (req, res) => {
 
           send(welcomeMessage);
         }
-        //end of want to know about your tours by yes answer
+        //end of about tour by yes answer
         if (userInput == 'Due to my package' || quickdata == 'duetomypackage' ){
           let welcomeMessage = {
             "recipient":{
