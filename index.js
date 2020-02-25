@@ -22,7 +22,7 @@ firebase.initializeApp({
   databaseURL: "https://fir-b7a51.firebaseio.com"
 });
 
-
+let askUserName = false;
 let db = firebase.firestore();  
   /*
   requestify.post(`https://graph.facebook.com/v5.0/me/messenger_profile?access_token=${pageaccesstoken}`, 
@@ -158,6 +158,21 @@ app.post('/webhook', (req, res) => {
           } 
 
           send(welcomeMessage);
+        }
+        if(userInput == "name" || quickdata == "name"){
+          let askName = {
+            "recipient":{
+              "id":webhook_event.sender.id
+            },           
+            "message":{
+              "text": "enter your name"              
+            }
+          } 
+
+          askUserName = true;
+
+          send(askName);
+
         }
         //end of question
         if (userInput == 'Yes' || quickdata == 'yes' ){
