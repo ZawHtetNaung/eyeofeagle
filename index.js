@@ -23,7 +23,7 @@ firebase.initializeApp({
 });
 
 
-let db = firebase.firestore();
+
   /*
   requestify.post(`https://graph.facebook.com/v5.0/me/messenger_profile?access_token=${pageaccesstoken}`, 
   {
@@ -50,7 +50,8 @@ let db = firebase.firestore();
 app.listen(process.env.PORT || 1337, () => console.log('webhook is listening'));
 
 
-app.get('/dbadd',function(req,res){    
+app.get('/dbadd',function(req,res){ 
+  let db = firebase.firestore();   
     let data = {
       "name": "effy",
       "age":16
