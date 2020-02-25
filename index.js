@@ -5,7 +5,7 @@ const
   express = require('express'),
   bodyParser = require('body-parser'),
   requestify = require('requestify'),
-  firebase = require(firebase-admin),
+  firebase = require('firebase-admin'),
   app = express().use(bodyParser.json()); // creates express http server
 
   const pageaccesstoken = process.env.PAGE_ACCESS_TOKEN;
