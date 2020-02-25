@@ -80,10 +80,10 @@ app.post('/webhook', (req, res) => {
 
         if(webhook_event.message){
           if(webhook_event.message.quick_reply){
-          var quickdata = webhook_event.message.quick_reply.payload;
-          console.log("quickdata:", quickdata);
+             var quickdata = webhook_event.message.quick_reply.payload;
+             console.log("quickdata:", quickdata);
           }else{
-            var userInput = webhook_event.message.text;
+             var userInput = webhook_event.message.text;
           }         
         
         }
@@ -312,6 +312,7 @@ app.post('/webhook', (req, res) => {
           } 
 
           send(welcomeMessage);
+          9
         }
         //end of about tour by yes answer
         if (userInput == 'Due to my package' || quickdata == 'duetomypackage' ){
@@ -1354,7 +1355,7 @@ function send(welcomeMessage){
   requestify.post(`https://graph.facebook.com/v5.0/me/messages?access_token=${pageaccesstoken}`, 
           welcomeMessage
           ).then(response=>{
-            console.log(response)
+            console.log("ok welcome") //
           }).fail(error=> {
             console.log(error)
           })
