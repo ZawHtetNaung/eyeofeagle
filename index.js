@@ -5,10 +5,22 @@ const
   express = require('express'),
   bodyParser = require('body-parser'),
   requestify = require('requestify'),
+  firebase = require(firebase-admin),
   app = express().use(bodyParser.json()); // creates express http server
 
-  const pageaccesstoken = 'EAAlHWK8zlGABAHFMuwu5ZAXIXZCNcSlpZBbBOYI7zg2qGx1ZB1cWRJQM1QjM5UYzTBaLpPiHt4lEpk1ZAteXOo5J1H3lhVQT2mjvzZAyNWQUYz5ShP0UsIV5E6aVuRKXlMGfSZCX5OJiIJcMstlVlpc0W4KlbaBtotEJq9XlM9QVUZBbrCNq57SE'
+  const pageaccesstoken = process.env.PAGE_ACCESS_TOKEN;
 
+
+
+//firebase initialize
+firebase.initializeApp({
+  credential: firebase.credential.cert({
+    "private_key": process.env.FIREBASE_PRIVATE_KEY.replace(/\\n/g, '\n'),
+    "client_email": process.env.FIREBASE_CLIENT_EMAIL,
+    "project_id": process.env.FIREBASE_PROJECT_ID,
+  }),
+  databaseURL: "https://fir-b7a51.firebaseio.com"
+});
   /*
   requestify.post(`https://graph.facebook.com/v5.0/me/messenger_profile?access_token=${pageaccesstoken}`, 
   {
