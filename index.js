@@ -26,7 +26,7 @@ let askUserName = false;
 let db = firebase.firestore();  
 
 let user = {};
-let orderRef = 0;
+let orderRef;
 
 
   /*
@@ -125,7 +125,7 @@ app.post('/webhook', (req, res) => {
 
          
 
-             db.collection('orders').doc('1').set(data);
+           orderRef.set(data, {marge:true});
 
           
         }
@@ -175,7 +175,7 @@ app.post('/webhook', (req, res) => {
 
          
 
-            db.collection('orders').doc('1').set(data);
+            orderRef = db.collection('orders').doc().set(data);
 
             askUserName = false;
 
