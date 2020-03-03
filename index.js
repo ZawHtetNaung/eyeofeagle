@@ -158,9 +158,9 @@ app.post('/webhook', (req, res) => {
         }
 
 
-        if (userInput && askHotelName == true ){
+        if ( (userInput || userButton) && askHotelName == true ){
 
-          let message = userInput;
+          let message = userInput || userButton;
 
           let n = message.indexOf("bookhotel:"); 
 
@@ -186,7 +186,7 @@ app.post('/webhook', (req, res) => {
 
 
 
-        if((userInput || userButton) && askUserName == true){
+        if((userInput  && askUserName == true){
            let data = {
             "name": userInput,
           
