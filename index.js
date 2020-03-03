@@ -160,10 +160,12 @@ app.post('/webhook', (req, res) => {
 
         if (userInput && askHotelName == true ){
 
-          let n = userInput.indexOf("bookhotel:"); 
+          let message = userInput;
+
+          let n = message.indexOf("bookhotel:"); 
 
           if(n => 0){
-            let hotelName = userinput.slice(10);
+            let hotelName = message.slice(10);
             
 
             let data = {
