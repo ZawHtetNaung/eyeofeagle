@@ -186,7 +186,7 @@ app.post('/webhook', (req, res) => {
 
 
 
-        if((userInput  && askUserName == true){
+        if(userInput  && askUserName == true){
            let data = {
             "name": userInput,
           
