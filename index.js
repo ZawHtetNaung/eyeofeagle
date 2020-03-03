@@ -125,7 +125,7 @@ app.post('/webhook', (req, res) => {
 
          
 
-           db.collection('orders').doc(orderRef).set(data).
+           db.collection('orders').doc(orderRef).set(data);
 
           
         }
