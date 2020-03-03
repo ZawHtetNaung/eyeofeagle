@@ -24,6 +24,10 @@ firebase.initializeApp({
 
 let askUserName = false;
 let db = firebase.firestore();  
+
+let user = {};
+
+
   /*
   requestify.post(`https://graph.facebook.com/v5.0/me/messenger_profile?access_token=${pageaccesstoken}`, 
   {
@@ -155,6 +159,8 @@ app.post('/webhook', (req, res) => {
            "age":15
           };
 
+         
+
               db.collection('users').doc().set(data);
 
               askUserName = false;
@@ -277,11 +283,6 @@ app.post('/webhook', (req, res) => {
                 "title":"change packages ",
                 "payload":"changepackages",
                 "image_url":"http://example.com/img/green.png"
-              },{
-                "content_type":"text",
-                "title":" create whole package",
-                "payload":"createwholepackage",
-                "image_url":"http://example.com/img/green.png"
               }
               ]
             }
@@ -376,13 +377,13 @@ app.post('/webhook', (req, res) => {
               "quick_replies":[
               {
                 "content_type":"text",
-                "title":"want to create new one",
-                "payload":"wanttocreatenewone",
+                "title":" create new one",
+                "payload":"createnewone",
                 "image_url":"http://example.com/img/red.png"
               },{
                 "content_type":"text",
-                "title":"Do not like each package",
-                "payload":"donotlikeeachpackage",
+                "title":" Customize package",
+                "payload":"customizepackage",
                 "image_url":"http://example.com/img/green.png"
               },{
                 "content_type":"text",
@@ -402,7 +403,7 @@ app.post('/webhook', (req, res) => {
           send(welcomeMessage);
         }
         //end of due to my package by yes answer
-        if (userInput == 'want to create new one' || quickdata == 'wanttocreatenewone' ){
+        if (userInput == 'create new one' || quickdata == 'createnewone' ){
           let welcomeMessage = {
             "recipient":{
               "id":webhook_event.sender.id
@@ -433,7 +434,7 @@ app.post('/webhook', (req, res) => {
 
           send(welcomeMessage);
         }
-        //end of want to create new one by yes answer
+        //end of  create new one by yes answer
          if (userInput == 'Do not know place' || quickdata == 'donotknowplace' ){
           let welcomeMessage = {
             "recipient":{
@@ -1279,7 +1280,7 @@ app.post('/webhook', (req, res) => {
         send(welcomeMessage);
         
       } 
-        //end of customize activity for pagodas
+      //end of customize activity for pagodas
         if (userInput == 'Hiking' || quickdata == "activity of hiking" ){
           let welcomeMessage = {
            "recipient":{
