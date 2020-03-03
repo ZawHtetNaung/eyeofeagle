@@ -118,30 +118,7 @@ app.post('/webhook', (req, res) => {
           var userButton = webhook_event.postback.payload
         }
         
-        if (userInput && askHotelName == true ){
 
-          n = userinput.indexOf("bookhotel:"); 
-
-          if(n => 0){
-            let hotelName = userinput.slice(10);
-            
-
-            let data = {
-                "hotel": hotelName,          
-             };
-
-        
-            let docRef = db.collection('orders').doc(orderRef);
-
-               docRef.set(data, {merge:true});
-        
-
-            }
-
-            
-
-         askHotelName = false; 
-        }
 
         if (userInput == 'Hi' || userButton == 'Hi' ){
           let welcomeMessage = {
@@ -179,6 +156,33 @@ app.post('/webhook', (req, res) => {
 
           send(welcomeMessage);
         }
+
+
+        if (userInput && askHotelName == true ){
+
+          let n = userinput.indexOf("bookhotel:"); 
+
+          if(n => 0){
+            let hotelName = userinput.slice(10);
+            
+
+            let data = {
+                "hotel": hotelName,          
+             };
+
+        
+            let docRef = db.collection('orders').doc(orderRef);
+
+               docRef.set(data, {merge:true});
+        
+
+            }            
+
+         askHotelName = false;
+          
+        }
+
+
 
         if(userInput && askUserName == true){
            let data = {
