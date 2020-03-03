@@ -23,7 +23,7 @@ firebase.initializeApp({
 });
 
 let askUserName = false;
-let askHotel = false;
+let askHotelName = false;
 let db = firebase.firestore();  
 
 let user = {};
@@ -118,7 +118,7 @@ app.post('/webhook', (req, res) => {
           var userButton = webhook_event.postback.payload
         }
         
-        if (userInput && askHotel == true ){
+        if (userInput && askHotelName == true ){
 
           n = userinput.indexOf("bookhotel:"); 
 
@@ -140,7 +140,7 @@ app.post('/webhook', (req, res) => {
 
             
 
-         askHotel = false; 
+         askHotelName = false; 
         }
 
         if (userInput == 'Hi' || userButton == 'Hi' ){
@@ -223,7 +223,7 @@ app.post('/webhook', (req, res) => {
             }
           } 
 
-          askHotel = true;
+          askHotelName = true;
 
           send(askHotel);
 
