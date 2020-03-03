@@ -127,7 +127,7 @@ app.post('/webhook', (req, res) => {
             
 
             let data = {
-                "hotel": userInput,          
+                "hotel": hotelName,          
              };
 
         
