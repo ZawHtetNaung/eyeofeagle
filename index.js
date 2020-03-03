@@ -118,6 +118,15 @@ app.post('/webhook', (req, res) => {
         }
         
         if (userInput == 'booksedona' || userButton == 'booksedona' ){
+             let data = {
+           "hotel": "Sedona Yangon",
+          
+          };
+
+         
+
+            orderRef = db.collection('orders').doc(orderRef).set(data);
+
           
         }
 
@@ -166,9 +175,9 @@ app.post('/webhook', (req, res) => {
 
          
 
-              orderRef = db.collection('orders').doc().set(data);
+            orderRef = db.collection('orders').doc().set(data);
 
-              askUserName = false;
+            askUserName = false;
 
         }
 
@@ -187,6 +196,8 @@ app.post('/webhook', (req, res) => {
           send(askName);
 
         }
+
+
         
 
         //end of question
