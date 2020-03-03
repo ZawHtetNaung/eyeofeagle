@@ -26,6 +26,7 @@ let askUserName = false;
 let db = firebase.firestore();  
 
 let user = {};
+let orderRef; 
 
 
   /*
@@ -116,6 +117,10 @@ app.post('/webhook', (req, res) => {
           var userButton = webhook_event.postback.payload
         }
         
+        if (userInput == 'booksedona' || userButton == 'booksedona' ){
+          
+        }
+
         if (userInput == 'Hi' || userButton == 'Hi' ){
           let welcomeMessage = {
             "recipient":{
@@ -156,12 +161,12 @@ app.post('/webhook', (req, res) => {
         if(userInput && askUserName == true){
            let data = {
            "name": userInput,
-           "age":15
+          
           };
 
          
 
-              db.collection('users').doc().set(data);
+              orderRef = db.collection('orders').doc().set(data);
 
               askUserName = false;
 
