@@ -1127,6 +1127,7 @@ app.post('/webhook', (req, res) => {
             }
           }
         }
+        askHotelName = true;
         send(welcomeMessage);
         
       } 
