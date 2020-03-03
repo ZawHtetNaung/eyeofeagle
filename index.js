@@ -123,9 +123,9 @@ app.post('/webhook', (req, res) => {
           
           };
 
-        let orderRef = db.collection('orders').doc('abc');
+        let docRef = db.collection('orders').doc(orderRef);
 
-          orderRef.set(data, {merge:true});
+         docRef.set(data, {merge:true});
 
           
         }
@@ -175,7 +175,9 @@ app.post('/webhook', (req, res) => {
 
          
 
-            db.collection('orders').doc('abc').set(data);
+            db.collection('orders').add(data).then((ref)=>{
+              orderRef = ref.id;
+            });
 
             askUserName = false;
 
