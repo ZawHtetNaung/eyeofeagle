@@ -738,32 +738,32 @@ app.post('/webhook', (req, res) => {
             },
             "messaging_type": "RESPONSE",
             "message":{
-              "text": " Customize Your Packages:",
+              "text": " Customize Your Packages: Yangon",
               "quick_replies":[
                {
                 "content_type":"text",
-                "title":"Pagodas in Yangon",
+                "title":"Pagodas",
                 "payload":"pagodasinyangon",
                 "image_url":"http://example.com/img/red.png"
               },
               {
                 "content_type":"text",
-                "title":"Hotel in Yangon",
+                "title":"Hotel",
                 "payload":"hotelinyangon",
                 "image_url":"http://example.com/img/red.png"
               },{
                 "content_type":"text",
-                "title":"Transportation in Yangon",
+                "title":"Transportation",
                 "payload":"transportationinyangon",
                 "image_url":"http://example.com/img/green.png"
               },{
                 "content_type":"text",
-                "title":"Guides in Yangon",
+                "title":"Guides",
                 "payload":"guidesinyangon",
                 "image_url":"http://example.com/img/green.png"
               },{
                 "content_type":"text",
-                "title":"Restaurants in Yangon",
+                "title":"Restaurants",
                 "payload":"restaurantsinyangon",
                 "image_url":"http://example.com/img/green.png"
               }
