@@ -125,7 +125,7 @@ app.post('/webhook', (req, res) => {
 
          
 
-           orderRef.set(data, {marge:true});
+           orderRef.set(data, {merge:true});
 
           
         }
