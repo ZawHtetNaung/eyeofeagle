@@ -23,6 +23,7 @@ firebase.initializeApp({
 });
 
 let askUserName = false;
+let askHotel = false;
 let db = firebase.firestore();  
 
 let user = {};
@@ -117,17 +118,29 @@ app.post('/webhook', (req, res) => {
           var userButton = webhook_event.postback.payload
         }
         
-        if (userInput == 'booksedona' || userButton == 'booksedona' ){
-             let data = {
-           "hotel": "Sedona Yangon",
-          
-          };
+        if (userInput && askHotel == true ){
 
-        let docRef = db.collection('orders').doc(orderRef);
+          n = userinput.indexOf("bookhotel:"); 
 
-         docRef.set(data, {merge:true});
+          if(n => 0){
+            let hotelName = userinput.slice(10);
+            
 
-          
+            let data = {
+                "hotel": userInput,          
+             };
+
+        
+            let docRef = db.collection('orders').doc(orderRef);
+
+               docRef.set(data, {merge:true});
+        
+
+            }
+
+            
+
+         askHotel = false; 
         }
 
         if (userInput == 'Hi' || userButton == 'Hi' ){
@@ -169,7 +182,7 @@ app.post('/webhook', (req, res) => {
 
         if(userInput && askUserName == true){
            let data = {
-           "name": userInput,
+            "name": userInput,
           
           };
 
@@ -196,6 +209,23 @@ app.post('/webhook', (req, res) => {
           askUserName = true;
 
           send(askName);
+
+        }
+
+
+        if(userInput == "hotel" || quickdata == "hotel"){
+          let askHotel = {
+            "recipient":{
+              "id":webhook_event.sender.id
+            },           
+            "message":{
+              "text": "enter hotel name"              
+            }
+          } 
+
+          askHotel = true;
+
+          send(askHotel);
 
         }
 
@@ -1045,7 +1075,7 @@ app.post('/webhook', (req, res) => {
                       {
                         "type":"postback",
                         "title":"Book",
-                        "payload":"booksedona"
+                        "payload":"bookhotel:sedona"
                       }
 
                       ]      
@@ -1063,7 +1093,7 @@ app.post('/webhook', (req, res) => {
                       {
                         "type":"postback",
                         "title":"Book",
-                        "payload":"booklotte"
+                        "payload":"bookhotel:lotte"
                       }
 
                       ]      
@@ -1081,7 +1111,7 @@ app.post('/webhook', (req, res) => {
                       {
                         "type":"postback",
                         "title":"Book",
-                        "payload":"bookinyalake"
+                        "payload":"bookhotel:inyalake"
                       }
 
                       ]      
