@@ -175,7 +175,7 @@ app.post('/webhook', (req, res) => {
 
          
 
-            db.collection('orders').doc().set(data).then(ref=>{
+            db.collection('orders').doc().set(data).then((ref)=>{
               orderRef = ref.id;
             });
 
