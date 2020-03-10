@@ -24,10 +24,12 @@ firebase.initializeApp({
 
 let askUserName = false;
 let askHotelName = false;
+let askTransportationName = false;
 let db = firebase.firestore();  
 
 let user = {};
 let orderRef;
+
 
 
   /*
@@ -965,7 +967,7 @@ app.post('/webhook', (req, res) => {
       } 
       //end of customize by hotel in yangon
         
-       if (userInput == 'Transportation' || quickdata == "transportation" ){
+       if (userInput == 'Transportation' || quickdata == "transportationinyangon" ){
           let welcomeMessage = {
            "recipient":{
             "id":webhook_event.sender.id
