@@ -967,96 +967,7 @@ app.post('/webhook', (req, res) => {
       } 
       //end of customize by hotel in yangon
         
-       if (userInput == 'Transportation' || quickdata == "transportationinyangon" ){
-          let welcomeMessage = {
-           "recipient":{
-            "id":webhook_event.sender.id
-          },
-          "message":{
-            "attachment":{
-              "type":"template",
-              "payload":{
-                "template_type":"generic",
-                "elements":[
-                {
-                  "title":"Car",
-                  "image_url":"https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcS9_6xLJh2OhELLHP-msYiU3Rzuyxb9Pv9HHyAF1LVg9NUu5TE2",
-                  "subtitle":"Choose the transportation what you want",
-                  "default_action": {
-                    "type": "web_url",
-                    "url": "https://petersfancybrownhats.com/view?item=103",
-                    "webview_height_ratio": "tall",
-                  },
-                  "buttons":[
-                  {
-                    "type":"postback",
-                    "title":"Customize",
-                    "payload":"customizecar"
-                  }
-
-                  ]      
-                },{
-                  "title":"Train",
-                  "image_url":"https://static01.nyt.com/images/2017/05/20/world/01myanmar-train-2/01myanmar-train-2-jumbo.jpg",
-                  "subtitle":"Choose the transportation what you want",
-                  "default_action": {
-                    "type": "web_url",
-                    "url": "https://petersfancybrownhats.com/view?item=103",
-                    "webview_height_ratio": "tall",
-                  },
-                  "buttons":[
-                  {
-                    "type":"postback",
-                    "title":"Customize",
-                    "payload":"customizetrain"
-                  }
-
-                  ]      
-                },{
-                  "title":"Ship",
-                  "image_url":"https://d23n7ahjfnjotp.cloudfront.net/imgs/mobileheaderipad/ship_521_myanmar_1024x416_mobhdr.jpg",
-                  "subtitle":"Choose the transportation what you want",
-                  "default_action": {
-                    "type": "web_url",
-                    "url": "https://petersfancybrownhats.com/view?item=103",
-                    "webview_height_ratio": "tall",
-                  },
-                  "buttons":[
-                  {
-                    "type":"postback",
-                    "title":"Customize",
-                    "payload":"customizeship"
-                  }
-
-                  ]      
-                },{
-                  "title":"Flight",
-                  "image_url":"https://static.tripzilla.com/thumb/7/6/65398_700x.jpg",
-                  "subtitle":"Choose the transportation what you want",
-                  "default_action": {
-                    "type": "web_url",
-                    "url": "https://petersfancybrownhats.com/view?item=103",
-                    "webview_height_ratio": "tall",
-                  },
-                  "buttons":[
-                  {
-                    "type":"postback",
-                    "title":"Customize",
-                    "payload":"customizeflight"
-                  }
-
-                  ]      
-                }
-
-                ]
-              }
-            }
-          }
-        }
-        send(welcomeMessage);
-        
-      } 
-     // end of customize by transportation
+      
      
 
        if (userInput == 'Height Class in Yangon' || userButton == "height class hotel in yangon" ){
@@ -1226,6 +1137,168 @@ app.post('/webhook', (req, res) => {
         
       } 
       //end of payment by book hotel
+       if (userInput == 'Transportation' || quickdata == "transportationinyangon" ){
+          let welcomeMessage = {
+           "recipient":{
+            "id":webhook_event.sender.id
+          },
+          "message":{
+            "attachment":{
+              "type":"template",
+              "payload":{
+                "template_type":"generic",
+                "elements":[
+                {
+                  "title":"Car",
+                  "image_url":"https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcS9_6xLJh2OhELLHP-msYiU3Rzuyxb9Pv9HHyAF1LVg9NUu5TE2",
+                  "subtitle":"Choose the transportation what you want",
+                  "default_action": {
+                    "type": "web_url",
+                    "url": "https://petersfancybrownhats.com/view?item=103",
+                    "webview_height_ratio": "tall",
+                  },
+                  "buttons":[
+                  {
+                    "type":"postback",
+                    "title":"Customize",
+                    "payload":"carinyangon"
+                  }
+
+                  ]      
+                },{
+                  "title":"Train",
+                  "image_url":"https://static01.nyt.com/images/2017/05/20/world/01myanmar-train-2/01myanmar-train-2-jumbo.jpg",
+                  "subtitle":"Choose the transportation what you want",
+                  "default_action": {
+                    "type": "web_url",
+                    "url": "https://petersfancybrownhats.com/view?item=103",
+                    "webview_height_ratio": "tall",
+                  },
+                  "buttons":[
+                  {
+                    "type":"postback",
+                    "title":"Customize",
+                    "payload":"customizetrain"
+                  }
+
+                  ]      
+                },{
+                  "title":"Ship",
+                  "image_url":"https://d23n7ahjfnjotp.cloudfront.net/imgs/mobileheaderipad/ship_521_myanmar_1024x416_mobhdr.jpg",
+                  "subtitle":"Choose the transportation what you want",
+                  "default_action": {
+                    "type": "web_url",
+                    "url": "https://petersfancybrownhats.com/view?item=103",
+                    "webview_height_ratio": "tall",
+                  },
+                  "buttons":[
+                  {
+                    "type":"postback",
+                    "title":"Customize",
+                    "payload":"customizeship"
+                  }
+
+                  ]      
+                },{
+                  "title":"Flight",
+                  "image_url":"https://static.tripzilla.com/thumb/7/6/65398_700x.jpg",
+                  "subtitle":"Choose the transportation what you want",
+                  "default_action": {
+                    "type": "web_url",
+                    "url": "https://petersfancybrownhats.com/view?item=103",
+                    "webview_height_ratio": "tall",
+                  },
+                  "buttons":[
+                  {
+                    "type":"postback",
+                    "title":"Customize",
+                    "payload":"customizeflight"
+                  }
+
+                  ]      
+                }
+
+                ]
+              }
+            }
+          }
+        }
+        send(welcomeMessage);
+        
+      } 
+     // end of customize by transportation
+      if (userInput == 'Car' || userButton == "carinyangon" ){
+          let welcomeMessage = {
+           "recipient":{
+            "id":webhook_event.sender.id
+          },
+          "message":{
+            "attachment":{
+              "type":"template",
+              "payload":{
+                "template_type":"generic",
+                "elements":[
+                {
+                  "title":"Saloon",
+                  "image_url":"https://3.bp.blogspot.com/-bEWPhIB3BeM/Tt4ufiYqVCI/AAAAAAAAAR8/71rXETMFZwQ/s1600/mazda6.jpg",
+                  "subtitle":"4seats",
+                  "default_action": {
+                    "type": "web_url",
+                    "url": "https://petersfancybrownhats.com/view?item=103",
+                    "webview_height_ratio": "tall",
+                  },
+                  "buttons":[
+                  {
+                    "type":"postback",
+                    "title":"Book",
+                    "payload":"saloon"
+                  }
+
+                  ]      
+                },  {
+                  "title":"Alphat",
+                  "image_url":"https://s1.cdn.autoevolution.com/images/gallery/TOYOTA-Alphard-697_17.jpg",
+                  "subtitle":"6seats",
+                  "default_action": {
+                    "type": "web_url",
+                    "url": "https://petersfancybrownhats.com/view?item=103",
+                    "webview_height_ratio": "tall",
+                  },
+                  "buttons":[
+                  {
+                    "type":"postback",
+                    "title":"Book",
+                    "payload":"alphat"
+                  }
+
+                  ]      
+                },{
+                  "title":"Express",
+                  "image_url":"https://www.thiwamontravel.com/wp-content/uploads/2019/01/highway-express-bus.png",
+                  "subtitle":"30seats",
+                  "default_action": {
+                    "type": "web_url",
+                    "url": "https://petersfancybrownhats.com/view?item=103",
+                    "webview_height_ratio": "tall",
+                  },
+                  "buttons":[
+                  {
+                    "type":"postback",
+                    "title":"Book",
+                    "payload":"express"
+                  }
+
+                  ]      
+                }
+                ]
+              }
+            }
+          }
+        }
+        send(welcomeMessage);
+        
+      } 
+      //end of customize car by transportation in yangon
         
          
         
