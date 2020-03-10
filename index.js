@@ -189,6 +189,35 @@ app.post('/webhook', (req, res) => {
           
         }
 
+        if ( (userInput || userButton) && askTransportationName == true ){
+
+          let message = userInput || userButton;
+
+          let n = message.indexOf("booktransportation:"); 
+
+          if(n => 0){
+            let hotelName = message.slice(19);
+            
+
+            let data = {
+                "transportation": transportationName,          
+             };
+
+        
+            let docRef = db.collection('orders').doc(orderRef);
+
+               docRef.set(data, {merge:true});
+        
+
+            }            
+
+          askTransportationName = false;
+
+          YangonPackage(webhook_event.sender.id);
+          console.log("yangon package function called");
+          
+        }
+
 
 
         if(userInput  && askUserName == true){
@@ -237,6 +266,22 @@ app.post('/webhook', (req, res) => {
           askHotelName = true;
 
           send(askHotel);
+
+        }
+
+        if(userInput == "transportation" || quickdata == "transportation"){
+          let askTransportation = {
+            "recipient":{
+              "id":webhook_event.sender.id
+            },           
+            "message":{
+              "text": "enter transportation name"              
+            }
+          } 
+
+          askTransportationName = true;
+
+          send(askTransportation);
 
         }
 
