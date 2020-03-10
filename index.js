@@ -184,7 +184,7 @@ app.post('/webhook', (req, res) => {
 
           askHotelName = false;
 
-          YangonPackage(webhook_event.sender.id);
+          //YangonPackage(webhook_event.sender.id);
           console.log("yangon package function called");
           
         }
