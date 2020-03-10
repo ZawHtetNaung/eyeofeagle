@@ -184,7 +184,7 @@ app.post('/webhook', (req, res) => {
 
           askHotelName = false;
 
-          //YangonPackage(webhook_event.sender.id);
+          YangonPackage(webhook_event.sender.id);
           
         }
 
@@ -1546,7 +1546,7 @@ function send(welcomeMessage){
             console.log(error)
           })
 }
-/*
+
 function YangonPackage(senderID){
     let welcomeMessage = {
             "recipient":{
@@ -1589,4 +1589,4 @@ function YangonPackage(senderID){
 
           send(welcomeMessage);
 
-}*/
+}
