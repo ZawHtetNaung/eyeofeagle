@@ -790,6 +790,9 @@ app.post('/webhook', (req, res) => {
         } 
         //end of show your packages
         if (userInput == 'Customize My package Pagoda in Yangon' || userButton == 'cuyppagodasinyangon' ){
+          YangonPackage(webhook_event.sender.id);
+
+          /*
           let welcomeMessage = {
             "recipient":{
               "id":webhook_event.sender.id
@@ -829,7 +832,7 @@ app.post('/webhook', (req, res) => {
             }
           } 
 
-          send(welcomeMessage);
+          send(welcomeMessage);*/
         }
         //end of customize package by pagodas 
          if (userInput == 'Pagodas in Yangon' || quickdata == "pagodasinyangon" ){
@@ -1547,7 +1550,7 @@ function send(welcomeMessage){
 function YangonPackage(senderID){
     let welcomeMessage = {
             "recipient":{
-              "id":senderID;
+              "id":senderID
             },
             "messaging_type": "RESPONSE",
             "message":{
