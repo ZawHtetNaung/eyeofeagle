@@ -183,6 +183,8 @@ app.post('/webhook', (req, res) => {
             }            
 
           askHotelName = false;
+
+          YangonPackage(webhook_event.sender.id);
           
         }
 
@@ -1540,4 +1542,48 @@ function send(welcomeMessage){
           }).fail(error=> {
             console.log(error)
           })
+}
+
+function YangonPackage(senderID){
+    let welcomeMessage = {
+            "recipient":{
+              "id":senderID;
+            },
+            "messaging_type": "RESPONSE",
+            "message":{
+              "text": " Customize Your Packages: Yangon",
+              "quick_replies":[
+               {
+                "content_type":"text",
+                "title":"Pagodas",
+                "payload":"pagodasinyangon",
+                "image_url":"http://example.com/img/red.png"
+              },
+              {
+                "content_type":"text",
+                "title":"Hotel",
+                "payload":"hotelinyangon",
+                "image_url":"http://example.com/img/red.png"
+              },{
+                "content_type":"text",
+                "title":"Transportation",
+                "payload":"transportationinyangon",
+                "image_url":"http://example.com/img/green.png"
+              },{
+                "content_type":"text",
+                "title":"Guides",
+                "payload":"guidesinyangon",
+                "image_url":"http://example.com/img/green.png"
+              },{
+                "content_type":"text",
+                "title":"Restaurants",
+                "payload":"restaurantsinyangon",
+                "image_url":"http://example.com/img/green.png"
+              }
+              ]
+            }
+          } 
+
+          send(welcomeMessage);
+
 }
