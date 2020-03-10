@@ -1547,7 +1547,7 @@ function send(welcomeMessage){
             console.log(error)
           })
 }
-
+/*
 function YangonPackage(senderID){
     let welcomeMessage = {
             "recipient":{
@@ -1590,4 +1590,4 @@ function YangonPackage(senderID){
 
           send(welcomeMessage);
 
-}
+}*/
