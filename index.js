@@ -490,7 +490,7 @@ app.post('/webhook', (req, res) => {
                 "title":" Customize package",
                 "payload":"customizepackage",
                 "image_url":"http://example.com/img/green.png"
-              },{
+              }/*,{
                 "content_type":"text",
                 "title":"want to join your package ",
                 "payload":"wanttojoinyourpackage",
@@ -500,7 +500,7 @@ app.post('/webhook', (req, res) => {
                 "title":"want to change my package",
                 "payload":"wantochangemypackage",
                 "image_url":"http://example.com/img/green.png"
-              }
+              }*/
               ]
             }
           } 
