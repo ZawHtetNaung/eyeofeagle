@@ -24,7 +24,7 @@ firebase.initializeApp({
 
 let askUserName = false;
 let askHotelName = false;
-let askTransportationName = true;
+let askTransportationName = false;
 let db = firebase.firestore();  
 
 let user = {};
