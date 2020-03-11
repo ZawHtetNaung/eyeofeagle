@@ -104,6 +104,7 @@ app.post('/webhook', (req, res) => {
         console.log(webhook_event);
 
         if(webhook_event.message){
+
           if(webhook_event.message.quick_reply){
              var quickdata = webhook_event.message.quick_reply.payload;
              console.log("quickdata:", quickdata);
@@ -193,10 +194,10 @@ app.post('/webhook', (req, res) => {
 
           let message = userInput || userButton;
 
-          let n = message.indexOf("booktransportation:"); 
+          let n = message.indexOf(":"); 
 
           if(n => 0){
-            let transportationName = message.slice(20);
+            let transportationName = message.substring(n+1);
             
 
             let data = {
