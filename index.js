@@ -314,12 +314,12 @@ app.post('/webhook', (req, res) => {
                 "title":"more functions ",
                 "payload":"morefunctions",
                 "image_url":"http://example.com/img/green.png"
-              },{
+              }/*,{
                 "content_type":"text",
                 "title":"about tour?",
                 "payload":"abouttour",
                 "image_url":"http://example.com/img/green.png"
-              }
+              }*/
               ]
             }
           } 
@@ -378,7 +378,7 @@ app.post('/webhook', (req, res) => {
                 "title":"Due to my package",
                 "payload":"duetomypackage",
                 "image_url":"http://example.com/img/red.png"
-              },{
+              }/*,{
                 "content_type":"text",
                 "title":"customize location",
                 "payload":"customizelocation",
@@ -388,7 +388,7 @@ app.post('/webhook', (req, res) => {
                 "title":"change packages ",
                 "payload":"changepackages",
                 "image_url":"http://example.com/img/green.png"
-              }
+              }*/
               ]
             }
           } 
