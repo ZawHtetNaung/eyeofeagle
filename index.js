@@ -24,7 +24,7 @@ firebase.initializeApp({
 
 let askUserName = false;
 let askHotelName = false;
-let askTransportationName = false;
+let askTransportationName = true;
 let db = firebase.firestore();  
 
 let user = {};
@@ -1347,8 +1347,9 @@ app.post('/webhook', (req, res) => {
             }
           }
         }
-        askTransportation = true;
+
         send(welcomeMessage);
+        //askTransportationName = true;
         
       } 
       //end of customize car by transportation in yangon
