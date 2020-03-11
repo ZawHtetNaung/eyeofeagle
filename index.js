@@ -196,7 +196,7 @@ app.post('/webhook', (req, res) => {
           let n = message.indexOf("booktransportation:"); 
 
           if(n => 0){
-            let hotelName = message.slice(19);
+            let transportationName = message.slice(19);
             
 
             let data = {
