@@ -197,7 +197,7 @@ app.post('/webhook', (req, res) => {
           let n = message.indexOf(":"); 
 
           if(n => 0){
-            let transportationName = message.substring(n+1);
+            let transportationName = message.slice(n+1);
             
 
             let data = {
@@ -1347,6 +1347,7 @@ app.post('/webhook', (req, res) => {
             }
           }
         }
+        askTransportation = true;
         send(welcomeMessage);
         
       } 
