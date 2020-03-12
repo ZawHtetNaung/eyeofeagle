@@ -194,7 +194,7 @@ app.post('/webhook', (req, res) => {
 
           let message = userInput || userButton;
 
-          let n = message.indexOf("booktransportation"); 
+          let n = message.indexOf("booktransportation:"); 
 
           if(n => 0){
             let transportationName = message.slice(n+1);
