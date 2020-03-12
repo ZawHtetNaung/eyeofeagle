@@ -689,7 +689,7 @@ app.post('/webhook', (req, res) => {
                 }
               }
             }
-          send(welcomeMessage);
+              send(welcomeMessage);
           
         } 
         //end of Choose your packages
@@ -1576,7 +1576,7 @@ app.post('/webhook', (req, res) => {
 
          
 
-      });
+    
   
       // Returns a '200 OK' response to all requests
       res.status(200).send('EVENT_RECEIVED');
