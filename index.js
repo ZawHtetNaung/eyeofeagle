@@ -196,7 +196,7 @@ app.post('/webhook', (req, res) => {
           if(n => 0){
             let transportationName = message.slice(n+1);
             
-
+            /*
             let data = {
                 "transportation": transportationName,          
              };
@@ -207,7 +207,7 @@ app.post('/webhook', (req, res) => {
                docRef.set(data, {merge:true});
         
 
-            }            
+            }        */    
 
           askTransportationName = false;
 
