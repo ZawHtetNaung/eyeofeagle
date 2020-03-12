@@ -252,7 +252,7 @@ app.post('/webhook', (req, res) => {
 
 
         if(userInput == "userinfo" ){
-          console.log(user);
+          console.log("USER INFO", user);
       }
 
 
