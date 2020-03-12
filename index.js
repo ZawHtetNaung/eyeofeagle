@@ -194,7 +194,7 @@ app.post('/webhook', (req, res) => {
 
           let message = userInput || userButton;
 
-          let n = message.indexOf(":"); 
+          let n = message.indexOf("booktransportation"); 
 
           if(n => 0){
             let transportationName = message.slice(n+1);
@@ -270,7 +270,7 @@ app.post('/webhook', (req, res) => {
 
         }
 
-        if(userInput == "transportation" || quickdata == "transportation"){
+        if(userInput == "transportation" || quickdata == "booktransportation"){
           let askTransportation = {
             "recipient":{
               "id":webhook_event.sender.id
