@@ -170,7 +170,7 @@ app.post('/webhook', (req, res) => {
           if(n => 0){
             let hotelName = message.slice(10);
             
-
+            /*
             let data = {
                 "hotel": hotelName,          
              };
@@ -181,12 +181,12 @@ app.post('/webhook', (req, res) => {
                docRef.set(data, {merge:true});
         
 
-            }            
+            }    */        
 
           askHotelName = false;
 
           YangonPackage(webhook_event.sender.id);
-          console.log("yangon package function called");
+          
           
         }
 
@@ -222,17 +222,18 @@ app.post('/webhook', (req, res) => {
 
 
         if(userInput  && askUserName == true){
+            /*
            let data = {
             "name": userInput,
           
-          };
+            };
 
          
 
             db.collection('orders').add(data).then((ref)=>{
               orderRef = ref.id;
             });
-
+            */
             askUserName = false;
 
         }
