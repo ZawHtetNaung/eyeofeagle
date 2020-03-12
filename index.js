@@ -432,7 +432,7 @@ app.post('/webhook', (req, res) => {
 
           send(welcomeMessage);
         }
-        //end of more functions by yes answer
+        //end of more functions by yes answe r
         if (userInput == 'About tour' || quickdata == 'abouttour' ){
           let welcomeMessage = {
             "recipient":{
