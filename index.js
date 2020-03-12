@@ -195,6 +195,8 @@ app.post('/webhook', (req, res) => {
 
           if(n => 0){
             let transportationName = message.slice(n+1);
+
+            user.transportation = transportationName;
             
             /*
             let data = {
@@ -216,6 +218,8 @@ app.post('/webhook', (req, res) => {
         }
 
         if(userInput  && askUserName == true){
+
+           user.name = userInput;
             /*
            let data = {
             "name": userInput,
@@ -245,6 +249,11 @@ app.post('/webhook', (req, res) => {
 
               send(askName);   
         }
+
+
+        if(userInput == "userinfo" ){
+          console.log(user);
+      }
 
 
       if(userInput == "hotel" || quickdata == "hotel"){
