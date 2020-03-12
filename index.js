@@ -1347,7 +1347,7 @@ app.post('/webhook', (req, res) => {
             }
           }
         }
-
+        askTransportationName = true;
         send(welcomeMessage);
         //askTransportationName = true;
         
