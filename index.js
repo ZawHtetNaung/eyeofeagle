@@ -646,7 +646,7 @@ app.post('/webhook', (req, res) => {
       }
       //end of packages
         
-      if (userInput == 'Show Package' || quickdata =='sp' ){
+      if (userInput == 'Show Packages' || quickdata =='sp' ){
         let welcomeMessage = {
          "recipient":{
           "id":webhook_event.sender.id
@@ -726,6 +726,63 @@ app.post('/webhook', (req, res) => {
           "id":webhook_event.sender.id
             },
             "message":{
+              "text":"Please choose your location!!"
+              "attachment":{
+                "type":"template",
+                "payload":{
+                  "template_type":"generic",
+                  "elements":[
+                  {
+                    "title":"Yangon",
+                    "image_url":"https://cdn.getyourguide.com/img/tour_img-1174626-148.jpg",
+                    "subtitle":"package",
+                    "default_action": {
+                      "type": "web_url",
+                      "url": "https://petersfancybrownhats.com/view?item=103",
+                      "webview_height_ratio": "tall",
+                    },
+                    "buttons":[
+                    {
+                      "type":"postback",
+                      "title":"Choose",
+                      "payload":"yg"
+                    }
+
+                    ]      
+                  },{
+                    "title":"Mandalay",
+                    "image_url":"https://www.sonicstartravel.com/car_rental/uploads/article/article_17102805421002.jpg",
+                    "subtitle":"package",
+                    "default_action": {
+                      "type": "web_url",
+                      "url": "https://petersfancybrownhats.com/view?item=103",
+                      "webview_height_ratio": "tall",
+                    },
+                    "buttons":[
+                    {
+                      "type":"postback",
+                      "title":"Choose",
+                      "payload":"md"
+                    }
+
+                    ]      
+                  }
+                  ]
+                }
+              }
+            }
+          }
+          send(welcomeMessage);
+      } 
+      //end of Choose location
+
+
+      /* if (userInput == 'Customize package' || quickdata =='cp' ){
+        let welcomeMessage = {
+         "recipient":{
+          "id":webhook_event.sender.id
+            },
+            "message":{
               "attachment":{
                 "type":"template",
                 "payload":{
@@ -789,11 +846,12 @@ app.post('/webhook', (req, res) => {
             }
           }
           send(welcomeMessage);
-      } 
+      } */
       //end of Customize your packages
 
 
-      if (userInput == 'Customize My packages in Pagodas' || userButton =='cuyppagodas' ){
+
+     /* if (userInput == 'Customize My packages in Pagodas' || userButton =='cuyppagodas' ){
         let welcomeMessage = {
          "recipient":{
             "id":webhook_event.sender.id
@@ -862,12 +920,12 @@ app.post('/webhook', (req, res) => {
           }
         }
           send(welcomeMessage);
-      } 
+      } */
       //end of show your packages
 
 
 
-      if (userInput == 'Customize My package Pagoda in Yangon' || userButton == 'cuyppagodasinyangon' ){
+      if (userInput == 'Yangon' || userButton == 'yg' ){
         //YangonPackage(webhook_event.sender.id);
 
         
@@ -881,8 +939,8 @@ app.post('/webhook', (req, res) => {
                 "quick_replies":[
                  {
                   "content_type":"text",
-                  "title":"Pagodas",
-                  "payload":"pagodasinyangon",
+                  "title":"Package",
+                  "payload":"packages",
                   "image_url":"http://example.com/img/red.png"
                 },
                 {
@@ -917,7 +975,7 @@ app.post('/webhook', (req, res) => {
 
 
 
-      if (userInput == 'Pagodas in Yangon' || quickdata == "pagodasinyangon" ){
+      /*if (userInput == 'Pagodas in Yangon' || quickdata == "pagodasinyangon" ){
           let welcomeMessage = {
            "recipient":{
             "id":webhook_event.sender.id
@@ -1004,7 +1062,7 @@ app.post('/webhook', (req, res) => {
               }
             }
             send(welcomeMessage);
-      } 
+      } */
         //end of customize by pagodas in yangon
 
 
