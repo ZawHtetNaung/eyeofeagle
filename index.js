@@ -624,13 +624,13 @@ app.post('/webhook', (req, res) => {
               "image_url":"http://example.com/img/red.png"
             },{
               "content_type":"text",
-              "title":"Customize Your Package",
-              "payload":"cuyp",
+              "title":"Customize Package",
+              "payload":"cp",
               "image_url":"http://example.com/img/green.png"
             },{
               "content_type":"text",
-              "title":"Choose your activity",
-              "payload":"cya",
+              "title":"Choose activity",
+              "payload":"ca",
               "image_url":"http://example.com/img/green.png"
             },{
               "content_type":"text",
@@ -1399,7 +1399,7 @@ app.post('/webhook', (req, res) => {
         
          
         
-      if (userInput == 'Choose my activity' || quickdata == 'cya' ){
+      if (userInput == 'Choose activity' || quickdata == 'ca' ){
             let welcomeMessage = {
               "recipient":{
                 "id":webhook_event.sender.id
