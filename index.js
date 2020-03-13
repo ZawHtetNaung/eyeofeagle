@@ -502,7 +502,7 @@ app.post('/webhook', (req, res) => {
             },{
               "content_type":"text",
               "title":" Customize package",
-              "payload":"customizepackage",
+              "payload":"cp",
               "image_url":"http://example.com/img/green.png"
             }/*,{
               "content_type":"text",
