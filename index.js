@@ -145,12 +145,12 @@ app.post('/webhook', (req, res) => {
                 "title":"Packages",
                 "payload":"packages",
                 "image_url":"http://example.com/img/green.png"
-              },{
+              }/*,{
                 "content_type":"text",
                 "title":"extra functions",
                 "payload":"extrafunctions",
                 "image_url":"http://example.com/img/green.png"
-              }
+              }*/
               ]
             }
           } 
@@ -308,12 +308,12 @@ app.post('/webhook', (req, res) => {
               "title":"Not Ok",
               "payload":"notok",
               "image_url":"http://example.com/img/green.png"
-            },{
+            }/*,{
               "content_type":"text",
               "title":"more functions ",
               "payload":"morefunctions",
               "image_url":"http://example.com/img/green.png"
-            }/*,{
+            },{
               "content_type":"text",
               "title":"about tour?",
               "payload":"abouttour",
@@ -339,13 +339,13 @@ app.post('/webhook', (req, res) => {
             "quick_replies":[
            {
               "content_type":"text",
-              "title":"Show your packages",
-              "payload":"cyp",
+              "title":"Show  packages",
+              "payload":"sp",
               "image_url":"http://example.com/img/red.png"
             },{
               "content_type":"text",
-              "title":"Customize Your Package",
-              "payload":"cuyp",
+              "title":"Customize Package",
+              "payload":"cp",
               "image_url":"http://example.com/img/green.png"
             },{
               "content_type":"text",
@@ -403,7 +403,7 @@ app.post('/webhook', (req, res) => {
 
 
 
-      if (userInput == 'More functions' || quickdata == 'morefunctions' ){
+      /*if (userInput == 'More functions' || quickdata == 'morefunctions' ){
         let welcomeMessage = {
           "recipient":{
             "id":webhook_event.sender.id
@@ -438,12 +438,12 @@ app.post('/webhook', (req, res) => {
         } 
 
         send(welcomeMessage);
-      }
+      }*/
       //end of more functions by yes answe r
         
 
 
-      if (userInput == 'About tour' || quickdata == 'abouttour' ){
+      /*if (userInput == 'About tour' || quickdata == 'abouttour' ){
         let welcomeMessage = {
           "recipient":{
             "id":webhook_event.sender.id
@@ -480,7 +480,7 @@ app.post('/webhook', (req, res) => {
         send(welcomeMessage);
       
       }
-      //end of about tour by yes answer
+      //end of about tour by yes answer*/
         
 
 
@@ -525,7 +525,7 @@ app.post('/webhook', (req, res) => {
         
 
 
-      if (userInput == 'create new one' || quickdata == 'createnewone' ){
+     /* if (userInput == 'create new one' || quickdata == 'createnewone' ){
         let welcomeMessage = {
           "recipient":{
             "id":webhook_event.sender.id
@@ -555,7 +555,7 @@ app.post('/webhook', (req, res) => {
         } 
 
         send(welcomeMessage);
-      }
+      }*/
       //end of  create new one by yes answer
         
 
@@ -608,7 +608,7 @@ app.post('/webhook', (req, res) => {
 
 
 
-      if (userInput == 'want to create' || quickdata == 'wanttocreate' ){
+      if (userInput == 'Create New One' || quickdata == 'createnewone' ){
         let welcomeMessage = {
           "recipient":{
             "id":webhook_event.sender.id
@@ -646,7 +646,7 @@ app.post('/webhook', (req, res) => {
       }
       //end of packages
         
-      if (userInput == 'Choose Your Package' || quickdata =='cyp' ){
+      if (userInput == 'Show Package' || quickdata =='sp' ){
         let welcomeMessage = {
          "recipient":{
           "id":webhook_event.sender.id
@@ -716,11 +716,11 @@ app.post('/webhook', (req, res) => {
           }
           send(welcomeMessage);
       } 
-      //end of Choose your packages
+      //end of Show packages
 
 
 
-      if (userInput == 'Customize Your package' || quickdata =='cuyp' ){
+      if (userInput == 'Customize package' || quickdata =='cp' ){
         let welcomeMessage = {
          "recipient":{
           "id":webhook_event.sender.id
