@@ -727,7 +727,7 @@ app.post('/webhook', (req, res) => {
           },
           "messaging_type": "RESPONSE",
           "message":{
-            "text": ":Choose Your Location",
+            "text": "Choose Your Location:",
           }
         } 
 
