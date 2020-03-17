@@ -722,6 +722,17 @@ app.post('/webhook', (req, res) => {
 
       if (userInput == 'Customize package' || quickdata =='cp' ){
         let welcomeMessage = {
+          "recipient":{
+            "id":webhook_event.sender.id
+          },
+          "messaging_type": "RESPONSE",
+          "message":{
+            "text": "suck the dick",
+          }
+        } 
+
+
+        let genericMessage = {
          "recipient":{
           "id":webhook_event.sender.id
             },
@@ -782,6 +793,15 @@ app.post('/webhook', (req, res) => {
           }).fail(error=> {
             console.log(error)
           })
+
+          requestify.post(`https://graph.facebook.com/v5.0/me/messages?access_token=${pageaccesstoken}`, 
+          genericMessage
+          ).then(response=>{
+            console.log("ok welcome") //
+          }).fail(error=> {
+            console.log(error)
+          })
+
 
 
 
