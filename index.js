@@ -772,7 +772,20 @@ app.post('/webhook', (req, res) => {
               }
             }
           }
-          send(welcomeMessage);
+
+          //request
+
+          requestify.post(`https://graph.facebook.com/v5.0/me/messages?access_token=${pageaccesstoken}`, 
+          welcomeMessage
+          ).then(response=>{
+            console.log("ok welcome") //
+          }).fail(error=> {
+            console.log(error)
+          })
+
+
+
+          //send(welcomeMessage);
       } 
       //end of Choose location
 
