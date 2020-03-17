@@ -726,7 +726,7 @@ app.post('/webhook', (req, res) => {
           "id":webhook_event.sender.id
             },
             "message":{
-              "text":"Please choose your location!!"
+            
               "attachment":{
                 "type":"template",
                 "payload":{
