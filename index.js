@@ -727,7 +727,7 @@ app.post('/webhook', (req, res) => {
           },
           "messaging_type": "RESPONSE",
           "message":{
-            "text": "suck the dick",
+            "text": ":Choose Your Location",
           }
         } 
 
