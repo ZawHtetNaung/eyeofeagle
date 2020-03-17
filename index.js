@@ -1008,7 +1008,7 @@ app.post('/webhook', (req, res) => {
 
 
 
-      /*if (userInput == 'Pagodas in Yangon' || quickdata == "pagodasinyangon" ){
+      if (userInput == 'Pagodas in Yangon' || quickdata == "pagodasinyangon" ){
           let welcomeMessage = {
            "recipient":{
             "id":webhook_event.sender.id
@@ -1095,7 +1095,7 @@ app.post('/webhook', (req, res) => {
               }
             }
             send(welcomeMessage);
-      } */
+      } 
         //end of customize by pagodas in yangon
 
 
@@ -1276,7 +1276,7 @@ app.post('/webhook', (req, res) => {
 
 
 
-      if (userInput == 'Book hotel' || userButton == "book hotel" ){
+      /*if (userInput == 'Book hotel' || userButton == "book hotel" ){
               let welcomeMessage = {
                 "recipient":{
                   "id":webhook_event.sender.id
@@ -1319,7 +1319,7 @@ app.post('/webhook', (req, res) => {
                 }
               }
                 send(welcomeMessage);
-      } 
+      } */
       //end of payment by book hotel
       
 
