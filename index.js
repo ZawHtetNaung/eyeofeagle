@@ -137,7 +137,7 @@ app.post('/webhook', (req, res) => {
                 "image_url":"http://example.com/img/red.png"
               },{
                 "content_type":"text",
-                "title":"No, I am plan to travel",
+                "title":"No, plan to travel",
                 "payload":"no",
                 "image_url":"http://example.com/img/green.png"
               }/*,{
