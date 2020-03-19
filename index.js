@@ -128,24 +128,24 @@ app.post('/webhook', (req, res) => {
             },
             "messaging_type": "RESPONSE",
             "message":{
-              "text": "Hi! Are you on trip?",
+              "text": "Mingalar bar. Welcome to Eye of Eagle travel and tour. Are you on trip?",
               "quick_replies":[
               {
                 "content_type":"text",
-                "title":"Yes",
+                "title":"Yes, I am travel",
                 "payload":"yes",
                 "image_url":"http://example.com/img/red.png"
               },{
                 "content_type":"text",
-                "title":"No",
+                "title":"No, I am plan to travel",
                 "payload":"no",
                 "image_url":"http://example.com/img/green.png"
-              },{
+              }/*,{
                 "content_type":"text",
                 "title":"Packages",
                 "payload":"packages",
                 "image_url":"http://example.com/img/green.png"
-              }/*,{
+              },{
                 "content_type":"text",
                 "title":"extra functions",
                 "payload":"extrafunctions",
@@ -289,7 +289,7 @@ app.post('/webhook', (req, res) => {
       
 
 
-      if (userInput == 'Yes' || quickdata == 'yes' ){
+      if (userInput == 'Yes, I am travel' || quickdata == 'yes' ){
         let welcomeMessage = {
           "recipient":{
             "id":webhook_event.sender.id
@@ -375,24 +375,24 @@ app.post('/webhook', (req, res) => {
           },
           "messaging_type": "RESPONSE",
           "message":{
-            "text": "Why?",
+            "text": "Sorry to hear that. Is there anything you want to change during your trip",
             "quick_replies":[
             {
               "content_type":"text",
-              "title":"Due to my package",
-              "payload":"duetomypackage",
+              "title":"Hotel",
+              "payload":"hotel",
               "image_url":"http://example.com/img/red.png"
-            }/*,{
+            },{
               "content_type":"text",
-              "title":"customize location",
-              "payload":"customizelocation",
+              "title":"Transportation",
+              "payload":"transportation",
               "image_url":"http://example.com/img/green.png"
             },{
               "content_type":"text",
-              "title":"change packages ",
-              "payload":"changepackages",
+              "title":"Restaurants ",
+              "payload":"restaurant",
               "image_url":"http://example.com/img/green.png"
-            }*/
+            }
             ]
           }
         } 
@@ -401,6 +401,92 @@ app.post('/webhook', (req, res) => {
       }
       //end of not ok by yes answer
 
+
+
+        if (userInput == 'Hotel' || quickdata == 'hotel' ){
+          let welcomeMessage = {
+           "recipient":{
+              "id":webhook_event.sender.id
+           },
+            "messaging_type": "RESPONSE",
+            "message":{
+             "text": "May I know your current city?",
+              "quick_replies":[
+             {
+              "content_type":"text",
+              "title":"Yangon",
+              "payload":"yangon",
+              "image_url":"http://example.com/img/red.png"
+            },{
+              "content_type":"text",
+              "title":"Mandalay",
+              "payload":"mandalay",
+              "image_url":"http://example.com/img/green.png"
+            },{
+              "content_type":"text",
+              "title":"Inlay ",
+              "payload":"inlay",
+              "image_url":"http://example.com/img/green.png"
+            },{
+              "content_type":"text",
+              "title":"Taunggyi",
+              "payload":"taunggyi",
+              "image_url":"http://example.com/img/green.png"
+            }
+            ]
+          }
+        } 
+
+        send(welcomeMessage);
+      }
+      //end of current city
+
+
+       if (userInput == 'Yangon' || quickdata == "yangon" ){
+        let welcomeMessage = {
+          "recipient":{
+            "id":webhook_event.sender.id
+          },
+          "message":{
+            "attachment":{
+              "type":"template",
+              "payload":{
+              "template_type":"generic",
+              "elements":[
+                {
+                  "title":"Here are your hotel options",
+                  "image_url":"https://r-cf.bstatic.com/images/hotel/max1024x768/181/181775739.jpg",
+                  "subtitle":"Choose the hotel what you want",
+                  "default_action": {
+                     "type": "web_url",
+                    "url": "https://petersfancybrownhats.com/view?item=103",
+                    "webview_height_ratio": "tall",
+                  },
+                  "buttons":[
+                     {
+                        "type":"postback",
+                        "title":"High Class",
+                        "payload":"height class hotel in yangon"
+                      },{
+                        "type":"postback",
+                        "title":"Medium",
+                        "payload":"medium hotel in yangon"
+                      },{
+                          "type":"postback",
+                          "title":"Low Budget",
+                          "payload":"low budget hotel in yangon"
+                        }
+
+                    ]      
+                }
+              ]
+            }
+          }
+          }
+        }
+        send(welcomeMessage);
+      } 
+      //end of hotel in yangon by yes answer
 
 
       /*if (userInput == 'More functions' || quickdata == 'morefunctions' ){
@@ -810,7 +896,7 @@ app.post('/webhook', (req, res) => {
       //end of Choose location
 
 
-      /* if (userInput == 'Customize package' || quickdata =='cp' ){
+      /* if (userInput == 'Packages' || quickdata =='packages' ){
         let welcomeMessage = {
          "recipient":{
           "id":webhook_event.sender.id
@@ -834,7 +920,7 @@ app.post('/webhook', (req, res) => {
                     {
                       "type":"postback",
                       "title":"Customize Your Packages",
-                      "payload":"cuyppagodas"
+                      "payload":"pagodas"
                     }
 
                     ]      
@@ -851,7 +937,7 @@ app.post('/webhook', (req, res) => {
                     {
                       "type":"postback",
                       "title":"Customize Your Packages",
-                      "payload":"cuypbeaches"
+                      "payload":"beaches"
                     }
 
                     ]      
@@ -868,7 +954,7 @@ app.post('/webhook', (req, res) => {
                     {
                       "type":"postback",
                       "title":"Customize Your Packages",
-                      "payload":"cuypeachofstate"
+                      "payload":"eachofstate"
                     }
 
                     ]      
@@ -1008,7 +1094,7 @@ app.post('/webhook', (req, res) => {
 
 
 
-      if (userInput == 'Pagodas in Yangon' || quickdata == "pagodasinyangon" ){
+     /* if (userInput == 'Pagodas in Yangon' || quickdata == "pagodasinyangon" ){
           let welcomeMessage = {
            "recipient":{
             "id":webhook_event.sender.id
@@ -1095,7 +1181,7 @@ app.post('/webhook', (req, res) => {
               }
             }
             send(welcomeMessage);
-      } 
+      } */
         //end of customize by pagodas in yangon
 
 
@@ -1531,7 +1617,7 @@ app.post('/webhook', (req, res) => {
 
 
 
-      if (userInput == 'Pagodas' || quickdata == "activity of pagoda" ){
+      if (userInput == 'Activity of Pagodas' || quickdata == "activity of pagoda" ){
           let welcomeMessage = {
            "recipient":{
             "id":webhook_event.sender.id
