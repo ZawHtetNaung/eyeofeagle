@@ -489,6 +489,46 @@ app.post('/webhook', (req, res) => {
       //end of hotel in yangon by yes answer
 
 
+       if (userInput == 'No,  plan to travel' || quickdata == 'no' ){
+            let welcomeMessage = {
+              "recipient":{
+                "id":webhook_event.sender.id
+              },
+              "messaging_type": "RESPONSE",
+              "message":{
+                "text": " May I know what kind of activity packages you want to do?",
+                "quick_replies":[
+                {
+                  "content_type":"text",
+                  "title":"Pagodas",
+                  "payload":"activity of pagoda",
+                  "image_url":"http://example.com/img/red.png"
+                },{
+                  "content_type":"text",
+                  "title":"Hiking",
+                  "payload":"activity of hiking",
+                  "image_url":"http://example.com/img/green.png"
+                },{
+                  "content_type":"text",
+                  "title":"Adventures",
+                  "payload":"activity of adventures",
+                  "image_url":"http://example.com/img/green.png"
+                },{
+                  "content_type":"text",
+                  "title":"Beaches",
+                  "payload":"activity of beaches",
+                  "image_url":"http://example.com/img/green.png"
+                }
+                ]
+              }
+            } 
+
+            send(welcomeMessage);
+      }
+        //end of qucik reply for activity
+
+
+
       /*if (userInput == 'More functions' || quickdata == 'morefunctions' ){
         let welcomeMessage = {
           "recipient":{
@@ -647,39 +687,24 @@ app.post('/webhook', (req, res) => {
 
 
 
-      if (userInput == 'Do not know place' || quickdata == 'donotknowplace' ){
+      if (userInput == 'Pagodas' || quickdata == 'activity of pagoda' ){
         let welcomeMessage = {
           "recipient":{
             "id":webhook_event.sender.id
           },
           "messaging_type": "RESPONSE",
           "message":{
-            "text": "Now where are you?",
+            "text": "Which city do you want to go the pagodas?",
             "quick_replies":[
             {
               "content_type":"text",
-              "title":"Yangon",
-              "payload":"yangon",
+              "title":"Pagodas in Yangon",
+              "payload":"pagodasinyangon",
               "image_url":"http://example.com/img/red.png"
             },{
               "content_type":"text",
-              "title":"Bago",
-              "payload":"bago",
-              "image_url":"http://example.com/img/green.png"
-            },{
-              "content_type":"text",
-              "title":"Mandalay",
-              "payload":"mandalay",
-              "image_url":"http://example.com/img/green.png"
-            },{
-              "content_type":"text",
-              "title":"Pyin Oo Lwin",
-              "payload":"pyinoolwin",
-              "image_url":"http://example.com/img/green.png"
-            },{
-              "content_type":"text",
-              "title":"Other",
-              "payload":"other",
+              "title":"Pagodas in Bago",
+              "payload":"pagodasinbago",
               "image_url":"http://example.com/img/green.png"
             }
             ]
@@ -688,13 +713,13 @@ app.post('/webhook', (req, res) => {
 
         send(welcomeMessage); 
       }
-      //end of do not know package by yes answer
+      //end of pagodad in activity
 
 
 
 
 
-      if (userInput == 'Create New One' || quickdata == 'createnewone' ){
+     /* if (userInput == 'Create New One' || quickdata == 'createnewone' ){
         let welcomeMessage = {
           "recipient":{
             "id":webhook_event.sender.id
@@ -729,10 +754,10 @@ app.post('/webhook', (req, res) => {
         } 
 
         send(welcomeMessage);
-      }
+      }*/
       //end of packages
         
-      if (userInput == 'Show Packages' || quickdata =='sp' ){
+     /* if (userInput == 'Show Packages' || quickdata =='sp' ){
         let welcomeMessage = {
          "recipient":{
           "id":webhook_event.sender.id
@@ -801,12 +826,12 @@ app.post('/webhook', (req, res) => {
             }
           }
           send(welcomeMessage);
-      } 
+      } */
       //end of Show packages
 
 
 
-      if (userInput == 'Customize package' || quickdata =='cp' ){
+      /*if (userInput == 'Customize package' || quickdata =='cp' ){
         let welcomeMessage = {
           "recipient":{
             "id":webhook_event.sender.id
@@ -892,7 +917,7 @@ app.post('/webhook', (req, res) => {
 
 
           //send(welcomeMessage);
-      } 
+      } */
       //end of Choose location
 
 
@@ -1094,7 +1119,7 @@ app.post('/webhook', (req, res) => {
 
 
 
-     /* if (userInput == 'Pagodas in Yangon' || quickdata == "pagodasinyangon" ){
+      if (userInput == 'Pagodas in Yangon' || quickdata == "pagodasinyangon" ){
           let welcomeMessage = {
            "recipient":{
             "id":webhook_event.sender.id
@@ -1181,7 +1206,7 @@ app.post('/webhook', (req, res) => {
               }
             }
             send(welcomeMessage);
-      } */
+      } 
         //end of customize by pagodas in yangon
 
 
@@ -1576,44 +1601,7 @@ app.post('/webhook', (req, res) => {
         
          
         
-      if (userInput == 'Choose activity' || quickdata == 'ca' ){
-            let welcomeMessage = {
-              "recipient":{
-                "id":webhook_event.sender.id
-              },
-              "messaging_type": "RESPONSE",
-              "message":{
-                "text": " Choose Your Activity:",
-                "quick_replies":[
-                {
-                  "content_type":"text",
-                  "title":"Pagodas",
-                  "payload":"activity of pagoda",
-                  "image_url":"http://example.com/img/red.png"
-                },{
-                  "content_type":"text",
-                  "title":"Hiking",
-                  "payload":"activity of hiking",
-                  "image_url":"http://example.com/img/green.png"
-                },{
-                  "content_type":"text",
-                  "title":"Adventures",
-                  "payload":"activity of adventures",
-                  "image_url":"http://example.com/img/green.png"
-                },{
-                  "content_type":"text",
-                  "title":"Waterfall",
-                  "payload":"activity of waterfall",
-                  "image_url":"http://example.com/img/green.png"
-                }
-                ]
-              }
-            } 
-
-            send(welcomeMessage);
-      }
-        //end of qucik reply for activity
-
+     
 
 
 
