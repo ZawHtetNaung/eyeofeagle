@@ -1314,7 +1314,7 @@ app.post('/webhook', (req, res) => {
 
 
 
-      if (userInput == 'Hotel' || quickdata == "hotel" ){
+     /* if (userInput == 'Hotel' || quickdata == "hotel" ){
             let welcomeMessage = {
              "recipient":{
               "id":webhook_event.sender.id
@@ -1357,7 +1357,7 @@ app.post('/webhook', (req, res) => {
               }
             }
             send(welcomeMessage);
-      } 
+      } */
       //end of customize by hotel
 
 
