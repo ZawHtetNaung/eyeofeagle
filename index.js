@@ -1605,7 +1605,7 @@ app.post('/webhook', (req, res) => {
 
 
 
-      if (userInput == 'Activity of Pagodas' || quickdata == "activity of pagoda" ){
+      /*if (userInput == 'Activity of Pagodas' || quickdata == "activity of pagoda" ){
           let welcomeMessage = {
            "recipient":{
             "id":webhook_event.sender.id
@@ -1674,7 +1674,7 @@ app.post('/webhook', (req, res) => {
               }
             }
             send(welcomeMessage);
-      } 
+      } */
       //end of customize activity for pagodas
       
 
