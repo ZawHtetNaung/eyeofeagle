@@ -379,18 +379,18 @@ app.post('/webhook', (req, res) => {
             "quick_replies":[
             {
               "content_type":"text",
-              "title":"Hotel",
-              "payload":"hotel",
+              "title":"Hotel option",
+              "payload":"hp",
               "image_url":"http://example.com/img/red.png"
             },{
               "content_type":"text",
-              "title":"Transportation",
-              "payload":"transportation",
+              "title":"Transportation option",
+              "payload":"tp",
               "image_url":"http://example.com/img/green.png"
             },{
               "content_type":"text",
-              "title":"Restaurants ",
-              "payload":"restaurant",
+              "title":"Restaurants option",
+              "payload":"rp",
               "image_url":"http://example.com/img/green.png"
             }
             ]
@@ -403,7 +403,7 @@ app.post('/webhook', (req, res) => {
 
 
 
-        if (userInput == 'Hotel' || quickdata == 'hotel' ){
+        if (userInput == 'Hotel option' || quickdata == 'hp' ){
           let welcomeMessage = {
            "recipient":{
               "id":webhook_event.sender.id
