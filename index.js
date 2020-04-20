@@ -57,6 +57,12 @@ let orderRef;
   console.log(error)
 })*/
 
+//whitelist domains
+//eg https://fbstarterbot.herokuapp.com/whitelists
+app.get('/whitelists',function(req,res){    
+    whitelistDomains(res);
+});
+
   // Sets server port and logs message on success
 app.listen(process.env.PORT || 1337, () => console.log('webhook is listening'));
 
@@ -1858,7 +1864,7 @@ function YangonPackage(senderID){
 const whitelistDomains = (res) => {
   var messageData = {
           "whitelisted_domains": [
-             "https://fbstarterbot.herokuapp.com" , 
+             "https://https://eyeofeagle.herokuapp.com/" , 
              "https://herokuapp.com"                           
           ]               
   };  
