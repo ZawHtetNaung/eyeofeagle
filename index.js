@@ -1864,7 +1864,7 @@ function YangonPackage(senderID){
 const whitelistDomains = (res) => {
   var messageData = {
           "whitelisted_domains": [
-             "https://eyeofeagle.herokuapp.com/" , 
+             "https://eyeofeagle.herokuapp.com" , 
              "https://herokuapp.com"                           
           ]               
   };  
