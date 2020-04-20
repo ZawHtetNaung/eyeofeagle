@@ -2,6 +2,7 @@
 
 // Imports dependencies and set up http server
 const
+  request = require('request'),
   express = require('express'),
   bodyParser = require('body-parser'),
   requestify = require('requestify'),
