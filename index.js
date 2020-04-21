@@ -77,7 +77,7 @@ app.get('/shwedagonpackage',function(req,res){
 app.get('/test/:title/:sender_id',function(req,res){
     const sender_id = req.params.sender_id;
     const title = req.params.title;
-    res.render('test.ejs',{title:title,sender_id:sender_id});
+    res.render('shwedagonbook.ejs',{title:title,sender_id:sender_id});
 });
 
 
