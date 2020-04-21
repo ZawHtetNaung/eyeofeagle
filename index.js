@@ -69,9 +69,9 @@ app.get('/whitelists',function(req,res){
   // Sets server port and logs message on success
 app.listen(process.env.PORT || 1337, () => console.log('webhook is listening'));
 
-app.get('/test',function(req,res){
-    //const sender_id = req.params.sender_id;
-    res.render('test.ejs',{title:"Hi!! Eye of Eagle"});
+app.get('/test/:sender_id',function(req,res){
+    const sender_id = req.params.sender_id;
+    res.render('test.ejs',{title:"Hi!! Eye of Eagle",sender_id:sender_id});
 });
 
 
@@ -1159,7 +1159,7 @@ app.post('/webhook', (req, res) => {
                           {
                             "type": "web_url",
                             "title": "create",
-                            "url":"https://eyeofeagle.herokuapp.com/test",
+                            "url":"https://eyeofeagle.herokuapp.com/test"+webhook_event.sender.id,
                              "webview_height_ratio": "full",
                             "messenger_extensions": true,          
                           },
