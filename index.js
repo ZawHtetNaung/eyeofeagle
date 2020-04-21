@@ -69,6 +69,11 @@ app.get('/whitelists',function(req,res){
   // Sets server port and logs message on success
 app.listen(process.env.PORT || 1337, () => console.log('webhook is listening'));
 
+app.get('/shwedagonpackage',function(req,res){
+    
+    res.render('shwedagonpackage.ejs');
+});
+
 app.get('/test/:title/:sender_id',function(req,res){
     const sender_id = req.params.sender_id;
     const title = req.params.title;
@@ -1156,7 +1161,16 @@ app.post('/webhook', (req, res) => {
                         "url": "https://eyeofeagle.herokuapp.com",
                         "webview_height_ratio": "tall",
                       },
-                      "buttons": [              
+                      "buttons": [ 
+
+                          {
+                            "type": "web_url",
+                            "title": "View Detail",
+                            "url":"https://eyeofeagle.herokuapp.com/shwedagonpackage/",
+                             "webview_height_ratio": "full",
+                            "messenger_extensions": true,          
+                          },
+
                           {
                             "type": "web_url",
                             "title": "create",
@@ -1166,6 +1180,8 @@ app.post('/webhook', (req, res) => {
                           },
                           
                         ],
+
+
                     },{
                       "title":"Sule",
                       "image_url":"https://res.cloudinary.com/fleetnation/image/private/c_fit,w_1120/g_south,l_text:style_gothic2:%C2%A9%20Frank%20Bienewald%20,o_20,y_10/g_center,l_watermark4,o_25,y_50/v1545300898/svhcrxyne1pgny6hcy41.jpg",
