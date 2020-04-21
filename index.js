@@ -69,6 +69,10 @@ app.get('/whitelists',function(req,res){
   // Sets server port and logs message on success
 app.listen(process.env.PORT || 1337, () => console.log('webhook is listening'));
 
+app.get('/test',function(req,res){
+    //const sender_id = req.params.sender_id;
+    res.render('test.ejs',{title:"Hi!! Eye of Eagle"});
+});
 
 
 // Adds support for GET requests to our webhook
