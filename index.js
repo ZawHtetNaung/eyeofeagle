@@ -12,6 +12,12 @@ const
   app = express().use(bodyParser.json()); // creates express http server
 
   const pageaccesstoken = process.env.PAGE_ACCESS_TOKEN;
+  const eyeofEagle = (sender_psid) => { 
+    let response = {
+    "text": `pagodasinyangon`,    
+    };
+    callSend(sender_psid, response); 
+}
 app.set('view engine', 'ejs');
 app.set('views', __dirname+'/views');
 
