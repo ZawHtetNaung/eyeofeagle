@@ -12,12 +12,7 @@ const
   app = express().use(bodyParser.json()); // creates express http server
 
   const pageaccesstoken = process.env.PAGE_ACCESS_TOKEN;
-  const eyeofEagle = (sender_psid) => { 
-    let response = {
-    "text": `pagodasinyangon`,    
-    };
-    callSend(sender_psid, response); 
-}
+
 app.set('view engine', 'ejs');
 app.set('views', __dirname+'/views');
 
@@ -1160,7 +1155,7 @@ app.post('/webhook', (req, res) => {
                           {
                             "type": "web_url",
                             "title": "create",
-                            "url":"https://eyeofeagle.herokuapp.com/addpackage/"+sender_psid,
+                            "url":"https://google.com/addpackage/"+sender_psid,
                              "webview_height_ratio": "full",
                             "messenger_extensions": true,          
                           },
