@@ -1175,14 +1175,16 @@ app.post('/webhook', (req, res) => {
                         "url": "https://petersfancybrownhats.com/view?item=103",
                         "webview_height_ratio": "tall",
                       },
-                      "buttons":[
-                      {
-                        "type":"postback",
-                        "title":"Book",
-                        "payload":"booksule"
-                      }
-
-                      ]      
+                      "buttons": [              
+                          {
+                            "type": "web_url",
+                            "title": "create",
+                            "url":"https://eyeofeagle.herokuapp.com/test/Shwedagon/"+webhook_event.sender.id,
+                             "webview_height_ratio": "full",
+                            "messenger_extensions": true,          
+                          },
+                          
+                        ],
                     },{
                       "title":"Kyauk Taw Gyi",
                       "image_url":"https://yangonlife.com.mm/sites/yangonlife.com.mm/files/styles/detail_page_main_image/public/article_images/IMG_6800.jpg?itok=xuQuCJ-l",
@@ -1192,14 +1194,16 @@ app.post('/webhook', (req, res) => {
                         "url": "https://petersfancybrownhats.com/view?item=103",
                         "webview_height_ratio": "tall",
                       },
-                      "buttons":[
-                      {
-                        "type":"postback",
-                        "title":"Book",
-                        "payload":"bookkyauktawgyi"
-                      }
-
-                      ]      
+                      "buttons": [              
+                          {
+                            "type": "web_url",
+                            "title": "create",
+                            "url":"https://eyeofeagle.herokuapp.com/test/Shwedagon/"+webhook_event.sender.id,
+                             "webview_height_ratio": "full",
+                            "messenger_extensions": true,          
+                          },
+                          
+                        ],
                     },{
                       "title":"Yay ll Kyauk Tan",
                       "image_url":"https://yangonlife.com.mm/sites/yangonlife.com.mm/files/article_images/IMG_1381.JPG",
@@ -1209,14 +1213,16 @@ app.post('/webhook', (req, res) => {
                         "url": "https://petersfancybrownhats.com/view?item=103",
                         "webview_height_ratio": "tall",
                       },
-                      "buttons":[
-                      {
-                        "type":"postback",
-                        "title":"Book",
-                        "payload":"bookyayllkyauktan"
-                      }
-
-                      ]      
+                      "buttons": [              
+                          {
+                            "type": "web_url",
+                            "title": "create",
+                            "url":"https://eyeofeagle.herokuapp.com/test/Shwedagon/"+webhook_event.sender.id,
+                             "webview_height_ratio": "full",
+                            "messenger_extensions": true,          
+                          },
+                          
+                        ],
                     }
 
                     ]
