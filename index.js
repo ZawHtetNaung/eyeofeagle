@@ -297,7 +297,7 @@ app.post('/webhook', (req, res) => {
                     "template_type":"generic",
                     "elements":[
                     {
-                      "title":"Shwedagon",
+                      "title":"Pagodas",
                       "image_url":"https://osugamyanmartravels.com/wp-content/uploads/2018/04/shwedagon-pagoda-yangon-burma-myanmar.jpg",
                       "subtitle":"Choose the transportation what you want",
                       "default_action": {
@@ -318,7 +318,7 @@ app.post('/webhook', (req, res) => {
                           {
                             "type": "web_url",
                             "title": "Customize",
-                            "url":"https://eyeofeagle.herokuapp.com/test/Shwedagon/"+webhook_event.sender.id,
+                            "url":"https://eyeofeagle.herokuapp.com/test/Pagodas/"+webhook_event.sender.id,
                              "webview_height_ratio": "full",
                             "messenger_extensions": true,          
                           },
@@ -326,7 +326,7 @@ app.post('/webhook', (req, res) => {
                           {
                             "type": "web_url",
                             "title": "Book",
-                            "url":"https://eyeofeagle.herokuapp.com/test/Shwedagon/"+webhook_event.sender.id,
+                            "url":"https://eyeofeagle.herokuapp.com/test/Pagodas/"+webhook_event.sender.id,
                              "webview_height_ratio": "full",
                             "messenger_extensions": true,          
                           },
