@@ -323,6 +323,13 @@ app.post('/webhook', (req, res) => {
                             "messenger_extensions": true,          
                           },
                           
+                          {
+                            "type": "web_url",
+                            "title": "Book",
+                            "url":"https://eyeofeagle.herokuapp.com/test/Shwedagon/"+webhook_event.sender.id,
+                             "webview_height_ratio": "full",
+                            "messenger_extensions": true,          
+                          },
                         ],
 
 
@@ -338,7 +345,7 @@ app.post('/webhook', (req, res) => {
                       "buttons": [              
                           {
                             "type": "web_url",
-                            "title": "customize",
+                            "title": "Customize",
                             "url":"https://eyeofeagle.herokuapp.com/test/Shwedagon/"+webhook_event.sender.id,
                              "webview_height_ratio": "full",
                             "messenger_extensions": true,          
@@ -376,7 +383,7 @@ app.post('/webhook', (req, res) => {
                       "buttons": [              
                           {
                             "type": "web_url",
-                            "title": "create",
+                            "title": "Customize",
                             "url":"https://eyeofeagle.herokuapp.com/test/Shwedagon/"+webhook_event.sender.id,
                              "webview_height_ratio": "full",
                             "messenger_extensions": true,          
