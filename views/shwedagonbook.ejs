@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
-    <title>Eye of Eagle</title>
+    <title>ddmo</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
  </head>
 
@@ -31,29 +31,60 @@
     };
   </script>
   
-	<h1><%= title %></h1>
+  <h1><%= title %></h1>
 
-	<h1><%= sender_id %></h1>
+  
 
-  <form id="form" method="post" action="https://eyeofeagle.herokuapp.com/addpackage/">
+  <form id="form" method="post" action="https://fbstarterbot.herokuapp.com/privatetour/">
   <div class="form-group">
-    <label for="name">Image</label>
-    <input type="text" class="form-control" id="image" name="image" placeholder="Enter image url">    
+    <label for="name">Where do you want to go</label>
+    <select class="form-control" name="destination" id="destination">
+      <option>Yangon</option>
+      <option>Mandalay</option>
+      <option>Nay Pyi Taw</option>
+      <option>Taungyi</option>
+      <option>Inn Lay</option>
+    </select> 
   </div>
   <div class="form-group">
-    <label for="title">Title</label>
-    <input type="text" class="form-control" id="title" name="title" placeholder="Title">
-  </div> 
+    <label for="title">What activity are you interested</label>
+    <input type="text" class="form-control" id="activities" name="activities" placeholder="Eg. Pagoda">
+  </div>
   <div class="form-group">
-    <label for="description">Description</label>
-    <textarea class="form-control" id="description" name="description" rows="3"></textarea>    
-  </div>   
+    <label for="title">How many guests</label>
+    <input type="text" class="form-control" id="guests" name="guests" placeholder="Enter number of guest">
+  </div>
+  <div class="form-group">
+    <label for="title">Travel mode </label>
+    <input type="text" class="form-control" id="travel_mode" name="travel_mode" placeholder="Enter car, train, or air">
+  </div>
+  <div class="form-group">
+    <label for="title">Travel option</label>
+    <input type="text" class="form-control" id="travel_option" name="travel_option" placeholder="E.g 4 seater car ">
+  </div>
+  <div class="form-group">
+    <label for="name">Your choice of hotel</label>
+    <input type="text" class="form-control" id="hotel" name="hotel" placeholder="Hotel name">    
+  </div>
+  <div class="form-group">
+    <label for="name">Your choice of restaurent</label>
+    <input type="text" class="form-control" id="restaurent" name="restaurent" placeholder="Restaurent name">    
+  </div>
+  <div class="form-group">
+    <label for="name">Your name please</label>
+    <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name">    
+  </div>
+  <div class="form-group">
+    <label for="title">Mobile</label>
+    <input type="text" class="form-control" id="mobile" name="mobile" placeholder="Title">
+  </div>
+    
   <input type="hidden"  id="sender" name="sender" value="<%= sender_id %>">
-  <input type="submit" value="Submit"> 
+  <input type="submit" value="Confirm Booking"> 
   </form>
 
 
-	
+  
   <script>
       
    
@@ -64,7 +95,6 @@
           console.log(err);
         });
       }
-
       
       document.getElementById("form").addEventListener("submit", windowShut);       
 
