@@ -77,7 +77,7 @@ app.get('/shwedagonpackage',function(req,res){
 app.get('/Customize/:pagodascustomize/:sender_id',function(req,res){
     const sender_id = req.params.sender_id;
     const pagodascustomize = req.params.pagodascustomize;
-    res.render('pagodascustomize.ejs',{Customize:pagodascustomize,sender_id:sender_id});
+    res.render('pagodascustomize.ejs',{title:"Customize",sender_id:sender_id});
 });
 
 app.get('/test/:title/:sender_id',function(req,res){
