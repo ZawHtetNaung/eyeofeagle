@@ -1,63 +1,15 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <title>ddmo</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
- </head>
+Trip - shwedagon-sule-kyaut taw gyi
 
-  <body>
-  <script>
-      (function(d, s, id){
-      var js, fjs = d.getElementsByTagName(s)[0];
-      if (d.getElementById(id)) {return;}
-      js = d.createElement(s); js.id = id;
-      js.src = "//connect.facebook.net/en_US/messenger.Extensions.js";
-      fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'Messenger'));
+Trasnportation - 12 seat minibus
 
-    const APP_ID = 2611721012483168;    
-    var senderID = "";
-    
-    window.extAsyncInit = function() {
-        MessengerExtensions.getContext(APP_ID, 
-          function success(thread_context){
-           senderID = thread_context.psid;
-          },
-          function error(err){
-            console.log(err);
-          }
-        );        
-    };
-  </script>
-  
-	<h1><%= title %></h1>
+Restaurant
 
-  <form id="form" method="post" action="https://eyeofeagle.herokuapp.com/addpackage/">
-   <img src="smiley.gif" alt="Smiley face" height="42" width="42">
-  </form>
+Breakfast -  Shwe Pa Lin
 
+Lunch - Golden Dush
 
-	
-  <script>
-      
-   
-      const windowShut = () => {
-        MessengerExtensions.requestCloseBrowser(function success() {
-          console.log("success");          
-        }, function error(err) {
-          console.log(err);
-        });
-      }
+Dinner - Shangrila
 
-      
-      document.getElementById("form").addEventListener("submit", windowShut);       
+Hotel - Lotte
 
-
-     
-
-  </script>
-
-  </body>
-
-</html>
+ 
