@@ -324,7 +324,7 @@ app.post('/webhook', (req, res) => {
                           {
                             "type": "web_url",
                             "title": "Customize",
-                            "url":"https://eyeofeagle.herokuapp.com/test/Pagodas/"+webhook_event.sender.id,
+                            "url":"https://eyeofeagle.herokuapp.com/Customize/Pagodas/"+webhook_event.sender.id,
                              "webview_height_ratio": "full",
                             "messenger_extensions": true,          
                           },
