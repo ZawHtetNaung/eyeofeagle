@@ -81,10 +81,10 @@ app.get('/parksdetail',function(req,res){
     res.render('parksdetail.ejs');
 });
 
-app.get('/pagodas_customize/:pagodascustomize/:sender_id',function(req,res){
+app.get('/Customize pagodas/:pagodascustomize/:sender_id',function(req,res){
     const sender_id = req.params.sender_id;
     const pagodascustomize = req.params.pagodascustomize;
-    res.render('pagodascustomize.ejs',{title:"pagodas_customize",sender_id:sender_id});
+    res.render('pagodascustomize.ejs',{title:"Customize pagodas",sender_id:sender_id});
 });
 
 app.get('/Customize/:parks_customize/:sender_id',function(req,res){
@@ -370,7 +370,7 @@ app.post('/webhook', (req, res) => {
                           {
                             "type": "web_url",
                             "title": "Customize",
-                            "url":"https://eyeofeagle.herokuapp.com/pagodas_customize/Pagodas/"+webhook_event.sender.id,
+                            "url":"https://eyeofeagle.herokuapp.com/Customize Pagodas/Pagodas/"+webhook_event.sender.id,
                              "webview_height_ratio": "full",
                             "messenger_extensions": true,          
                           },
