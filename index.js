@@ -80,10 +80,16 @@ app.get('/Customize/:pagodascustomize/:sender_id',function(req,res){
     res.render('pagodascustomize.ejs',{title:"Customize",sender_id:sender_id});
 });
 
+app.get('/Book/:pagodas_book/:sender_id',function(req,res){
+    const sender_id = req.params.sender_id;
+    const pagodas_book = req.params.title;
+    res.render('pagodas_book.ejs',{title:"Book",sender_id:sender_id});
+});
+
 app.get('/test/:title/:sender_id',function(req,res){
     const sender_id = req.params.sender_id;
     const title = req.params.title;
-    res.render('shwedagonbook.ejs',{title:title,sender_id:sender_id});
+    res.render('addpackages.ejs',{title:title,sender_id:sender_id});
 });
 
 
@@ -332,7 +338,7 @@ app.post('/webhook', (req, res) => {
                           {
                             "type": "web_url",
                             "title": "Book",
-                            "url":"https://eyeofeagle.herokuapp.com/test/Pagodas/"+webhook_event.sender.id,
+                            "url":"https://eyeofeagle.herokuapp.com/Book/Pagodas/"+webhook_event.sender.id,
                              "webview_height_ratio": "full",
                             "messenger_extensions": true,          
                           },
