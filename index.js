@@ -18,6 +18,8 @@ app.set('views', __dirname+'/views');
 
 
 
+
+
 //firebase initialize
 firebase.initializeApp({
   credential: firebase.credential.cert({
@@ -90,6 +92,36 @@ app.get('/test/:title/:sender_id',function(req,res){
     const sender_id = req.params.sender_id;
     const title = req.params.title;
     res.render('addpackages.ejs',{title:title,sender_id:sender_id});
+});
+
+app.post('/pagodascustomize',function(req,res){
+      
+      let destination= req.body.destination;
+      let activities = req.body.activities;
+      let guests = req.body.guests;
+      let travel_mode = req.body.travel_mode;
+      let travel_option = req.body.travel_option;
+      let hotel = req.body.hotel;
+      let restaurent= req.body.restaurent;
+      let name  = req.body.name;
+      let mobile = req.body.mobile;
+      let sender = req.body.sender;   
+
+      db.collection('Private Tour Bookings').add({
+            destination:destination,
+            activities:activities,
+            guests:guests,
+            travel_mode:travel_mode,
+            travel_option:travel_option,
+            hotel:hotel,
+            restaurent:restaurent,            
+            name:name,
+            mobile:mobile
+          }).then(success => {             
+             ThankYouEagle(sender);    
+          }).catch(error => {
+            console.log(error);
+      });        
 });
 
 
