@@ -96,6 +96,7 @@ app.get('/test/:title/:sender_id',function(req,res){
 
 app.post('/pagodascustomize',function(req,res){
       
+       console.log("FORMDATA",req.body)
       let destination= req.body.destination;
       let activities = req.body.activities;
       let guests = req.body.guests;
