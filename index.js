@@ -76,6 +76,11 @@ app.get('/pagodasdetail',function(req,res){
     res.render('pagodasdetail.ejs');
 });
 
+app.get('/parksdetail',function(req,res){
+    
+    res.render('parksdetail.ejs');
+});
+
 app.get('/Customize/:pagodascustomize/:sender_id',function(req,res){
     const sender_id = req.params.sender_id;
     const pagodascustomize = req.params.pagodascustomize;
@@ -369,7 +374,7 @@ app.post('/webhook', (req, res) => {
 
 
                     },{
-                      "title":"Park",
+                      "title":"Parks",
                       "image_url":"https://yangondaytours.com/wp-content/uploads/2017/02/kandawgyi-park.jpg",
                       "subtitle":"Choose the transportation what you want",
                       "default_action": {
@@ -382,7 +387,7 @@ app.post('/webhook', (req, res) => {
                            {
                             "type": "web_url",
                             "title": "View Detail",
-                            "url":"https://eyeofeagle.herokuapp.com/shwedagonpackage/",
+                            "url":"https://eyeofeagle.herokuapp.com/parksdetail/",
                              "webview_height_ratio": "full",
                             "messenger_extensions": true,          
                           },
