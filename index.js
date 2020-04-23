@@ -71,9 +71,9 @@ app.get('/whitelists',function(req,res){
   // Sets server port and logs message on success
 app.listen(process.env.PORT || 1337, () => console.log('webhook is listening'));
 
-app.get('/shwedagonpackage',function(req,res){
+app.get('/pagodasdetail',function(req,res){
     
-    res.render('shwedagonpackage.ejs');
+    res.render('pagodasdetail.ejs');
 });
 
 app.get('/Customize/:pagodascustomize/:sender_id',function(req,res){
@@ -82,11 +82,7 @@ app.get('/Customize/:pagodascustomize/:sender_id',function(req,res){
     res.render('pagodascustomize.ejs',{title:"Customize",sender_id:sender_id});
 });
 
-app.get('/Book/:pagodas_book/:sender_id',function(req,res){
-    const sender_id = req.params.sender_id;
-    const pagodas_book = req.params.title;
-    res.render('pagodas_book.ejs',{title:"Book",sender_id:sender_id});
-});
+
 
 app.get('/test/:title/:sender_id',function(req,res){
     const sender_id = req.params.sender_id;
@@ -355,7 +351,7 @@ app.post('/webhook', (req, res) => {
                           {
                             "type": "web_url",
                             "title": "View Detail",
-                            "url":"https://eyeofeagle.herokuapp.com/shwedagonpackage/",
+                            "url":"https://eyeofeagle.herokuapp.com/pagodasdetail/",
                              "webview_height_ratio": "full",
                             "messenger_extensions": true,          
                           },
@@ -368,13 +364,7 @@ app.post('/webhook', (req, res) => {
                             "messenger_extensions": true,          
                           },
                           
-                          {
-                            "type": "web_url",
-                            "title": "Book",
-                            "url":"https://eyeofeagle.herokuapp.com/Book/Pagodas/"+webhook_event.sender.id,
-                             "webview_height_ratio": "full",
-                            "messenger_extensions": true,          
-                          },
+                          
                         ],
 
 
@@ -387,7 +377,16 @@ app.post('/webhook', (req, res) => {
                         "url": "https://petersfancybrownhats.com/view?item=103",
                         "webview_height_ratio": "tall",
                       },
-                      "buttons": [              
+                      "buttons": [   
+
+                           {
+                            "type": "web_url",
+                            "title": "View Detail",
+                            "url":"https://eyeofeagle.herokuapp.com/shwedagonpackage/",
+                             "webview_height_ratio": "full",
+                            "messenger_extensions": true,          
+                          },
+
                           {
                             "type": "web_url",
                             "title": "Customize",
