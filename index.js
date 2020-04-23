@@ -346,7 +346,7 @@ app.post('/webhook', (req, res) => {
 
 
                     },{
-                      "title":"Sule",
+                      "title":"Park",
                       "image_url":"https://res.cloudinary.com/fleetnation/image/private/c_fit,w_1120/g_south,l_text:style_gothic2:%C2%A9%20Frank%20Bienewald%20,o_20,y_10/g_center,l_watermark4,o_25,y_50/v1545300898/svhcrxyne1pgny6hcy41.jpg",
                       "subtitle":"Choose the transportation what you want",
                       "default_action": {
@@ -365,7 +365,7 @@ app.post('/webhook', (req, res) => {
                           
                         ],
                     },{
-                      "title":"Kyauk Taw Gyi",
+                      "title":"Traditional",
                       "image_url":"https://yangonlife.com.mm/sites/yangonlife.com.mm/files/styles/detail_page_main_image/public/article_images/IMG_6800.jpg?itok=xuQuCJ-l",
                       "subtitle":"Choose the transportation what you want",
                       "default_action": {
@@ -384,7 +384,7 @@ app.post('/webhook', (req, res) => {
                           
                         ],
                     },{
-                      "title":"Yay ll Kyauk Tan",
+                      "title":"Eating and Drinking",
                       "image_url":"https://yangonlife.com.mm/sites/yangonlife.com.mm/files/article_images/IMG_1381.JPG",
                       "subtitle":"Choose the transportation what you want",
                       "default_action": {
