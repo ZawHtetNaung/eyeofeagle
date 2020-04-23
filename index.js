@@ -107,7 +107,7 @@ app.post('/pagodascustomize',function(req,res){
       let mobile = req.body.mobile;
       let sender = req.body.sender;   
 
-      db.collection('Private Tour Bookings').add({
+      db.collection('Pagodas Booking').add({
             destination:destination,
             activities:activities,
             guests:guests,
