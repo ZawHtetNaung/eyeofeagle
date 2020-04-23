@@ -87,6 +87,12 @@ app.get('/Customize/:pagodascustomize/:sender_id',function(req,res){
     res.render('pagodascustomize.ejs',{title:"Customize",sender_id:sender_id});
 });
 
+app.get('/Customize/:parks_customize/:sender_id',function(req,res){
+    const sender_id = req.params.sender_id;
+    const pagodascustomize = req.params.pagodascustomize;
+    res.render('parks_customize.ejs',{title:"Customize",sender_id:sender_id});
+});
+
 
 
 app.get('/test/:title/:sender_id',function(req,res){
@@ -395,7 +401,7 @@ app.post('/webhook', (req, res) => {
                           {
                             "type": "web_url",
                             "title": "Customize",
-                            "url":"https://eyeofeagle.herokuapp.com/test/Shwedagon/"+webhook_event.sender.id,
+                            "url":"https://eyeofeagle.herokuapp.com/Customize/Parks/"+webhook_event.sender.id,
                              "webview_height_ratio": "full",
                             "messenger_extensions": true,          
                           },
