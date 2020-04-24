@@ -142,6 +142,38 @@ app.post('/pagodascustomize',function(req,res){
       });        
 });
 
+app.post('/parks_customize',function(req,res){
+      
+       console.log("FORMDATA",req.body)
+      let parks_trip= req.body.parks_trip;
+      let transportation = req.body.transportation;
+      let breakfast = req.body.breakfast;
+      let lunch = req.body.lunch;
+      let dinner = req.body.dinner;
+      let hotel = req.body.hotel;
+      let name= req.body.name;
+      let mobile  = req.body.mobile;
+      let sender = req.body.sender;  
+
+     let booking_ref = generateRandom(5);    
+
+      db.collection('Pagodas Booking').add({
+           
+            parks_trip:parks_trip,
+            transportation:transportation,
+            breakfast:breakfast,
+            lunch:lunch,
+            dinner:dinner,
+            hotel:hotel,            
+            name:name,
+            mobile:mobile,
+            booking_ref:booking_ref,
+          }).then(success => {             
+             ThankYouEagle(sender);    
+          }).catch(error => {
+            console.log(error);
+      });        
+});
 
 // Adds support for GET requests to our webhook
 app.get('/webhook', (req, res) => {
