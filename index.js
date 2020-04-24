@@ -9,12 +9,16 @@ const
   requestify = require('requestify'),
   firebase = require('firebase-admin'),
   ejs = require("ejs"),
-  app = express().use(bodyParser.json()); // creates express http server
-
+  app = express(); // creates express http server
+  
   const pageaccesstoken = process.env.PAGE_ACCESS_TOKEN;
 
 app.set('view engine', 'ejs');
 app.set('views', __dirname+'/views');
+
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded());
 
 
 
@@ -104,7 +108,7 @@ app.get('/test/:title/:sender_id',function(req,res){
 app.post('/pagodascustomize',function(req,res){
       
        console.log("FORMDATA",req.body)
-      
+      let destination= req.body.destination;
       let activities = req.body.activities;
       let guests = req.body.guests;
       let travel_mode = req.body.travel_mode;
@@ -117,6 +121,7 @@ app.post('/pagodascustomize',function(req,res){
 
       db.collection('Pagodas Booking').add({
            
+            destination:destination,
             activities:activities,
             guests:guests,
             travel_mode:travel_mode,
