@@ -613,7 +613,7 @@ const showBookingNumber = (sender_psid, ref) => {
       "id":sender_psid,
     },           
     "message":{
-      "text": `You arn't ok when you going to trip text this message (change update:reference no) ${ref}`,              
+      "text": `You aren't ok when you going to trip text this message (change update:reference no) and your reference is ${ref}`,              
     }
   } 
 
