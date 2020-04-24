@@ -157,7 +157,7 @@ app.post('/parks_customize',function(req,res){
 
      let booking_ref = generateRandom(5);    
 
-      db.collection('Pagodas Booking').add({
+      db.collection('Parks Booking').add({
            
             parks_trip:parks_trip,
             transportation:transportation,
@@ -169,7 +169,7 @@ app.post('/parks_customize',function(req,res){
             mobile:mobile,
             booking_ref:booking_ref,
           }).then(success => {             
-             ThankYouEagle(sender);    
+             showBookingNumber(sender,booking_ref);    
           }).catch(error => {
             console.log(error);
       });        
@@ -602,4 +602,11 @@ const generateRandom = (length) => {
       result += characters.charAt(Math.floor(Math.random() * charactersLength));
    }
    return result;
+}
+
+const showBookingNumber = (sender_psid, ref) => { 
+    let response = {
+    "text": `Your data is saved. Please keep your booking reference ${ref}`,    
+    };
+    callSend(sender_psid, response); 
 }
