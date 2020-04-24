@@ -168,8 +168,10 @@ app.post('/parks_customize',function(req,res){
             name:name,
             mobile:mobile,
             booking_ref:booking_ref,
-          }).then(success => {             
-             showBookingNumber(sender,booking_ref);    
+          }).then(success => {   
+             console.log("DATASAVESHOWBOOKINGNUMBER");       
+             showBookingNumber(sender,booking_ref); 
+
           }).catch(error => {
             console.log(error);
       });        
