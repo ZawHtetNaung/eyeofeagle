@@ -104,7 +104,7 @@ app.get('/test/:title/:sender_id',function(req,res){
 app.post('/pagodascustomize',function(req,res){
       
        console.log("FORMDATA",req.body)
-      let destination= req.body.destination;
+      
       let activities = req.body.activities;
       let guests = req.body.guests;
       let travel_mode = req.body.travel_mode;
@@ -116,7 +116,7 @@ app.post('/pagodascustomize',function(req,res){
       let sender = req.body.sender;   
 
       db.collection('Pagodas Booking').add({
-            destination:destination,
+           
             activities:activities,
             guests:guests,
             travel_mode:travel_mode,
