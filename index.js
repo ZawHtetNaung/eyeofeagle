@@ -607,8 +607,17 @@ const generateRandom = (length) => {
 }
 
 const showBookingNumber = (sender_psid, ref) => { 
+   
     let response = {
-    "text": `Your data is saved. Please keep your booking reference ${ref}`,    
-    };
-    callSend(sender_psid, response); 
+    "recipient":{
+      "id":sender_psid,
+    },           
+    "message":{
+      "text": `Your data is saved. Please keep your booking reference ${ref}`,              
+    }
+  } 
+
+ 
+
+  send(response);   
 }
