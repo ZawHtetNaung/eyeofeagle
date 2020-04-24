@@ -13,6 +13,8 @@ const
   
   const pageaccesstoken = process.env.PAGE_ACCESS_TOKEN;
 
+
+
 app.set('view engine', 'ejs');
 app.set('views', __dirname+'/views');
 
@@ -117,7 +119,9 @@ app.post('/pagodascustomize',function(req,res){
       let restaurent= req.body.restaurent;
       let name  = req.body.name;
       let mobile = req.body.mobile;
-      let sender = req.body.sender;   
+      let sender = req.body.sender;  
+
+     let booking_ref = generateRandom(5);    
 
       db.collection('Pagodas Booking').add({
            
@@ -129,7 +133,8 @@ app.post('/pagodascustomize',function(req,res){
             hotel:hotel,
             restaurent:restaurent,            
             name:name,
-            mobile:mobile
+            mobile:mobile,
+            booking_ref:booking_ref,
           }).then(success => {             
              ThankYouEagle(sender);    
           }).catch(error => {
@@ -556,3 +561,13 @@ const whitelistDomains = (res) => {
       }
   });
 } 
+
+const generateRandom = (length) => {
+   var result           = '';
+   var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+   var charactersLength = characters.length;
+   for ( var i = 0; i < length; i++ ) {
+      result += characters.charAt(Math.floor(Math.random() * charactersLength));
+   }
+   return result;
+}
