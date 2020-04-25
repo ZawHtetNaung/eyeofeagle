@@ -502,7 +502,7 @@ app.post('/webhook', (req, res) => {
       } 
         //end of customize by pagodas in yangon
 
-      if(userInput == "name" || quickdata == "name"){
+      if(userInput == "Change package" || quickdata == "Change package"){
         let ref_num = user_message.slice(15);
         ref_num = ref_num.trim();
         parks_update(sender_psid, ref_num);        
