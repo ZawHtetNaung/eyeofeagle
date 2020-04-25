@@ -509,7 +509,9 @@ app.post('/webhook', (req, res) => {
         parks_update(sender_psid, ref_num);        
       }*/
 
-      if(userInput == "name" || quickdata == "name"){
+      if(userInput == "Change package" || quickdata == "Change package"){
+          let ref_num = userInput.slice(15);
+              ref_num = ref_num.trim();
            let askName = {
                 "recipient":{
                   "id":webhook_event.sender.id
