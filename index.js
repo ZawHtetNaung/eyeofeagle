@@ -505,29 +505,7 @@ app.post('/webhook', (req, res) => {
       if(userInput == "Change package" || quickdata == "Change package"){
         let ref_num = userInput.slice(15);
         ref_num = ref_num.trim();
-        //parks_update(sender_psid, ref_num);  
-        let response;
-        response = {
-      "attachment": {
-        "type": "template",
-        "payload": {
-          "template_type": "generic",
-          "elements": [{
-            "title": "You are updating your booking number: " + ref_num,                       
-            "buttons": [              
-              {
-                "type": "web_url",
-                "title": "Update",
-                "url":"https://fbstarterbot.herokuapp.com/updateprivatetour/"+ref_num+"/"+sender_psid,
-                 "webview_height_ratio": "full",
-                "messenger_extensions": true,          
-              },
-              
-            ],
-          }]
-        }
-      }
-    }      
+        parks_update(sender_psid, ref_num);        
       }
 
      
