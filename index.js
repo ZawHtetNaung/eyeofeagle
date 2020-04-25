@@ -641,7 +641,7 @@ const parks_update = (sender_psid, ref_num) => {
               {
                 "type": "web_url",
                 "title": "Update",
-                "url":"https://fbstarterbot.herokuapp.com/updateprivatetour/"+ref_num+"/"+sender_psid,
+                "url":"https://fbstarterbot.herokuapp.com/parks_update/"+ref_num+"/"+sender_psid,
                  "webview_height_ratio": "full",
                 "messenger_extensions": true,          
               },
