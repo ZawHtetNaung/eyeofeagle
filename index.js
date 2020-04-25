@@ -190,7 +190,7 @@ app.get('/webhook', (req, res) => {
     let mode = req.query['hub.mode'];
     let token = req.query['hub.verify_token'];
     let challenge = req.query['hub.challenge'];
-    let sender_psid = webhook_event.sender.id; 
+    
     // Checks if a token and mode is in the query string of the request
     if (mode && token) {
     
@@ -503,11 +503,26 @@ app.post('/webhook', (req, res) => {
       } 
         //end of customize by pagodas in yangon
 
-      if(userInput == "Change package" || quickdata == "Change package"){
+      /*if(userInput == "Change package" || quickdata == "Change package"){
         let ref_num = userInput.slice(15);
         ref_num = ref_num.trim();
         parks_update(sender_psid, ref_num);        
-      }
+      }*/
+
+      if(userInput == "name" || quickdata == "name"){
+           let askName = {
+                "recipient":{
+                  "id":webhook_event.sender.id
+                },           
+                "message":{
+                  "text": "enter your name"              
+                }
+              } 
+
+              askUserName = true;
+
+              send(askName);   
+        }
 
      
      
