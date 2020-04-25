@@ -177,6 +177,8 @@ app.post('/parks_customize',function(req,res){
       });        
 });
 
+
+
 // Adds support for GET requests to our webhook
 app.get('/webhook', (req, res) => {
 
@@ -500,7 +502,11 @@ app.post('/webhook', (req, res) => {
       } 
         //end of customize by pagodas in yangon
 
-
+      if(user_message.includes("Change package:")){
+        let ref_num = user_message.slice(15);
+        ref_num = ref_num.trim();
+        parks_update(sender_psid, ref_num);        
+      }
 
      
      
@@ -613,11 +619,38 @@ const showBookingNumber = (sender_psid, ref) => {
       "id":sender_psid,
     },           
     "message":{
-      "text": `You aren't ok when you going to trip text this message (change update:reference no) and your reference is ${ref}`,              
+      "text": `You aren't ok when you going to trip text this message (Change package:reference no) and your reference is ${ref}`,              
     }
   } 
 
  
 
   send(response);   
+}
+
+const parks_update = (sender_psid, ref_num) => {
+    let response;
+  response = {
+      "attachment": {
+        "type": "template",
+        "payload": {
+          "template_type": "generic",
+          "elements": [{
+            "title": "You are updating your booking number: " + ref_num,                       
+            "buttons": [              
+              {
+                "type": "web_url",
+                "title": "Update",
+                "url":"https://fbstarterbot.herokuapp.com/updateprivatetour/"+ref_num+"/"+sender_psid,
+                 "webview_height_ratio": "full",
+                "messenger_extensions": true,          
+              },
+              
+            ],
+          }]
+        }
+      }
+    }
+  callSendAPI(sender_psid, response);
+
 }
