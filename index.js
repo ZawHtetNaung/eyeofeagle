@@ -44,7 +44,7 @@ let db = firebase.firestore();
 let user = {};
 let orderRef;
 
-let userInput = received_message.text;
+
 
 
 
@@ -507,7 +507,7 @@ app.post('/webhook', (req, res) => {
       if(userInput == "Change package" || quickdata == "Change package"){
         let ref_num = userInput.slice(15);
         ref_num = ref_num.trim();
-        parks_update(sender_psid, ref_num);        
+        /*parks_update(sender_psid, ref_num); */      
       }
 
       /*if(userInput == "Change package" || quickdata == "Change package"){
