@@ -508,7 +508,7 @@ app.post('/webhook', (req, res) => {
       if(userInput == "Change package" || quickdata == "Change package"){
         let ref_num = userInput.slice(15);
         ref_num = ref_num.trim();
-        parks_update(sender_psid, ref_num);        
+        parks_update(webhook_event.sender.id, ref_num);        
       }
 
       /*if(userInput == "Change package" || quickdata == "Change package"){
@@ -661,7 +661,7 @@ const parks_update = (sender_psid, ref_num) => {
               {
                 "type": "web_url",
                 "title": "Update",
-                "url":"https://fbstarterbot.herokuapp.com/parks_update/"+ref_num+"/"+sender_psid,
+                "url":"https://fbstarterbot.herokuapp.com/parks_update/"+ref_num+"/"+webhook_event.sender.id,
                  "webview_height_ratio": "full",
                 "messenger_extensions": true,          
               },
@@ -671,6 +671,6 @@ const parks_update = (sender_psid, ref_num) => {
         }
       }
     }
-  callSendAPI(sender_psid, response);
+  callSendAPI(webhook_event.sender.id, response);
 
 }
