@@ -628,7 +628,7 @@ const showBookingNumber = (sender_psid, ref) => {
   send(response);   
 }
 
-const parks = (sender_psid, ref_num) => {
+const parks_update = (sender_psid, ref_num) => {
     let response;
   response = {
       "attachment": {
