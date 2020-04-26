@@ -119,7 +119,7 @@ app.post('/pagodascustomize',function(req,res){
 
       db.collection('Pagodas Booking').add({
            
-            parks_trip:parks_trip,
+            pagodas_trip:pagodas_trip,
             transportation:transportation,
             breakfast:breakfast,
             lunch:lunch,
