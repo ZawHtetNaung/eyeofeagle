@@ -102,36 +102,36 @@ app.get('/Customize-pagodas/:pagodascustomize/:sender_id',function(req,res){
     res.render('pagodascustomize.ejs',{title:"Customize-pagodas",sender_id:sender_id});
 });
 
-app.post('/pagodascustomize',function(req,res){
+app.post('/parks_customize',function(req,res){
       
        console.log("FORMDATA",req.body)
-      let destination= req.body.destination;
-      let activities = req.body.activities;
-      let guests = req.body.guests;
-      let travel_mode = req.body.travel_mode;
-      let travel_option = req.body.travel_option;
+      let pagodas_trip= req.body.pagodas_trip;
+      let transportation = req.body.transportation;
+      let breakfast = req.body.breakfast;
+      let lunch = req.body.lunch;
+      let dinner = req.body.dinner;
       let hotel = req.body.hotel;
-      let restaurent= req.body.restaurent;
-      let name  = req.body.name;
-      let mobile = req.body.mobile;
+      let name= req.body.name;
+      let mobile  = req.body.mobile;
       let sender = req.body.sender;  
 
      let booking_ref = generateRandom(5);    
 
-      db.collection('Pagodas Booking').add({
+      db.collection('Parks Booking').add({
            
-            destination:destination,
-            activities:activities,
-            guests:guests,
-            travel_mode:travel_mode,
-            travel_option:travel_option,
-            hotel:hotel,
-            restaurent:restaurent,            
+            parks_trip:parks_trip,
+            transportation:transportation,
+            breakfast:breakfast,
+            lunch:lunch,
+            dinner:dinner,
+            hotel:hotel,            
             name:name,
             mobile:mobile,
             booking_ref:booking_ref,
-          }).then(success => {             
-             ThankYouEagle(sender);    
+          }).then(success => {   
+             console.log("DATASAVESHOWBOOKINGNUMBER");       
+             showBookingNumber(sender,booking_ref); 
+
           }).catch(error => {
             console.log(error);
       });        
