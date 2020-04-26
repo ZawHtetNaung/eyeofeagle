@@ -223,7 +223,7 @@ app.post('/webhook', (req, res) => {
         // Gets the message. entry.messaging is an array, but 
         // will only ever contain one message, so we get index 0
         let webhook_event = entry.messaging[0];
-        let sender_psid = webhook_event.sender.id;
+       /* let sender_psid = webhook_event.sender.id;*/ 
         console.log(webhook_event);
 
         if(webhook_event.message){
@@ -626,7 +626,7 @@ const showBookingNumber = (sender_psid, ref) => {
   send(response);   
 }
 
-/*const parks_update = (sender_psid, ref_num) => {
+const parks_update = (sender_psid, ref_num) => {
     let response;
   response = {
       "attachment": {
@@ -651,5 +651,4 @@ const showBookingNumber = (sender_psid, ref) => {
     }
   callSendAPI(sender_psid, response);
 
-}*/
-
+}
