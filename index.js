@@ -89,24 +89,17 @@ app.get('/parksdetail',function(req,res){
     res.render('parksdetail.ejs');
 });
 
-app.get('/Customize-pagodas/:pagodascustomize/:sender_id',function(req,res){
-    const sender_id = req.params.sender_id;
-    const pagodascustomize = req.params.pagodascustomize;
-    res.render('pagodascustomize.ejs',{title:"Customize-pagodas",sender_id:sender_id});
-});
-
-app.get('/Customize/:parks_customize/:sender_id',function(req,res){
-    const sender_id = req.params.sender_id;
-    const pagodascustomize = req.params.pagodascustomize;
-    res.render('parks_customize.ejs',{title:"Customize",sender_id:sender_id});
-});
-
-
-
 app.get('/test/:title/:sender_id',function(req,res){
     const sender_id = req.params.sender_id;
     const title = req.params.title;
     res.render('addpackages.ejs',{title:title,sender_id:sender_id});
+});
+
+//PAGODAS_CUSTOMIZE
+app.get('/Customize-pagodas/:pagodascustomize/:sender_id',function(req,res){
+    const sender_id = req.params.sender_id;
+    const pagodascustomize = req.params.pagodascustomize;
+    res.render('pagodascustomize.ejs',{title:"Customize-pagodas",sender_id:sender_id});
 });
 
 app.post('/pagodascustomize',function(req,res){
@@ -142,6 +135,13 @@ app.post('/pagodascustomize',function(req,res){
           }).catch(error => {
             console.log(error);
       });        
+});
+
+//PARKS CUSTOMIZE
+app.get('/Customize/:parks_customize/:sender_id',function(req,res){
+    const sender_id = req.params.sender_id;
+    const pagodascustomize = req.params.pagodascustomize;
+    res.render('parks_customize.ejs',{title:"Customize",sender_id:sender_id});
 });
 
 app.post('/parks_customize',function(req,res){
@@ -223,7 +223,7 @@ app.post('/webhook', (req, res) => {
         // Gets the message. entry.messaging is an array, but 
         // will only ever contain one message, so we get index 0
         let webhook_event = entry.messaging[0];
-        let sender_psid = webhook_event.sender.id; 
+        let sender_psid = webhook_event.sender.id;
         console.log(webhook_event);
 
         if(webhook_event.message){
@@ -271,122 +271,107 @@ app.post('/webhook', (req, res) => {
           send(welcomeMessage);
         }
 
+        if (userInput == 'I am travelling' || quickdata == 'yes' ){
+          let welcomeMessage = {
+            "recipient":{
+              "id":webhook_event.sender.id
+            },
+            "messaging_type": "RESPONSE",
+            "message":{
+              "text": "Are you ok with that trip?",
+              "quick_replies":[
+              {
+                "content_type":"text",
+                "title":"Ok",
+                "payload":"ok",
+                "image_url":"http://example.com/img/red.png"
+              },{
+                "content_type":"text",
+                "title":"Not Ok",
+                "payload":"notok",
+                "image_url":"http://example.com/img/green.png"
+              }
+              ]
+            }
+          } 
 
-       
+          send(welcomeMessage);
+        }
+        //end of yes answer
           
-         
 
-
-      if (userInput == 'I am travelling' || quickdata == 'yes' ){
-        let welcomeMessage = {
-          "recipient":{
-            "id":webhook_event.sender.id
-          },
-          "messaging_type": "RESPONSE",
-          "message":{
-            "text": "Are you ok with that trip?",
-            "quick_replies":[
-            {
-              "content_type":"text",
-              "title":"Ok",
-              "payload":"ok",
-              "image_url":"http://example.com/img/red.png"
-            },{
-              "content_type":"text",
-              "title":"Not Ok",
-              "payload":"notok",
-              "image_url":"http://example.com/img/green.png"
+        if (userInput == 'Ok' || quickdata == 'ok' ){
+          let welcomeMessage = {
+            "recipient":{
+              "id":webhook_event.sender.id
+            },
+            "messaging_type": "RESPONSE",
+            "message":{
+              "text": "If you aren't ok you can create package by your self, you can choose youractivity by your self and then I will suggest and you don't know your place where you are. So you can send your location and I will be show the package and you can choose each package. ",
+              "quick_replies":[
+             {
+                "content_type":"text",
+                "title":"Show  packages",
+                "payload":"sp",
+                "image_url":"http://example.com/img/red.png"
+              },{
+                "content_type":"text",
+                "title":"Customize Package",
+                "payload":"cp",
+                "image_url":"http://example.com/img/green.png"
+              },{
+                "content_type":"text",
+                "title":"Choose your activity",
+                "payload":"cya",
+                "image_url":"http://example.com/img/green.png"
+              },{
+                "content_type":"text",
+                "title":"detail",
+                "payload":"detail",
+                "image_url":"http://example.com/img/green.png"
+              }
+              ]
             }
-            ]
-          }
-        } 
+          } 
 
-        send(welcomeMessage);
-      }
-      //end of yes answer
-        
+          send(welcomeMessage);
+        }
+        //end of ok by yes answer
 
-      if (userInput == 'Ok' || quickdata == 'ok' ){
-        let welcomeMessage = {
-          "recipient":{
-            "id":webhook_event.sender.id
-          },
-          "messaging_type": "RESPONSE",
-          "message":{
-            "text": "If you aren't ok you can create package by your self, you can choose youractivity by your self and then I will suggest and you don't know your place where you are. So you can send your location and I will be show the package and you can choose each package. ",
-            "quick_replies":[
-           {
-              "content_type":"text",
-              "title":"Show  packages",
-              "payload":"sp",
-              "image_url":"http://example.com/img/red.png"
-            },{
-              "content_type":"text",
-              "title":"Customize Package",
-              "payload":"cp",
-              "image_url":"http://example.com/img/green.png"
-            },{
-              "content_type":"text",
-              "title":"Choose your activity",
-              "payload":"cya",
-              "image_url":"http://example.com/img/green.png"
-            },{
-              "content_type":"text",
-              "title":"detail",
-              "payload":"detail",
-              "image_url":"http://example.com/img/green.png"
+        if (userInput == 'Not ok' || quickdata == 'notok' ){
+          let welcomeMessage = {
+            "recipient":{
+              "id":webhook_event.sender.id
+            },
+            "messaging_type": "RESPONSE",
+            "message":{
+              "text": "Sorry to hear that. Is there anything you want to change during your trip",
+              "quick_replies":[
+              {
+                "content_type":"text",
+                "title":"Hotel option",
+                "payload":"hp",
+                "image_url":"http://example.com/img/red.png"
+              },{
+                "content_type":"text",
+                "title":"Transportation option",
+                "payload":"tp",
+                "image_url":"http://example.com/img/green.png"
+              },{
+                "content_type":"text",
+                "title":"Restaurants option",
+                "payload":"rp",
+                "image_url":"http://example.com/img/green.png"
+              }
+              ]
             }
-            ]
-          }
-        } 
+          } 
 
-        send(welcomeMessage);
-      }
-      //end of ok by yes answer
+          send(welcomeMessage);
+        }
+        //end of not ok by yes answer
 
-
-
-      if (userInput == 'Not ok' || quickdata == 'notok' ){
-        let welcomeMessage = {
-          "recipient":{
-            "id":webhook_event.sender.id
-          },
-          "messaging_type": "RESPONSE",
-          "message":{
-            "text": "Sorry to hear that. Is there anything you want to change during your trip",
-            "quick_replies":[
-            {
-              "content_type":"text",
-              "title":"Hotel option",
-              "payload":"hp",
-              "image_url":"http://example.com/img/red.png"
-            },{
-              "content_type":"text",
-              "title":"Transportation option",
-              "payload":"tp",
-              "image_url":"http://example.com/img/green.png"
-            },{
-              "content_type":"text",
-              "title":"Restaurants option",
-              "payload":"rp",
-              "image_url":"http://example.com/img/green.png"
-            }
-            ]
-          }
-        } 
-
-        send(welcomeMessage);
-      }
-      //end of not ok by yes answer
-
-
-
-       
-        
-
-
-
-      if (userInput == 'Planning to Travel' || quickdata == "no" ){
+        if (userInput == 'Planning to Travel' || quickdata == "no" ){
           let welcomeMessage = {
            "recipient":{
             "id":webhook_event.sender.id
@@ -502,14 +487,14 @@ app.post('/webhook', (req, res) => {
               }
             }
             send(welcomeMessage);
-      } 
+        } 
         //end of customize by pagodas in yangon
 
-      if(userInput == "Change package" || quickdata == "Change package"){
-        let ref_num = userInput.slice(15);
-        ref_num = ref_num.trim();
-        parks_update(webhook_event.sender.id, ref_num);        
-      }
+        if(userInput == "Change package" || quickdata == "Change package"){
+          let ref_num = userInput.slice(15);
+          ref_num = ref_num.trim();
+          parks_update(sender_psid, ref_num);        
+        }
 
       /*if(userInput == "Change package" || quickdata == "Change package"){
           let ref_num = userInput.slice(15);
@@ -528,14 +513,7 @@ app.post('/webhook', (req, res) => {
               send(askName);   
         }*/
 
-     
-     
-         
-
-
-         
-
-      });
+        });
   
       // Returns a '200 OK' response to all requests
       res.status(200).send('EVENT_RECEIVED');
@@ -661,7 +639,7 @@ const parks_update = (sender_psid, ref_num) => {
               {
                 "type": "web_url",
                 "title": "Update",
-                "url":"https://fbstarterbot.herokuapp.com/parks_update/"+ref_num+"/"+webhook_event.sender.id,
+                "url":"https://fbstarterbot.herokuapp.com/parks_update/"+ref_num+"/"+sender_psid,
                  "webview_height_ratio": "full",
                 "messenger_extensions": true,          
               },
@@ -671,6 +649,6 @@ const parks_update = (sender_psid, ref_num) => {
         }
       }
     }
-  callSendAPI(webhook_event.sender.id, response);
+  callSendAPI(sender_psid, response);
 
 }
