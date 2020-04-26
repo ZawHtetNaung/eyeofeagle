@@ -102,7 +102,7 @@ app.get('/Customize-pagodas/:pagodascustomize/:sender_id',function(req,res){
     res.render('pagodascustomize.ejs',{title:"Customize-pagodas",sender_id:sender_id});
 });
 
-app.post('/parks_customize',function(req,res){
+app.post('/pagodascustomize',function(req,res){
       
        console.log("FORMDATA",req.body)
       let pagodas_trip= req.body.pagodas_trip;
@@ -117,7 +117,7 @@ app.post('/parks_customize',function(req,res){
 
      let booking_ref = generateRandom(5);    
 
-      db.collection('Parks Booking').add({
+      db.collection('Pagodas Booking').add({
            
             parks_trip:parks_trip,
             transportation:transportation,
