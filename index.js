@@ -137,6 +137,86 @@ app.post('/pagodascustomize',function(req,res){
       });        
 });
 
+//PAGODAS_UPDATE
+app.get('/pagodas_update/:booking_number/:sender_id/',function(req,res){
+    const sender_id = req.params.sender_id;
+    const booking_ref = req.params.booking_ref;
+
+
+
+    db.collection("Pagodas Booking").where("booking_ref", "==", booking_number)
+    .get()
+    .then(function(querySnapshot) {
+        querySnapshot.forEach(function(doc) {
+
+            let data = {
+              doc_id:doc.id,
+              pagodas_trip:pagodas_trip,
+              transportation:transportation,
+              breakfast:breakfast,
+              lunch:lunch,
+              dinner:dinner,
+              hotel:hotel,            
+              name:name,
+              mobile:mobile,
+              booking_ref:booking_ref,
+            }   
+
+            console.log("BOOKING DATA", data);     
+
+            res.render('parks_update.ejs',{data:data, sender_id:sender_id});
+            
+
+        });
+    })
+    .catch(function(error) {
+        console.log("Error getting documents: ", error);
+    });
+
+
+
+
+
+    
+});
+
+app.post('/parks_update',function(req,res){
+      
+      
+      let pagodas_trip= req.body.pagodas_trip;
+      let transportation = req.body.transportation;
+      let breakfast = req.body.breakfast;
+      let lunch = req.body.lunch;
+      let dinner = req.body.dinner;
+      let hotel = req.body.hotel;
+      let name= req.body.name;
+      let mobile  = req.body.mobile;
+      let booking_ref = req.body.booking_ref; 
+      let doc_id = req.body.doc_id;  
+
+      console.log("DOC_ID", doc_id );
+      console.log("BOOKING NUMBER", booking_ref );
+
+
+      db.collection('Pagodas Booking').doc(doc_id).update({           
+            pagodas_trip:pagodas_trip,
+            transportation:transportation,
+            breakfast:breakfast,
+            lunch:lunch,
+            dinner:dinner,
+            hotel:hotel,            
+            name:name,
+            mobile:mobile,
+            booking_ref:booking_ref,
+          }).then(success => {             
+             showBookingNumber(sender, booking_ref);   
+          }).catch(error => {
+            console.log(error);
+      });        
+});
+
+
+
 //PARKS CUSTOMIZE
 app.get('/Customize/:parks_customize/:sender_id',function(req,res){
     const sender_id = req.params.sender_id;
