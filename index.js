@@ -105,33 +105,33 @@ app.get('/Customize-pagodas/:pagodascustomize/:sender_id',function(req,res){
 app.post('/pagodascustomize',function(req,res){
       
        console.log("FORMDATA",req.body)
-      let pagodas_trip= req.body.pagodas_trip;
-      let transportation = req.body.transportation;
-      let breakfast = req.body.breakfast;
-      let lunch = req.body.lunch;
-      let dinner = req.body.dinner;
+      let destination= req.body.destination;
+      let activities = req.body.activities;
+      let guests = req.body.guests;
+      let travel_mode = req.body.travel_mode;
+      let travel_option = req.body.travel_option;
       let hotel = req.body.hotel;
-      let name= req.body.name;
-      let mobile  = req.body.mobile;
+      let restaurent= req.body.restaurent;
+      let name  = req.body.name;
+      let mobile = req.body.mobile;
       let sender = req.body.sender;  
 
      let booking_ref = generateRandom(5);    
 
       db.collection('Pagodas Booking').add({
            
-            pagodas_trip:pagodas_trip,
-            transportation:transportation,
-            breakfast:breakfast,
-            lunch:lunch,
-            dinner:dinner,
-            hotel:hotel,            
+            destination:destination,
+            activities:activities,
+            guests:guests,
+            travel_mode:travel_mode,
+            travel_option:travel_option,
+            hotel:hotel,
+            restaurent:restaurent,            
             name:name,
             mobile:mobile,
             booking_ref:booking_ref,
-          }).then(success => {   
-             console.log("DATASAVESHOWBOOKINGNUMBER");       
-             showBookingNumber(sender,booking_ref); 
-
+          }).then(success => {             
+             ThankYouEagle(sender);    
           }).catch(error => {
             console.log(error);
       });        
@@ -632,7 +632,7 @@ const showBookingNumber = (sender_psid, ref) => {
       "id": sender_psid
     },
     "message": response
-  }*/
+  }
 
 const parks_update = (sender_psid, ref_num) => {
     let response;
