@@ -763,7 +763,8 @@ const parks_update = (sender_psid, ref_num) => {
               "type":"template",
               "payload":{
               "template_type":"generic",
-              "elements": [{
+              "elements": [
+              {
             "title": "You are updating your booking number: " + booking_ref,                       
             "buttons": [              
               {
@@ -782,5 +783,4 @@ const parks_update = (sender_psid, ref_num) => {
   
 }
 send(welcomeMessage);
-
 }
