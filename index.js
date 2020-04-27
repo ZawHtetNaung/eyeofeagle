@@ -610,7 +610,7 @@ app.post('/webhook', (req, res) => {
         send(welcomeMessage);
       } */
 
-        if(userInput == "Change booking" || quickdata == "Change package"){
+        if(userInput == "Change package" || quickdata == "Change package"){
           let ref_num = userInput.slice(15);
           ref_num = ref_num.trim();
           parks_update(sender_psid, ref_num);        
@@ -635,7 +635,7 @@ app.post('/webhook', (req, res) => {
 
      
      
-         
+  
 
 
          
@@ -764,12 +764,12 @@ const parks_update = (sender_psid, ref_num) => {
               "payload":{
               "template_type":"generic",
               "elements": [{
-            "title": "You are updating your booking number: " + ref_num,                       
+            "title": "You are updating your booking number: " + booking_ref,                       
             "buttons": [              
               {
                 "type": "web_url",
                 "title": "Update",
-                "url":"https://fbstarterbot.herokuapp.com/parks_update/"+ref_num+"/"+sender_psid,
+                "url":"https://eyeofeagle.herokuapp.com/parks_update/"+ref_num+"/"+sender_psid,
                  "webview_height_ratio": "full",
                 "messenger_extensions": true,          
               },
