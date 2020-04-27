@@ -779,8 +779,8 @@ const parks_update = (sender_psid, ref_num) => {
         }
       }
     }
-  send(welcomeMessage);
-
+  
 }
+send(welcomeMessage);
 
 }
