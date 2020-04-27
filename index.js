@@ -613,7 +613,7 @@ app.post('/webhook', (req, res) => {
         if(userInput == "Change package" || quickdata == "Change package"){
           let ref_num = userInput.slice(15);
           ref_num = ref_num.trim();
-          parks_update(sender_psid, ref_num);        
+          parks_update(webhook_event.sender.id, ref_num);        
         }
 
       /*if(userInput == "Change package" || quickdata == "Change package"){
