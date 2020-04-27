@@ -613,7 +613,7 @@ app.post('/webhook', (req, res) => {
         if(userInput == "Change package" || quickdata == "Change package"){
           let ref_num = userInput.slice(15);
           ref_num = ref_num.trim();
-          parks_update(webhook_event.sender.id, ref_num);        
+          parks_update(sender_psid,ref_num);        
         }
 
       /*if(userInput == "Change package" || quickdata == "Change package"){
@@ -756,7 +756,7 @@ const showBookingNumber = (sender_psid, ref) => {
 const parks_update = (sender_psid, ref_num) => {
     let welcomeMessage = {
           "recipient":{
-            "id":senderID
+            "id":sender_psid,
           },
           "message":{
             "attachment":{
@@ -765,7 +765,7 @@ const parks_update = (sender_psid, ref_num) => {
               "template_type":"generic",
               "elements": [
               {
-            "title": "You are updating your booking number: " + booking_ref,                       
+            "title": "You are updating your booking number: " + ref_num,                       
             "buttons": [              
               {
                 "type": "web_url",
