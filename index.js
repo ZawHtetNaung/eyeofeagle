@@ -765,12 +765,12 @@ const update_package = (sender_psid, ref_num) => {
               "template_type":"generic",
               "elements": [
               {
-            "title": "You are updating your booking number: " + ref_num,                       
+            "title": "You are updating your booking number:" + ref_num,                       
             "buttons": [              
               {
                 "type": "web_url",
                 "title": "Update",
-                "url":"https://eyeofeagle.herokuapp.com/parks_update/"+ref_num+"/"+sender_psid,
+                "url":"https://eyeofeagle.herokuapp.com/update_package/"+ref_num+"/"+sender_psid,
                  "webview_height_ratio": "full",
                 "messenger_extensions": true,          
               },
