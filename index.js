@@ -180,7 +180,7 @@ app.get('/pagodas_update/:booking_number/:sender_id/',function(req,res){
     
 });
 
-app.post('/parks_update',function(req,res){
+app.post('/pagodas_update',function(req,res){
       
       
       let pagodas_trip= req.body.pagodas_trip;
@@ -570,7 +570,7 @@ app.post('/webhook', (req, res) => {
         } 
         //end of customize by pagodas in yangon
 
-         if (userInput == 'Change booking:' || quickdata == "yangon" ){
+        /* if (userInput == 'Change booking:' || quickdata == "yangon" ){
         let ref_num = userInput.slice(15);
             ref_num = ref_num.trim();
         let welcomeMessage = {
@@ -608,13 +608,13 @@ app.post('/webhook', (req, res) => {
           }
         }
         send(welcomeMessage);
-      } 
+      } */
 
-       /* if(userInput == "Change package" || quickdata == "Change package"){
+        if(userInput == "Change booking" || quickdata == "Change package"){
           let ref_num = userInput.slice(15);
           ref_num = ref_num.trim();
           parks_update(sender_psid, ref_num);        
-        }*/
+        }
 
       /*if(userInput == "Change package" || quickdata == "Change package"){
           let ref_num = userInput.slice(15);
@@ -753,14 +753,17 @@ const showBookingNumber = (sender_psid, ref) => {
   send(response);   
 }
 
-/*const parks_update = (sender_psid, ref_num) => {
-    let response;
-  response = {
-      "attachment": {
-        "type": "template",
-        "payload": {
-          "template_type": "generic",
-          "elements": [{
+const parks_update = (sender_psid, ref_num) => {
+    let welcomeMessage = {
+          "recipient":{
+            "id":webhook_event.sender.id
+          },
+          "message":{
+            "attachment":{
+              "type":"template",
+              "payload":{
+              "template_type":"generic",
+              "elements": [{
             "title": "You are updating your booking number: " + ref_num,                       
             "buttons": [              
               {
@@ -776,6 +779,6 @@ const showBookingNumber = (sender_psid, ref) => {
         }
       }
     }
-  callSendAPI(sender_psid, response);
+  send(welcomeMessage);
 
-}*/
+}
