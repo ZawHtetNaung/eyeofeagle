@@ -313,7 +313,7 @@ app.post('/webhook', (req, res) => {
              console.log("quickdata:", quickdata);
           }else{
               var userInput = webhook_event.message.text;
-              console.log('USER INPUT BEFORE',userInput);           
+              console.log('USER INPUT TOP',userInput);           
           }         
         
         }
