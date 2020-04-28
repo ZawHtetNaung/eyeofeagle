@@ -610,6 +610,7 @@ app.post('/webhook', (req, res) => {
         send(welcomeMessage);
       } */
 
+          console.log('USER INPUT BEFORE',userInput);
         if(userInput.includes("Change package:")){
           console.log('USER INPUT',userInput);
           let ref_num = userInput.slice(15);
