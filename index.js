@@ -613,8 +613,9 @@ app.post('/webhook', (req, res) => {
         if(userInput == "Change package:" || quickdata == "Change package"){
           let ref_num = userInput.slice(15);
           ref_num = ref_num.trim();
+          Console.log('REF NUM',ref_num); 
           update_package(sender_psid,ref_num); 
-          console.log(ref_num);       
+
         }
 
 
