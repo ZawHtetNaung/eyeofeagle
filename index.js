@@ -610,7 +610,7 @@ app.post('/webhook', (req, res) => {
         send(welcomeMessage);
       } */
 
-        if(user_message.includes("Change package:")){
+        if(user_Input.includes("Change package:")){
           let ref_num = userInput.slice(15);
           ref_num = ref_num.trim();
           update_package(sender_psid,ref_num);        
