@@ -326,6 +326,14 @@ app.post('/webhook', (req, res) => {
           console.log("WEBHOOK_EVENT.POSTBACK",webhook_event.postback);
         }
         
+           console.log('USER INPUT BEFORE',userInput);
+        if(userInput.includes("Change package:")){
+          console.log('USER INPUT',userInput);
+          let ref_num = userInput.slice(15);
+          ref_num = ref_num.trim();
+          console.log('REF NUM',ref_num); 
+          update_package(sender_psid,ref_num); 
+      }
 
 
         if (userInput == 'Hi' || userButton == 'Hi' ){
@@ -574,6 +582,8 @@ app.post('/webhook', (req, res) => {
         } 
         //end of customize by pagodas in yangon
 
+
+
         /* if (userInput == 'Change booking:' || quickdata == "yangon" ){
         let ref_num = userInput.slice(15);
             ref_num = ref_num.trim();
@@ -614,15 +624,7 @@ app.post('/webhook', (req, res) => {
         send(welcomeMessage);
       } */
 
-          console.log('USER INPUT BEFORE',userInput);
-        if(userInput.includes("Change package:")){
-          console.log('USER INPUT',userInput);
-          let ref_num = userInput.slice(15);
-          ref_num = ref_num.trim();
-          console.log('REF NUM',ref_num); 
-          update_package(sender_psid,ref_num); 
-      }
-
+         
 
       /*if(userInput == "Change package" || quickdata == "Change package"){
           let ref_num = userInput.slice(15);
@@ -649,6 +651,7 @@ app.post('/webhook', (req, res) => {
          
 
       });
+
   
       // Returns a '200 OK' response to all requests
       res.status(200).send('EVENT_RECEIVED');
