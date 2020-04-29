@@ -274,7 +274,7 @@ app.get('/webhook', (req, res) => {
     
     // Checks if a token and mode is in the query string of the request
     if (mode && token) {
-    
+    console.log('MODE && TOKEN',mode && token);
       // Checks the mode and token sent is correct
       if (mode === 'subscribe' && token === VERIFY_TOKEN) {
         
@@ -295,8 +295,9 @@ app.post('/webhook', (req, res) => {
     let body = req.body;
   
     // Checks this is an event from a page subscription
+    
     if (body.object === 'page') {
-  
+     console.log('BODY.OBJECT ===PAGE',body.object === 'page');
       // Iterates over each entry - there may be multiple if batched
       body.entry.forEach(function(entry) {
   
@@ -306,8 +307,10 @@ app.post('/webhook', (req, res) => {
        let sender_psid = webhook_event.sender.id;
         console.log(webhook_event);
 
+        
         if(webhook_event.message){
-
+          console.log('WEB_EVENT.MESSAGE',webhook_event.message);
+          
           if(webhook_event.message.quick_reply){
              var quickdata = webhook_event.message.quick_reply.payload;
              console.log("quickdata:", quickdata);
@@ -320,6 +323,7 @@ app.post('/webhook', (req, res) => {
         
         if(webhook_event.postback){
           var userButton = webhook_event.postback.payload
+          console.log("WEBHOOK_EVENT.POSTBACK",webhook_event.postback);
         }
         
 
