@@ -356,14 +356,7 @@ app.post('/webhook', (req, res) => {
           send(welcomeMessage);
         }
 
-        console.log('USER INPUT BEFORE',userInput);
-        if(userInput.includes("Change package:")){
-          console.log('USER INPUT',userInput);
-          let ref_num = userInput.slice(15);
-          ref_num = ref_num.trim();
-          console.log('REF NUM',ref_num); 
-          update_package(sender_psid,ref_num); 
-        }
+
 
         if (userInput == 'I am travelling' || quickdata == 'yes' ){
           let welcomeMessage = {
@@ -464,6 +457,15 @@ app.post('/webhook', (req, res) => {
           send(welcomeMessage);
         }
         //end of not ok by yes answer
+
+        console.log('USER INPUT BEFORE',userInput);
+        if(userInput.includes("Change package:")){
+          console.log('USER INPUT',userInput);
+          let ref_num = userInput.slice(15);
+          ref_num = ref_num.trim();
+          console.log('REF NUM',ref_num); 
+          update_package(sender_psid,ref_num); 
+        }
 
         if (userInput == 'Planning to Travel' || quickdata == "no" ){
           let welcomeMessage = {
