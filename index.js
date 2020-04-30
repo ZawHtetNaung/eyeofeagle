@@ -45,11 +45,7 @@ let user = {};
 let orderRef;
 
 
-
-
-
-  
-  requestify.post(`https://graph.facebook.com/v5.0/me/messenger_profile?access_token=${pageaccesstoken}`, 
+ requestify.post(`https://graph.facebook.com/v5.0/me/messenger_profile?access_token=${pageaccesstoken}`, 
   {
     "get_started": {
       "payload": "Hi"
