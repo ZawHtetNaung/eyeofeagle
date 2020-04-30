@@ -317,7 +317,9 @@ app.post('/webhook', (req, res) => {
           }else{
               var userInput = webhook_event.message.text;
               console.log('USER INPUT TOP',userInput);           
-          }         
+          }else{var userInput = webhook_event.message.includes;
+
+          }       
         
         }
         
