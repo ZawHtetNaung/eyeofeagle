@@ -304,11 +304,18 @@ app.post('/webhook', (req, res) => {
         // Gets the message. entry.messaging is an array, but 
         // will only ever contain one message, so we get index 0
         let webhook_event = entry.messaging[0];
-       let sender_psid = webhook_event.sender.id;
+       //let sender_psid = webhook_event.sender.id;
         console.log(webhook_event);
-
+         if(webhook_event.message){
+          var userInput = webhook_event.message.text;
+          
+        }
         
-        if(webhook_event.message){
+        if(webhook_event.postback){
+          var userInput = webhook_event.postback.payload
+        }
+        
+       /* if(webhook_event.message){
           console.log('WEB_EVENT.MESSAGE',webhook_event.message);
           
           if(webhook_event.message.quick_reply){
@@ -317,16 +324,14 @@ app.post('/webhook', (req, res) => {
           }else{
               var userInput = webhook_event.message.text;
               console.log('USER INPUT TOP',userInput);           
-          }else{var userInput = webhook_event.message.includes;
-
-          }       
+          }     
         
         }
         
         if(webhook_event.postback){
           var userButton = webhook_event.postback.payload
           console.log("WEBHOOK_EVENT.POSTBACK",webhook_event.postback);
-        }
+        }*/
         
 
 
