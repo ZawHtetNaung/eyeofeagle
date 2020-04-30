@@ -336,7 +336,7 @@ app.post('/webhook', (req, res) => {
 
 
 
-        if (userInput == 'Hi' || userButton == 'Hi' ){
+        if (userInput == 'Hi'){
           let welcomeMessage = {
             "recipient":{
               "id":webhook_event.sender.id
