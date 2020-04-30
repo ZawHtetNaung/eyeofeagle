@@ -650,7 +650,7 @@ app.post('/webhook', (req, res) => {
 
          
 
-      });
+      //});
 
   
       // Returns a '200 OK' response to all requests
@@ -660,7 +660,7 @@ app.post('/webhook', (req, res) => {
       res.sendStatus(404);
     }
   
-  });
+  //});
 
 function send(welcomeMessage){
   requestify.post(`https://graph.facebook.com/v5.0/me/messages?access_token=${pageaccesstoken}`, 
