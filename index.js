@@ -312,8 +312,8 @@ app.post('/webhook', (req, res) => {
           console.log('WEB_EVENT.MESSAGE',webhook_event.message);
           
           if(webhook_event.message.quick_reply){
-             var quickdata = webhook_event.message.quick_reply.payload;
-             console.log("quickdata:", quickdata);
+             var userInput = webhook_event.message.quick_reply.payload;
+             console.log("userInput:", userInput);
           }else{
               var userInput = webhook_event.message.text;
               console.log('USER INPUT TOP',userInput);           
@@ -360,7 +360,7 @@ app.post('/webhook', (req, res) => {
 
 
 
-        if (quickdata == 'yes' ){
+        if (userInput == 'yes' ){
           let welcomeMessage = {
             "recipient":{
               "id":webhook_event.sender.id
@@ -389,7 +389,7 @@ app.post('/webhook', (req, res) => {
         //end of yes answer
           
 
-        if (quickdata == 'ok' ){
+        if (userInput == 'ok' ){
           let welcomeMessage = {
             "recipient":{
               "id":webhook_event.sender.id
@@ -427,7 +427,7 @@ app.post('/webhook', (req, res) => {
         }
         //end of ok by yes answer
 
-        if (quickdata == 'notok' ){
+        if (userInput == 'notok' ){
           let welcomeMessage = {
             "recipient":{
               "id":webhook_event.sender.id
@@ -462,7 +462,7 @@ app.post('/webhook', (req, res) => {
 
        
 
-        if (quickdata == "no" ){
+        if (userInput == "no" ){
           let welcomeMessage = {
            "recipient":{
             "id":webhook_event.sender.id
