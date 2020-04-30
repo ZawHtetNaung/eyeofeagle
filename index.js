@@ -584,73 +584,8 @@ app.post('/webhook', (req, res) => {
         }
 
 
-        /* if (userInput == 'Change booking:' || quickdata == "yangon" ){
-        let ref_num = userInput.slice(15);
-            ref_num = ref_num.trim();
-        let welcomeMessage = {
-          "recipient":{
-            "id":webhook_event.sender.id
-          },
-          "message":{
-            "attachment":{
-              "type":"template",
-              "payload":{
-              "template_type":"generic",
-              "elements":[
-                {
-                  "title":"Here are your hotel options",
-                  "image_url":"https://r-cf.bstatic.com/images/hotel/max1024x768/181/181775739.jpg",
-                  "subtitle":"Choose the hotel what you want",
-                  "default_action": {
-                     "type": "web_url",
-                    "url": "https://petersfancybrownhats.com/view?item=103",
-                    "webview_height_ratio": "tall",
-                  },
-                  "buttons":[
-                     {
-                      "type": "web_url",
-                      "title": "Update",
-                      "url":"https://fbstarterbot.herokuapp.com/parks_update/"+ref_num+"/"+sender_psid,
-                       "webview_height_ratio": "full",
-                      "messenger_extensions": true,      
-                      }
-                    ]      
-                }
-              ]
-            }
-          }
-          }
-        }
-        send(welcomeMessage);
-      } */
-
-         
-
-      /*if(userInput == "Change package" || quickdata == "Change package"){
-          let ref_num = userInput.slice(15);
-              ref_num = ref_num.trim();
-           let askName = {
-                "recipient":{
-                  "id":webhook_event.sender.id
-                },           
-                "message":{
-                  "text": "enter your name"              
-                }
-              } 
-
-              askUserName = true;
-
-              send(askName);   
-        }*/
-
-     
-     
-  
-
-
-         
-
-      //});
+      
+     });
 
   
       // Returns a '200 OK' response to all requests
@@ -660,7 +595,7 @@ app.post('/webhook', (req, res) => {
       res.sendStatus(404);
     }
   
-  //});
+  });
 
 function send(welcomeMessage){
   requestify.post(`https://graph.facebook.com/v5.0/me/messages?access_token=${pageaccesstoken}`, 
