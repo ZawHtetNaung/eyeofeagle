@@ -613,7 +613,7 @@ function send(welcomeMessage){
           })
 }
 
-function YangonPackage(senderID){
+/*function YangonPackage(senderID){
     let welcomeMessage = {
             "recipient":{
               "id":senderID
@@ -655,7 +655,7 @@ function YangonPackage(senderID){
 
           send(welcomeMessage);
 
-}
+}*/
 
 const whitelistDomains = (res) => {
   var messageData = {
