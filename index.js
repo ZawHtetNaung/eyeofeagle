@@ -365,7 +365,7 @@ app.post('/webhook', (req, res) => {
 
 
 
-        if (userInput == 'I am travelling' || quickdata == 'yes' ){
+        if (userInput == 'I am travelling'){
           let welcomeMessage = {
             "recipient":{
               "id":webhook_event.sender.id
@@ -394,7 +394,7 @@ app.post('/webhook', (req, res) => {
         //end of yes answer
           
 
-        if (userInput == 'Ok' || quickdata == 'ok' ){
+        if (userInput == 'Ok'){
           let welcomeMessage = {
             "recipient":{
               "id":webhook_event.sender.id
@@ -432,7 +432,7 @@ app.post('/webhook', (req, res) => {
         }
         //end of ok by yes answer
 
-        if (userInput == 'Not ok' || quickdata == 'notok' ){
+        if (userInput == 'Not ok'){
           let welcomeMessage = {
             "recipient":{
               "id":webhook_event.sender.id
@@ -467,7 +467,7 @@ app.post('/webhook', (req, res) => {
 
        
 
-        if (userInput == 'Planning to Travel' || quickdata == "no" ){
+        if (userInput == 'Planning to Travel'){
           let welcomeMessage = {
            "recipient":{
             "id":webhook_event.sender.id
