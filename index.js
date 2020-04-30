@@ -574,14 +574,14 @@ app.post('/webhook', (req, res) => {
         } 
         //end of customize by pagodas in yangon
 
-         console.log('USER INPUT BEFORE',userInput);
+        /* console.log('USER INPUT BEFORE',userInput);
         if(userInput.includes("Change package:")){
           console.log('USER INPUT',userInput);
           let ref_num = userInput.slice(15);
           ref_num = ref_num.trim();
           console.log('REF NUM',ref_num); 
           update_package(sender_psid,ref_num); 
-      }
+      }*/
 
 
         /* if (userInput == 'Change booking:' || quickdata == "yangon" ){
