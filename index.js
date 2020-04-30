@@ -306,16 +306,9 @@ app.post('/webhook', (req, res) => {
         let webhook_event = entry.messaging[0];
        //let sender_psid = webhook_event.sender.id;
         console.log(webhook_event);
-         if(webhook_event.message){
-          var userInput = webhook_event.message.text;
-          
-        }
+
         
-        if(webhook_event.postback){
-          var userInput = webhook_event.postback.payload
-        }
-        
-       /* if(webhook_event.message){
+        if(webhook_event.message){
           console.log('WEB_EVENT.MESSAGE',webhook_event.message);
           
           if(webhook_event.message.quick_reply){
@@ -331,12 +324,16 @@ app.post('/webhook', (req, res) => {
         if(webhook_event.postback){
           var userButton = webhook_event.postback.payload
           console.log("WEBHOOK_EVENT.POSTBACK",webhook_event.postback);
-        }*/
+        }
+
+        if(webhook_event.message){
+          var userInput = webhook_event.message.text;
+          }
         
 
 
 
-        if (userInput == 'Hi'){
+        if (userInput == 'Hi' || userButton == 'Hi' ){
           let welcomeMessage = {
             "recipient":{
               "id":webhook_event.sender.id
@@ -365,7 +362,7 @@ app.post('/webhook', (req, res) => {
 
 
 
-        if (userInput == 'I am travelling'){
+        if (userInput == 'I am travelling' || quickdata == 'yes' ){
           let welcomeMessage = {
             "recipient":{
               "id":webhook_event.sender.id
@@ -394,7 +391,7 @@ app.post('/webhook', (req, res) => {
         //end of yes answer
           
 
-        if (userInput == 'Ok'){
+        if (userInput == 'Ok' || quickdata == 'ok' ){
           let welcomeMessage = {
             "recipient":{
               "id":webhook_event.sender.id
@@ -432,7 +429,7 @@ app.post('/webhook', (req, res) => {
         }
         //end of ok by yes answer
 
-        if (userInput == 'Not ok'){
+        if (userInput == 'Not ok' || quickdata == 'notok' ){
           let welcomeMessage = {
             "recipient":{
               "id":webhook_event.sender.id
@@ -467,7 +464,7 @@ app.post('/webhook', (req, res) => {
 
        
 
-        if (userInput == 'Planning to Travel'){
+        if (userInput == 'Planning to Travel' || quickdata == "no" ){
           let welcomeMessage = {
            "recipient":{
             "id":webhook_event.sender.id
@@ -586,14 +583,14 @@ app.post('/webhook', (req, res) => {
         } 
         //end of customize by pagodas in yangon
 
-         /*console.log('USER INPUT BEFORE',userInput);
+         console.log('USER INPUT BEFORE',userInput);
         if(userInput.includes("Change package:")){
           console.log('USER INPUT',userInput);
           let ref_num = userInput.slice(15);
           ref_num = ref_num.trim();
           console.log('REF NUM',ref_num); 
           update_package(sender_psid,ref_num); 
-        }*/
+        }
 
       
      });
