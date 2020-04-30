@@ -318,7 +318,7 @@ app.post('/webhook', (req, res) => {
         }
         
         if(webhook_event.postback){
-          var userButton = webhook_event.postback.payload
+          var userInput = webhook_event.postback.payload
           console.log("WEBHOOK_EVENT.POSTBACK",webhook_event.postback);
         }
 
@@ -327,7 +327,7 @@ app.post('/webhook', (req, res) => {
 
 
 
-        if (userInput == 'Hi' || userButton == 'Hi'){
+        if (userInput == 'Hi' || userInput == 'Hi'){
           let welcomeMessage = {
             "recipient":{
               "id":webhook_event.sender.id
