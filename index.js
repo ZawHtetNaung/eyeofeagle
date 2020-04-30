@@ -48,7 +48,7 @@ let orderRef;
 
 
 
-  /*
+  
   requestify.post(`https://graph.facebook.com/v5.0/me/messenger_profile?access_token=${pageaccesstoken}`, 
   {
     "get_started": {
@@ -68,7 +68,7 @@ let orderRef;
   console.log(response)
 }).fail( error => {
   console.log(error)
-})*/
+})
 
 //whitelist domains
 //eg https://fbstarterbot.herokuapp.com/whitelists
