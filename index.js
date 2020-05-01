@@ -584,7 +584,7 @@ app.post('/webhook', (req, res) => {
           let ref_num = userInput.slice(15);
           ref_num = ref_num.trim();
           console.log('REF NUM',ref_num); 
-          update_package(sender_psid,ref_num); 
+          update_pagodas(sender_psid,ref_num); 
         }
 
       
@@ -702,7 +702,7 @@ const showBookingNumber = (sender_psid, ref) => {
   send(response);   
 }
 
-const update_package = (sender_psid, ref_num) => {
+const update_pagodas = (sender_psid, ref_num) => {
     let welcomeMessage = {
           "recipient":{
             "id":sender_psid,
