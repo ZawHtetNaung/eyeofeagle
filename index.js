@@ -718,7 +718,7 @@ const update_package = (sender_psid, ref_num) => {
               {
                 "type": "web_url",
                 "title": "Update",
-                "url":"https://eyeofeagle.herokuapp.com/update_package/"+ref_num+"/"+sender_psid,
+                "url":"https://eyeofeagle.herokuapp.com/pagodas_update/"+ref_num+"/"+sender_psid,
                  "webview_height_ratio": "full",
                 "messenger_extensions": true,          
               },
