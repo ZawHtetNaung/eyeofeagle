@@ -153,8 +153,8 @@ app.get('/pagodas_update/:booking_ref/:sender_id/',function(req,res){
               lunch:doc.data().lunch,
               dinner:doc.data().dinner,
               hotel:doc.data().hotel,            
-              name:doc.data()name,
-              mobile:doc.data()mobile,
+              name:doc.data().name,
+              mobile:doc.data().mobile,
               booking_ref:doc.data()booking_ref,
             }   
 
