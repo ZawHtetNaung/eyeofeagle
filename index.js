@@ -140,7 +140,7 @@ app.get('/pagodas_update/:booking_number/:sender_id/',function(req,res){
 
 
 
-    db.collection("Pagodas Booking").where("booking_ref", "==", booking_number)
+    db.collection("Pagodas Booking").where("booking_ref", "==", booking_ref)
     .get()
     .then(function(querySnapshot) {
         querySnapshot.forEach(function(doc) {
