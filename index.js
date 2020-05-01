@@ -134,7 +134,7 @@ app.post('/pagodascustomize',function(req,res){
 });
 
 //PAGODAS_UPDATE
-app.get('/pagodas_update/:booking_number/:sender_id/',function(req,res){
+app.get('/pagodas_update/:booking_ref/:sender_id/',function(req,res){
     const sender_id = req.params.sender_id;
     const booking_ref = req.params.booking_ref;
 
@@ -160,7 +160,7 @@ app.get('/pagodas_update/:booking_number/:sender_id/',function(req,res){
 
             console.log("BOOKING DATA", data);     
 
-            res.render('parks_update.ejs',{data:data, sender_id:sender_id});
+            res.render('pagodas_update.ejs',{data:data, sender_id:sender_id});
             
 
         });
