@@ -206,7 +206,7 @@ app.post('/pagodas_update',function(req,res){
             mobile:mobile,
             booking_ref:booking_ref,
           }).then(success => {             
-             showBookingNumber(sender, booking_ref);   
+              notifySave(sender);    
           }).catch(error => {
             console.log(error);
       });        
@@ -701,6 +701,17 @@ const showBookingNumber = (sender_psid, ref) => {
 
   send(response);   
 }
+
+const notifySave = (sender_psid) => { 
+    let response = {
+      "recipient":{
+      "id":sender_psid,
+    },       
+    "text": `Your data is saved`,    
+    };
+    send(response);
+}
+
 
 const update_pagodas = (sender_psid, ref_num) => {
     let welcomeMessage = {
