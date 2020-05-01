@@ -39,7 +39,7 @@
   
  <div class="form-group">
     <label for="name">Where do you want to go</label>
-    <select class="form-control" name="pagodas_trip" id="pagodas_trip">
+    <select class="form-control" name="pagodas_trip" id="pagodas_trip"  value="<%= data.pagodas_trip %>">
       <option value="shwedagon-sule-kyaut taw gyi">shwedagon-sule-kyaut taw gyi</option>
       <option value="Ngar Htet Kyi-Yay ll Kyout Tan-Koe Htet Kyi">Ngar Htet Kyi-Yay ll Kyout Tan-Koe Htet Kyi</option>
       <option value="Nee Payr-Kan Taw Pwit-Kyi Aung Chan Tar">Nee Payr-Kan Taw Pwit-Kyi Aung Chan Tar</option>
@@ -49,7 +49,7 @@
 
   <div class="form-group">
     <label for="name">Choose your Transportation what you like</label>
-    <select class="form-control" name="transportation" id="transportation">
+    <select class="form-control" name="transportation" id="transportation"  value="<%= data.transportation %>">
       <option>12 seat minibus</option>
       <option>10 seat</option>
       <option>4 seat</option>
@@ -61,7 +61,7 @@
 
   <div class="form-group">
     <label for="name">Breakfast</label>
-    <select class="form-control" name="breakfast" id="breakfast">
+    <select class="form-control" name="breakfast" id="breakfast"  value="<%= data.breakfast %>">
       <option>Shwepalin</option>
       <option>Maung Aye</option>
       <option>Tone Pan Hla</option>
@@ -71,7 +71,7 @@
 
   <div class="form-group">
     <label for="name">Lunch</label>
-    <select class="form-control" name="lunch" id="lunch">
+    <select class="form-control" name="lunch" id="lunch"  value="<%= data.lunch %>">
       <option>Golden Duck</option>
       <option>Indian Kitchen</option>
       <option>Sein Sweli</option>
@@ -81,7 +81,7 @@
 
   <div class="form-group">
     <label for="name">Dinner</label>
-    <select class="form-control" name="dinner" id="dinner">
+    <select class="form-control" name="dinner" id="dinner"  value="<%= data.dinner %>">
       <option>Shangrila</option>
       <option>Indian Kitchen</option>
       <option>Sein Sweli</option>
@@ -91,7 +91,7 @@
 
   <div class="form-group">
     <label for="name">Hotel</label>
-    <select class="form-control" name="hotel" id="hotel">
+    <select class="form-control" name="hotel" id="hotel"  value="<%= data.hotel %>">
       <option>Lotte</option>
       <option>Sedona</option>
       <option>Kan Taw mingalar</option>
@@ -101,11 +101,11 @@
 
   <div class="form-group">
     <label for="name">Your name please</label>
-    <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name">    
+    <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name" value="<%= data.name %>">    
   </div>
   <div class="form-group">
     <label for="title">Mobile</label>
-    <input type="text" class="form-control" id="mobile" name="mobile" placeholder="Title">
+    <input type="text" class="form-control" id="mobile" name="mobile" placeholder="Title"  value="<%= data.mobile %>" >
   </div>
   <input type="hidden"  id="sender" name="doc_id" value="<%= data.doc_id %>"> 
   <input type="hidden"  id="sender" name="booking_ref" value="<%= data.booking_ref %>">    
