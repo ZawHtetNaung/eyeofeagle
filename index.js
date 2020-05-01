@@ -147,15 +147,15 @@ app.get('/pagodas_update/:booking_ref/:sender_id/',function(req,res){
 
             let data = {
               doc_id:doc.id,
-              pagodas_trip:pagodas_trip,
-              transportation:transportation,
-              breakfast:breakfast,
-              lunch:lunch,
-              dinner:dinner,
-              hotel:hotel,            
-              name:name,
-              mobile:mobile,
-              booking_ref:booking_ref,
+              pagodas_trip:doc.data().pagodas_trip,
+              transportation:doc.data().transportation,
+              breakfast:doc.data().breakfast,
+              lunch:doc.data().lunch,
+              dinner:doc.data().dinner,
+              hotel:doc.data().hotel,            
+              name:doc.data()name,
+              mobile:doc.data()mobile,
+              booking_ref:doc.data()booking_ref,
             }   
 
             console.log("BOOKING DATA", data);     
@@ -195,6 +195,7 @@ app.post('/pagodas_update',function(req,res){
 
 
       db.collection('Pagodas Booking').doc(doc_id).update({           
+            
             pagodas_trip:pagodas_trip,
             transportation:transportation,
             breakfast:breakfast,
