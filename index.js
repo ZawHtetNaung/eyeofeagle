@@ -155,7 +155,7 @@ app.get('/pagodas_update/:booking_ref/:sender_id/',function(req,res){
               hotel:doc.data().hotel,            
               name:doc.data().name,
               mobile:doc.data().mobile,
-              booking_ref:doc.data()booking_ref,
+              booking_ref:doc.data().booking_ref,
             }   
 
             console.log("BOOKING DATA", data);     
