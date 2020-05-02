@@ -256,7 +256,85 @@ app.post('/parks_customize',function(req,res){
       });        
 });
 
+//Parks upate
 
+app.get('/parks_update/:booking_ref/:sender_id/',function(req,res){
+    const sender_id = req.params.sender_id;
+    const booking_ref = req.params.booking_ref;
+
+
+
+    db.collection("Parks Booking").where("booking_ref", "==", booking_ref)
+    .get()
+    .then(function(querySnapshot) {
+        querySnapshot.forEach(function(doc) {
+
+            let data = {
+              doc_id:doc.id,
+              parks_trip:doc.data().parks_trip,
+              transportation:doc.data().transportation,
+              breakfast:doc.data().breakfast,
+              lunch:doc.data().lunch,
+              dinner:doc.data().dinner,
+              hotel:doc.data().hotel,            
+              name:doc.data().name,
+              mobile:doc.data().mobile,
+              booking_ref:doc.data().booking_ref,
+            }   
+
+            console.log("BOOKING DATA", data);     
+
+            res.render('parks_update.ejs',{data:data, sender_id:sender_id});
+            
+
+        });
+    })
+    .catch(function(error) {
+        console.log("Error getting documents: ", error);
+    });
+
+
+
+
+
+    
+});
+
+app.post('/parks_update',function(req,res){
+      
+      
+      let parks_trip= req.body.parks_trip;
+      let transportation = req.body.transportation;
+      let breakfast = req.body.breakfast;
+      let lunch = req.body.lunch;
+      let dinner = req.body.dinner;
+      let hotel = req.body.hotel;
+      let name= req.body.name;
+      let mobile  = req.body.mobile;
+      let booking_ref = req.body.booking_ref; 
+      let doc_id = req.body.doc_id;  
+
+      console.log("DOC_ID", doc_id );
+      console.log("BOOKING NUMBER", booking_ref );
+
+
+      db.collection('Parks Booking').doc(doc_id).update({           
+            
+            parks_trip:parks_trip,
+            transportation:transportation,
+            breakfast:breakfast,
+            lunch:lunch,
+            dinner:dinner,
+            hotel:hotel,            
+            name:name,
+            mobile:mobile,
+            booking_ref:booking_ref,
+          }).then(success => {             
+              notifySave(sender);    
+          }).catch(error => {
+            console.log(error);
+      });        
+});
 
 // Adds support for GET requests to our webhook
 app.get('/webhook', (req, res) => {
