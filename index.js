@@ -579,9 +579,9 @@ app.post('/webhook', (req, res) => {
         //end of customize by pagodas in yangon
 
          console.log('USER INPUT BEFORE',userInput);
-        if(webhook_event.message.text.includes("Change package:")){
+        if(webhook_event.message.text.includes("Change pago:")){
           console.log('USER INPUT',userInput);
-          let ref_num = userInput.slice(15);
+          let ref_num = userInput.slice(12);
           ref_num = ref_num.trim();
           console.log('REF NUM',ref_num); 
           update_pagodas(sender_psid,ref_num); 
@@ -693,7 +693,7 @@ const showBookingNumber = (sender_psid, ref) => {
       "id":sender_psid,
     },           
     "message":{
-      "text": `You aren't ok when you going to trip text this message (Change package:reference no) and your reference is ${ref}`,              
+      "text": `You aren't ok when you going to trip text this message (Pagodas=Change pago:reference no,Parks=Change parks:reference no,Traditional=Change trad,Eating and Drinking=Change end:reference no) and your reference is ${ref}`,              
     }
   } 
 

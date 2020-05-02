@@ -31,14 +31,15 @@
     };
   </script>
   
-	<h1><%= title %></h1>
+  <h1><%= data.booking_ref %></h1>
 
   
 
-  <form id="form" method="post" action="https://eyeofeagle.herokuapp.com/parks_customize/">
-  <div class="form-group">
+  <form id="form" method="post" action="https://eyeofeagle.herokuapp.com/parks_update/">
+  
+ <div class="form-group">
     <label for="name">Where do you want to go</label>
-    <select class="form-control" name="parks_trip" id="parks_trip">
+    <select class="form-control" name="pagodas_trip" id="pagodas_trip"  value="<%= data.pagodas_trip %>">
       <option value="People parks-Mahar Bandula Parks-Water boom">People parks-Mahar Bandula Parks-Water boom</option>
       <option value="Happy world-Happy Zone-Animal Parks">Happy world-Happy Zone-Animal Parks</option>
       <option value="Kan Taw Gyi-Kan Taw Lay-Kan Bound">Kan Taw Gyi-Kan Taw Lay-Kan Bound</option>
@@ -48,7 +49,7 @@
 
   <div class="form-group">
     <label for="name">Choose your Transportation what you like</label>
-    <select class="form-control" name="transportation" id="transportation">
+    <select class="form-control" name="transportation" id="transportation"  value="<%= data.transportation %>">
       <option>12 seat minibus</option>
       <option>10 seat</option>
       <option>4 seat</option>
@@ -60,7 +61,7 @@
 
   <div class="form-group">
     <label for="name">Breakfast</label>
-    <select class="form-control" name="breakfast" id="breakfast">
+    <select class="form-control" name="breakfast" id="breakfast"  value="<%= data.breakfast %>">
       <option>Shwepalin</option>
       <option>Maung Aye</option>
       <option>Tone Pan Hla</option>
@@ -70,7 +71,7 @@
 
   <div class="form-group">
     <label for="name">Lunch</label>
-    <select class="form-control" name="lunch" id="lunch">
+    <select class="form-control" name="lunch" id="lunch"  value="<%= data.lunch %>">
       <option>Golden Duck</option>
       <option>Indian Kitchen</option>
       <option>Sein Sweli</option>
@@ -80,7 +81,7 @@
 
   <div class="form-group">
     <label for="name">Dinner</label>
-    <select class="form-control" name="dinner" id="dinner">
+    <select class="form-control" name="dinner" id="dinner"  value="<%= data.dinner %>">
       <option>Shangrila</option>
       <option>Indian Kitchen</option>
       <option>Sein Sweli</option>
@@ -90,7 +91,7 @@
 
   <div class="form-group">
     <label for="name">Hotel</label>
-    <select class="form-control" name="hotel" id="hotel">
+    <select class="form-control" name="hotel" id="hotel"  value="<%= data.hotel %>">
       <option>Lotte</option>
       <option>Sedona</option>
       <option>Kan Taw mingalar</option>
@@ -100,21 +101,20 @@
 
   <div class="form-group">
     <label for="name">Your name please</label>
-    <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name">    
+    <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name" value="<%= data.name %>">    
   </div>
   <div class="form-group">
     <label for="title">Mobile</label>
-    <input type="text" class="form-control" id="mobile" name="mobile" placeholder="Title">
+    <input type="text" class="form-control" id="mobile" name="mobile" placeholder="Title"  value="<%= data.mobile %>" >
   </div>
-    
   <input type="hidden"  id="sender" name="doc_id" value="<%= data.doc_id %>"> 
-  <input type="hidden"  id="sender" name="booking_ref" value="<%= data.booking_ref %>">  
+  <input type="hidden"  id="sender" name="booking_ref" value="<%= data.booking_ref %>">    
   <input type="hidden"  id="sender" name="sender" value="<%= sender_id %>">
   <input type="submit" value="Confirm Booking"> 
   </form>
 
 
-	
+  
   <script>
       
    
