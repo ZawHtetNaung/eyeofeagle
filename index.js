@@ -87,7 +87,7 @@ app.get('/parksdetail',function(req,res){
 
 app.get('/traditional_detail',function(req,res){
     
-    res.render('traitional_detail.ejs');
+    res.render('traditional_detail.ejs');
 });
 
 app.get('/test/:title/:sender_id',function(req,res){
