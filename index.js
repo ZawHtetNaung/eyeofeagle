@@ -607,7 +607,7 @@ app.post('/webhook', (req, res) => {
                     {
                       "title":"Pagodas",
                       "image_url":"https://osugamyanmartravels.com/wp-content/uploads/2018/04/shwedagon-pagoda-yangon-burma-myanmar.jpg",
-                      "subtitle":"Choose the transportation what you want",
+                      "subtitle":"Enjoy your package",
                       "default_action": {
                         "type": "web_url",
                         "url": "https://eyeofeagle.herokuapp.com",
@@ -638,7 +638,7 @@ app.post('/webhook', (req, res) => {
                     },{
                       "title":"Parks",
                       "image_url":"https://yangondaytours.com/wp-content/uploads/2017/02/kandawgyi-park.jpg",
-                      "subtitle":"Choose the transportation what you want",
+                      "subtitle":"Enjoy your package",
                       "default_action": {
                         "type": "web_url",
                         "url": "https://petersfancybrownhats.com/view?item=103",
@@ -666,7 +666,7 @@ app.post('/webhook', (req, res) => {
                     },{
                       "title":"Traditional",
                       "image_url":"https://www.mmtimes.com/sites/mmtimes.com/files/styles/mmtimes_ratio_c_normal_detail_image/public/news-images/music-1_3.jpg?itok=GFuo1VFo",
-                      "subtitle":"Choose the transportation what you want",
+                      "subtitle":"Enjoy your package",
                       "default_action": {
                         "type": "web_url",
                         "url": "https://petersfancybrownhats.com/view?item=103",
@@ -692,7 +692,7 @@ app.post('/webhook', (req, res) => {
                     },{
                       "title":"Eating and Drinking",
                       "image_url":"https://coconuts.co/wp-content/uploads/2019/07/rosegarden-960x540.jpg",
-                      "subtitle":"Choose the transportation what you want",
+                      "subtitle":"Enjoy your package",
                       "default_action": {
                         "type": "web_url",
                         "url": "https://petersfancybrownhats.com/view?item=103",
