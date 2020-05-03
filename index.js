@@ -85,6 +85,11 @@ app.get('/parksdetail',function(req,res){
     res.render('parksdetail.ejs');
 });
 
+app.get('/traditional_detail',function(req,res){
+    
+    res.render('traitional_detail.ejs');
+});
+
 app.get('/test/:title/:sender_id',function(req,res){
     const sender_id = req.params.sender_id;
     const title = req.params.title;
@@ -616,11 +621,18 @@ app.post('/webhook', (req, res) => {
                         "url": "https://petersfancybrownhats.com/view?item=103",
                         "webview_height_ratio": "tall",
                       },
-                      "buttons": [              
+                      "buttons": [   
+                           {
+                            "type": "web_url",
+                            "title": "View Detail",
+                            "url":"https://eyeofeagle.herokuapp.com/traditional_detail/",
+                             "webview_height_ratio": "full",
+                            "messenger_extensions": true,          
+                          },           
                           {
                             "type": "web_url",
                             "title": "customize",
-                            "url":"https://eyeofeagle.herokuapp.com/test/Shwedagon/"+webhook_event.sender.id,
+                            "url":"https://eyeofeagle.herokuapp.com/Customize_traditional/Traditional/"+webhook_event.sender.id,
                              "webview_height_ratio": "full",
                             "messenger_extensions": true,          
                           },

@@ -1,0 +1,84 @@
+<!doctype html>
+
+<html>
+	<head>
+		<title>Eye of Eagle</title>
+	</head>
+
+	<body>
+
+		
+		<h1>Packages</h1>
+		<img src="/img/inle.jpg" alt="HTML5 Icon" style="width:128px;height:128px;">
+
+		<h2>Trip</h2>
+
+			<ul>
+			  <li>Shwe Gone Puppet Theatre-Myanmar Culture show-Karaweik palace</li>
+			  <li>Sein Satin-Htoo Chon-Kangyi Maung-Bokalay Hla myint</li>
+			  <li>NSein Maha Tabin-Takhine Lone Shwe-Nan Win</li>
+			</ul>  
+
+			<h2>Transportation</h2>
+
+			<ul>
+			  <li>12 seat minibus</li>
+			  <li>10 seat </li>
+			  <li>4 seat</li>
+			</ul>  
+
+			<h2>Restaurant</h2>
+
+			<h3>Breakfast</h3>
+
+			<ul>
+			  <li>Shwepalin</li>
+			  <li>Maung Aye</li>
+			  <li>Tone Pan Hla</li>
+			</ul>  
+
+			<h3>Lunch</h3>
+
+			<ul>
+			  <li>Golden Duck</li>
+			  <li>Indian Kitchen</li>
+			  <li>Sein Sweli</li>
+			</ul>  
+
+			<h3>Dinner</h3>
+
+			<ul>
+			  <li>Shangrila</li>
+			  <li>Pouk Pouk</li>
+			  <li>Nyoun tone</li>
+			</ul>  
+
+			<h2>Hotel</h2>
+
+			<ul>
+			  <li>Lotte</li>
+			  <li>Sedona</li>
+			  <li>Kan Taw mingalar</li>
+			</ul>  
+
+
+		
+		
+
+	</body>
+
+	
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
