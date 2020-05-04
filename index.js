@@ -346,7 +346,7 @@ app.post('/parks_update',function(req,res){
             mobile:mobile,
             booking_ref:booking_ref,
           }).then(success => {             
-              updatepackage(sender);    
+              notifySave(webhook_event.sender.id);    
           }).catch(error => {
             console.log(error);
       });        
@@ -998,16 +998,16 @@ const showBookingNumber = (sender_psid, ref) => {
   send(response);   
 }
 
-const updatepackage = (sender_psid, ref) => { 
-   
+console.log('NOTIFYSAVE',notifySave);
+function notifySave(sender_psid) { 
     let response = {
-    "recipient":{
+      "recipient":{
       "id":sender_psid,
-    },           
-    "message":{
-      "text": `Your data is saved, Thanks You`,              
-    }
-  } 
+    },       
+    "text": `Your data is saved`,    
+    };
+    send(response);
+}
 
 
 const update_pagodas = (sender_psid, ref_num) => {
