@@ -90,6 +90,11 @@ app.get('/traditional_detail',function(req,res){
     res.render('traditional_detail.ejs');
 });
 
+app.get('/eatinganddrinking_detail',function(req,res){
+    
+    res.render('eatinganddrinking_detail.ejs');
+});
+
 app.get('/test/:title/:sender_id',function(req,res){
     const sender_id = req.params.sender_id;
     const title = req.params.title;
@@ -779,7 +784,14 @@ app.post('/webhook', (req, res) => {
                         "url": "https://petersfancybrownhats.com/view?item=103",
                         "webview_height_ratio": "tall",
                       },
-                      "buttons": [              
+                      "buttons": [ 
+                          {
+                            "type": "web_url",
+                            "title": "View Detail",
+                            "url":"https://eyeofeagle.herokuapp.com/eatinganddrinking_detail/",
+                             "webview_height_ratio": "full",
+                            "messenger_extensions": true,          
+                          },                        
                           {
                             "type": "web_url",
                             "title": "Customize",
