@@ -522,6 +522,89 @@ app.post('/eatinganddrinking_customize',function(req,res){
             console.log(error);
       });        
 });
+
+/**************************
+//UPDATE EATINGANDDRINKING
+***************************/
+
+app.get('/eatinganddrinking_update/:booking_ref/:sender_id/',function(req,res){
+    const sender_id = req.params.sender_id;
+    const booking_ref = req.params.booking_ref;
+
+
+
+    db.collection("Eating and Drinking Booking").where("booking_ref", "==", booking_ref)
+    .get()
+    .then(function(querySnapshot) {
+        querySnapshot.forEach(function(doc) {
+
+            let data = {
+              doc_id:doc.id,
+              eatinganddrinking_trip:doc.data().eatinganddrinking_trip,
+              transportation:doc.data().transportation,
+              breakfast:doc.data().breakfast,
+              lunch:doc.data().lunch,
+              dinner:doc.data().dinner,
+              hotel:doc.data().hotel,            
+              name:doc.data().name,
+              mobile:doc.data().mobile,
+              booking_ref:doc.data().booking_ref,
+            }   
+
+            console.log("BOOKING DATA", data);     
+
+            res.render('eatinganddrinking_update.ejs',{data:data, sender_id:sender_id});
+            
+
+        });
+    })
+    .catch(function(error) {
+        console.log("Error getting documents: ", error);
+    });
+
+
+
+
+
+    
+});
+
+app.post('/eatinganddrinking_update',function(req,res){
+      
+      
+      let eatinganddrinking_trip= req.body.eatinganddrinking_trip;
+      let transportation = req.body.transportation;
+      let breakfast = req.body.breakfast;
+      let lunch = req.body.lunch;
+      let dinner = req.body.dinner;
+      let hotel = req.body.hotel;
+      let name= req.body.name;
+      let mobile  = req.body.mobile;
+      let booking_ref = req.body.booking_ref; 
+      let doc_id = req.body.doc_id;  
+
+      console.log("DOC_ID", doc_id );
+      console.log("BOOKING NUMBER", booking_ref );
+
+
+      db.collection('Eating and Drinking Booking').doc(doc_id).update({           
+            
+            eatinganddrinking_trip:eatinganddrinking_trip,
+            transportation:transportation,
+            breakfast:breakfast,
+            lunch:lunch,
+            dinner:dinner,
+            hotel:hotel,            
+            name:name,
+            mobile:mobile,
+            booking_ref:booking_ref,
+          }).then(success => {             
+              notifySave(sender_id);    
+          }).catch(error => {
+            console.log(error);
+      });        
+});
+
 // Adds support for GET requests to our webhook
 app.get('/webhook', (req, res) => {
 
@@ -883,6 +966,15 @@ app.post('/webhook', (req, res) => {
           update_traditional(sender_psid,ref_num); 
         }
 
+        console.log('USER INPUT BEFORE',userInput);
+        if(webhook_event.message.text.includes("Change end:")){
+          console.log('USER INPUT',userInput);
+          let ref_num = userInput.slice(11);
+          ref_num = ref_num.trim();
+          console.log('REF NUM',ref_num); 
+          update_eatinganddrinking(sender_psid,ref_num); 
+        }
+
       
      });
 
@@ -1092,6 +1184,38 @@ const update_traditional = (sender_psid, ref_num) => {
                 "type": "web_url",
                 "title": "Update",
                 "url":"https://eyeofeagle.herokuapp.com/traditional_update/"+ref_num+"/"+sender_psid,
+                 "webview_height_ratio": "full",
+                "messenger_extensions": true,          
+              },
+              
+            ],
+          }]
+        }
+      }
+    }
+  
+}
+send(welcomeMessage);
+}
+
+const update_eatinganddrinking = (sender_psid, ref_num) => {
+    let welcomeMessage = {
+          "recipient":{
+            "id":sender_psid,
+          },
+          "message":{
+            "attachment":{
+              "type":"template",
+              "payload":{
+              "template_type":"generic",
+              "elements": [
+              {
+            "title": "You are updating your booking number:" + ref_num,                       
+            "buttons": [              
+              {
+                "type": "web_url",
+                "title": "Update",
+                "url":"https://eyeofeagle.herokuapp.com/eatinganddrinking_update/"+ref_num+"/"+sender_psid,
                  "webview_height_ratio": "full",
                 "messenger_extensions": true,          
               },
