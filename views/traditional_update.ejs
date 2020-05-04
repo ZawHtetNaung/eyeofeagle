@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>ddmo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+ </head>
+
+  <body>
+  <script>
+      (function(d, s, id){
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) {return;}
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_US/messenger.Extensions.js";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'Messenger'));
+
+    const APP_ID = 2611721012483168;    
+    var senderID = "";
+    
+    window.extAsyncInit = function() {
+        MessengerExtensions.getContext(APP_ID, 
+          function success(thread_context){
+           senderID = thread_context.psid;
+          },
+          function error(err){
+            console.log(err);
+          }
+        );        
+    };
+  </script>
+  
+  <h1><%= data.booking_ref %></h1>
+
+  
+
+  <form id="form" method="post" action="https://eyeofeagle.herokuapp.com/traditional_update/">
+  
+ <div class="form-group">
+    <label for="name">Where do you want to go</label>
+    <select class="form-control" name="parks_trip" id="traditional_trip"  value="<%= data.traditional_trip %>">
+       <option value="Shwe Gone Puppet Theatre-Myanmar Culture show-Karaweik palace">Shwe Gone Puppet Theatre-Myanmar Culture show-Karaweik palace</option>
+      <option value="Sein Satin-Htoo Chon-Kangyi Maung-Bokalay Hla myint">Sein Satin-Htoo Chon-Kangyi Maung-Bokalay Hla myint</option>
+      <option value="Sein Maha Tabin-Takhine Lone Shwe-Nan Win">Sein Maha Tabin-Takhine Lone Shwe-Nan Win</option>
+      
+    </select> 
+  </div>
+
+  <div class="form-group">
+    <label for="name">Choose your Transportation what you like</label>
+    <select class="form-control" name="transportation" id="transportation"  value="<%= data.transportation %>">
+      <option>12 seat minibus</option>
+      <option>10 seat</option>
+      <option>4 seat</option>
+
+     </select> 
+  </div>
+
+   <h2>Restaurants</h2>
+
+  <div class="form-group">
+    <label for="name">Breakfast</label>
+    <select class="form-control" name="breakfast" id="breakfast"  value="<%= data.breakfast %>">
+      <option>Shwepalin</option>
+      <option>Maung Aye</option>
+      <option>Tone Pan Hla</option>
+
+     </select> 
+  </div>
+
+  <div class="form-group">
+    <label for="name">Lunch</label>
+    <select class="form-control" name="lunch" id="lunch"  value="<%= data.lunch %>">
+      <option>Golden Duck</option>
+      <option>Indian Kitchen</option>
+      <option>Sein Sweli</option>
+
+     </select> 
+  </div>
+
+  <div class="form-group">
+    <label for="name">Dinner</label>
+    <select class="form-control" name="dinner" id="dinner"  value="<%= data.dinner %>">
+      <option>Shangrila</option>
+      <option>Indian Kitchen</option>
+      <option>Sein Sweli</option>
+
+     </select> 
+  </div>
+
+  <div class="form-group">
+    <label for="name">Hotel</label>
+    <select class="form-control" name="hotel" id="hotel"  value="<%= data.hotel %>">
+      <option>Lotte</option>
+      <option>Sedona</option>
+      <option>Kan Taw mingalar</option>
+
+     </select> 
+  </div>
+
+  <div class="form-group">
+    <label for="name">Your name please</label>
+    <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name" value="<%= data.name %>">    
+  </div>
+  <div class="form-group">
+    <label for="title">Mobile</label>
+    <input type="text" class="form-control" id="mobile" name="mobile" placeholder="Title"  value="<%= data.mobile %>" >
+  </div>
+  <input type="hidden"  id="sender" name="doc_id" value="<%= data.doc_id %>"> 
+  <input type="hidden"  id="sender" name="booking_ref" value="<%= data.booking_ref %>">    
+  <input type="hidden"  id="sender" name="sender" value="<%= sender_id %>">
+  <input type="submit" value="Confirm Booking"> 
+  </form>
+
+
+  
+  <script>
+      
+   
+      const windowShut = () => {
+        MessengerExtensions.requestCloseBrowser(function success() {
+          console.log("success");          
+        }, function error(err) {
+          console.log(err);
+        });
+      }
+      
+      document.getElementById("form").addEventListener("submit", windowShut);       
+
+
+     
+
+  </script>
+
+  </body>
+
+</html>
