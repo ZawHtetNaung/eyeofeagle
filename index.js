@@ -737,6 +737,15 @@ app.post('/webhook', (req, res) => {
           update_parks(sender_psid,ref_num); 
         }
 
+         console.log('USER INPUT BEFORE',userInput);
+        if(webhook_event.message.text.includes("Change trad:")){
+          console.log('USER INPUT',userInput);
+          let ref_num = userInput.slice(12);
+          ref_num = ref_num.trim();
+          console.log('REF NUM',ref_num); 
+          update_traditional(sender_psid,ref_num); 
+        }
+
       
      });
 
@@ -914,6 +923,38 @@ const update_parks = (sender_psid, ref_num) => {
                 "type": "web_url",
                 "title": "Update",
                 "url":"https://eyeofeagle.herokuapp.com/parks_update/"+ref_num+"/"+sender_psid,
+                 "webview_height_ratio": "full",
+                "messenger_extensions": true,          
+              },
+              
+            ],
+          }]
+        }
+      }
+    }
+  
+}
+send(welcomeMessage);
+}
+
+const update_traditional = (sender_psid, ref_num) => {
+    let welcomeMessage = {
+          "recipient":{
+            "id":sender_psid,
+          },
+          "message":{
+            "attachment":{
+              "type":"template",
+              "payload":{
+              "template_type":"generic",
+              "elements": [
+              {
+            "title": "You are updating your booking number:" + ref_num,                       
+            "buttons": [              
+              {
+                "type": "web_url",
+                "title": "Update",
+                "url":"https://eyeofeagle.herokuapp.com/traditional_update/"+ref_num+"/"+sender_psid,
                  "webview_height_ratio": "full",
                 "messenger_extensions": true,          
               },
