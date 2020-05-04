@@ -989,7 +989,7 @@ const showBookingNumber = (sender_psid, ref) => {
       "id":sender_psid,
     },           
     "message":{
-      "text": `You aren't ok when you going to trip text this message (Pagodas=Change pago:reference no,Parks=Change parks:reference no,Traditional=Change trad,Eating and Drinking=Change end:reference no) and your reference is ${ref}`,              
+      "text": `You aren't ok when you going to trip text this message (Pagodas=Change pago:reference no,Parks=Change parks:reference no,Traditional=Change trad:reference no,Eating and Drinking=Change end:reference no) and your reference is ${ref}`,              
     }
   } 
 
