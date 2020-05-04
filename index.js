@@ -999,7 +999,7 @@ const showBookingNumber = (sender_psid, ref) => {
 }
 
 console.log('NOTIFYSAVE',notifySave);
-function notifySave(sender_psid) { 
+const notifySave = (sender_psid) => { 
     let response = {
       "recipient":{
       "id":sender_psid,
