@@ -478,6 +478,50 @@ app.post('/traditional_update',function(req,res){
       });        
 });
 
+/*****************************
+//CUSTOMIZE EATINGANDDRINKING
+******************************/
+
+app.get('/Customize_eatinganddrinking/:eatinganddrinking_customize/:sender_id',function(req,res){
+    const sender_id = req.params.sender_id;
+    const eatinganddrinkingcustomize = req.params.eatinganddrinkingcustomize;
+    res.render('eatinganddrinking_customize.ejs',{title:"Customize-Eating and Drinking",sender_id:sender_id});
+});
+
+app.post('/eatinganddrinking_customize',function(req,res){
+      
+       console.log("FORMDATA",req.body)
+      let eatinganddrinking_trip= req.body.eatinganddrinking_trip;
+      let transportation = req.body.transportation;
+      let breakfast = req.body.breakfast;
+      let lunch = req.body.lunch;
+      let dinner = req.body.dinner;
+      let hotel = req.body.hotel;
+      let name= req.body.name;
+      let mobile  = req.body.mobile;
+      let sender = req.body.sender;  
+
+     let booking_ref = generateRandom(5);    
+
+      db.collection('Eating and Drinking Booking').add({
+           
+            eatinganddrinking_trip:eatinganddrinking_trip,
+            transportation:transportation,
+            breakfast:breakfast,
+            lunch:lunch,
+            dinner:dinner,
+            hotel:hotel,            
+            name:name,
+            mobile:mobile,
+            booking_ref:booking_ref,
+          }).then(success => {   
+             console.log("DATASAVESHOWBOOKINGNUMBER");       
+             showBookingNumber(sender,booking_ref); 
+
+          }).catch(error => {
+            console.log(error);
+      });        
+});
 // Adds support for GET requests to our webhook
 app.get('/webhook', (req, res) => {
 
@@ -795,7 +839,7 @@ app.post('/webhook', (req, res) => {
                           {
                             "type": "web_url",
                             "title": "Customize",
-                            "url":"https://eyeofeagle.herokuapp.com/test/Shwedagon/"+webhook_event.sender.id,
+                            "url":"https://eyeofeagle.herokuapp.com/Customize_eatinganddrinking/Eatinganddrinking/"+webhook_event.sender.id,
                              "webview_height_ratio": "full",
                             "messenger_extensions": true,          
                           },
