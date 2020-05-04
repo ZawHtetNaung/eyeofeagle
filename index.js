@@ -101,6 +101,11 @@ app.get('/test/:title/:sender_id',function(req,res){
     res.render('addpackages.ejs',{title:title,sender_id:sender_id});
 });
 
+app.get('/webview',function(req,res){
+    
+    res.render('webview.ejs');
+});
+
 /******************
 //PAGODAS_CUSTOMIZE
 ******************/
@@ -823,7 +828,7 @@ app.post('/webhook', (req, res) => {
                       "subtitle":"Enjoy your package",
                       "default_action": {
                         "type": "web_url",
-                        "url": "https://eyeofeagle.herokuapp.com",
+                        "url": "https://eyeofeagle.herokuapp.com/webview",
                         "webview_height_ratio": "tall",
                       },
                       "buttons": [ 
