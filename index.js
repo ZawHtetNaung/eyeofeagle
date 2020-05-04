@@ -107,7 +107,7 @@ app.get('/test/:title/:sender_id',function(req,res){
 app.get('/Customize-pagodas/:pagodascustomize/:sender_id',function(req,res){
     const sender_id = req.params.sender_id;
     const pagodascustomize = req.params.pagodascustomize;
-    res.render('pagodascustomize.ejs',{title:"Customize-pagodas",sender_id:sender_id});
+    res.render('pagodascustomize.ejs',{title:"Customize-Pagodas",sender_id:sender_id});
 });
 
 app.post('/pagodascustomize',function(req,res){
@@ -233,7 +233,7 @@ app.post('/pagodas_update',function(req,res){
 app.get('/Customize/:parks_customize/:sender_id',function(req,res){
     const sender_id = req.params.sender_id;
     const pagodascustomize = req.params.pagodascustomize;
-    res.render('parks_customize.ejs',{title:"Customize",sender_id:sender_id});
+    res.render('parks_customize.ejs',{title:"Customize-Parks",sender_id:sender_id});
 });
 
 app.post('/parks_customize',function(req,res){
@@ -359,7 +359,7 @@ TRADITIONAL CUSTOMIZE
 app.get('/Customize_traditional/:traditional_customize/:sender_id',function(req,res){
     const sender_id = req.params.sender_id;
     const traditionalcustomize = req.params.traditionalcustomize;
-    res.render('traditional_customize.ejs',{title:"Customize_traditional",sender_id:sender_id});
+    res.render('traditional_customize.ejs',{title:"Customize-Traditional",sender_id:sender_id});
 });
 
 app.post('/traditional_customize',function(req,res){
