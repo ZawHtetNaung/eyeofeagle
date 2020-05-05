@@ -126,6 +126,7 @@ app.post('/pagodascustomize',function(req,res){
       let hotel = req.body.hotel;
       let name= req.body.name;
       let mobile  = req.body.mobile;
+      let company  = req.body.company;
       let sender = req.body.sender;  
 
      let booking_ref = generateRandom(5);    
@@ -140,6 +141,7 @@ app.post('/pagodascustomize',function(req,res){
             hotel:hotel,            
             name:name,
             mobile:mobile,
+            company:company,
             booking_ref:booking_ref,
           }).then(success => {   
              console.log("DATASAVESHOWBOOKINGNUMBER");       
@@ -174,6 +176,7 @@ app.get('/pagodas_update/:booking_ref/:sender_id/',function(req,res){
               hotel:doc.data().hotel,            
               name:doc.data().name,
               mobile:doc.data().mobile,
+              company:doc.data().company,
               booking_ref:doc.data().booking_ref,
             }   
 
@@ -206,6 +209,7 @@ app.post('/pagodas_update',function(req,res){
       let hotel = req.body.hotel;
       let name= req.body.name;
       let mobile  = req.body.mobile;
+      let company = req.body.company;
       let booking_ref = req.body.booking_ref; 
       let doc_id = req.body.doc_id;  
 
@@ -223,6 +227,7 @@ app.post('/pagodas_update',function(req,res){
             hotel:hotel,            
             name:name,
             mobile:mobile,
+            company:company,
             booking_ref:booking_ref,
           }).then(success => {             
               notifySave(sender);    
