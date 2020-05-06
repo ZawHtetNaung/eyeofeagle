@@ -973,7 +973,7 @@ app.post('/webhook', (req, res) => {
         }
 
          console.log('USER INPUT BEFORE',userInput);
-        if(userInput.text.includes("Change trad:")){
+        if(userInput.includes("Change trad:")){
           console.log('USER INPUT',userInput);
           let ref_num = userInput.slice(12);
           ref_num = ref_num.trim();
@@ -982,7 +982,7 @@ app.post('/webhook', (req, res) => {
         }
 
         console.log('USER INPUT BEFORE',userInput);
-        if(userInput.text.includes("Change end:")){
+        if(userInput.includes("Change end:")){
           console.log('USER INPUT',userInput);
           let ref_num = userInput.slice(11);
           ref_num = ref_num.trim();
