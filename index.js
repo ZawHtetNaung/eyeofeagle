@@ -955,7 +955,7 @@ app.post('/webhook', (req, res) => {
         //end of customize by pagodas in yangon
 
          console.log('USER INPUT BEFORE',userInput);
-        if(webhook_event.message.text.includes("Change pago:")){
+        if(userInput.includes("Change pago:")){
           console.log('USER INPUT',userInput);
           let ref_num = userInput.slice(12);
           ref_num = ref_num.trim();
@@ -964,7 +964,7 @@ app.post('/webhook', (req, res) => {
         }
 
          console.log('USER INPUT BEFORE',userInput);
-        if(webhook_event.message.text.includes("Change parks:")){
+        if(userInput.includes("Change parks:")){
           console.log('USER INPUT',userInput);
           let ref_num = userInput.slice(13);
           ref_num = ref_num.trim();
@@ -973,7 +973,7 @@ app.post('/webhook', (req, res) => {
         }
 
          console.log('USER INPUT BEFORE',userInput);
-        if(webhook_event.message.text.includes("Change trad:")){
+        if(userInput.text.includes("Change trad:")){
           console.log('USER INPUT',userInput);
           let ref_num = userInput.slice(12);
           ref_num = ref_num.trim();
@@ -982,7 +982,7 @@ app.post('/webhook', (req, res) => {
         }
 
         console.log('USER INPUT BEFORE',userInput);
-        if(webhook_event.message.text.includes("Change end:")){
+        if(userInput.text.includes("Change end:")){
           console.log('USER INPUT',userInput);
           let ref_num = userInput.slice(11);
           ref_num = ref_num.trim();
