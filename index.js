@@ -353,7 +353,7 @@ app.post('/parks_update', function(req, res) {
 
     console.log("DOC_ID", doc_id);
     console.log("BOOKING NUMBER", booking_ref);
-
+    console.log("REQ BODY", req.body);
 
     db.collection('Parks Booking').doc(doc_id).update({
 
