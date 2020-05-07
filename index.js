@@ -1116,7 +1116,7 @@ function notifySave(sender_psid) {
             "id": sender_psid,
         },
         "message":{
-          "text": `Your data is saved`,
+          "text": `Your data is saved, Thanks you !!`,
         }
     };
     send(response);
