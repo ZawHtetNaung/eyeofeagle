@@ -223,7 +223,7 @@ app.post('/pagodas_update', function(req, res) {
     console.log("BOOKING NUMBER", booking_ref);
 
 
-    db.collection('Pagodas Booking').doc(doc_id).update({
+    db.collection('Update Pagodas').doc(doc_id).update({
 
         pagodas_trip: pagodas_trip,
         transportation: transportation,
