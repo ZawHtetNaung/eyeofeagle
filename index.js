@@ -237,7 +237,7 @@ app.post('/pagodas_update', function(req, res) {
         e_mail: e_mail,
         booking_ref: booking_ref,
     }).then(success => {
-        notifySave(sender);
+        notifySave(req.body.sender);
     }).catch(error => {
         console.log(error);
     });
