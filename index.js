@@ -333,6 +333,10 @@ app.get('/parks_update/:booking_ref/:sender_id/', function(req, res) {
                     hotel: doc.data().hotel,
                     name: doc.data().name,
                     mobile: doc.data().mobile,
+                    company: doc.data().company,
+                    e_mail: doc.data().e_mail,
+                    arriveddate: doc.data().arriveddate,
+                    arrivedtime: doc.data().arrivedtime,
                     booking_ref: doc.data().booking_ref,
                 }
 
@@ -366,6 +370,10 @@ app.post('/parks_update', function(req, res) {
     let hotel = req.body.hotel;
     let name = req.body.name;
     let mobile = req.body.mobile;
+    let company = req.body.company;
+    let e_mail = req.body.e_mail;
+    let arriveddate = req.body.arriveddate;
+    let arrivedtime = req.body.arrivedtime;
     let booking_ref = req.body.booking_ref;
     let doc_id = req.body.doc_id;
 
@@ -383,6 +391,10 @@ app.post('/parks_update', function(req, res) {
         hotel: hotel,
         name: name,
         mobile: mobile,
+        company: company,
+        e_mail: e_mail,
+        arriveddate: arriveddate,
+        arrivedtime: arrivedtime,
         booking_ref: booking_ref,
     }).then(success => {
         notifySave(req.body.sender);
