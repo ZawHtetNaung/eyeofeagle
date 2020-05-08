@@ -2,7 +2,12 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
-    <title>ddmo</title>
+    <title>Eye of Eagle</title>
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
  </head>
 
@@ -38,67 +43,39 @@
   <form id="form" method="post" action="https://eyeofeagle.herokuapp.com/parks_update/">
   
  <div class="form-group">
-    <label for="name">Where do you want to go</label>
-    <select class="form-control" name="parks_trip" id="parks_trip"  value="<%= data.parks_trip %>">
-      <option value="People parks-Mahar Bandula Parks-Water boom">People parks-Mahar Bandula Parks-Water boom</option>
-      <option value="Happy world-Happy Zone-Animal Parks">Happy world-Happy Zone-Animal Parks</option>
-      <option value="Kan Taw Gyi-Kan Taw Lay-Kan Bound">Kan Taw Gyi-Kan Taw Lay-Kan Bound</option>
-      
-    </select> 
+    <label for="name"> Please, Fill the Trip you want to change</label>
+    <input type="text" class="form-control" id="parks_trip" name="parks_trip" placeholder=">People parks-Mahar Bandula Parks-Water boom"  value="<%= data.parks_trip %>" >
   </div>
 
   <div class="form-group">
-    <label for="name">Choose your Transportation what you like</label>
-    <select class="form-control" name="transportation" id="transportation"  value="<%= data.transportation %>">
-      <option>12 seat minibus</option>
-      <option>10 seat</option>
-      <option>4 seat</option>
-
-     </select> 
+   <label for="name"> Please, Fill the Transportation you want to change</label>
+    <input type="text" class="form-control" id="transportation" name="transportation" placeholder="10 seat mini bus"  value="<%= data.transportation %>" >
   </div>
 
    <h2>Restaurants</h2>
 
   <div class="form-group">
-    <label for="name">Breakfast</label>
-    <select class="form-control" name="breakfast" id="breakfast"  value="<%= data.breakfast %>">
-      <option>Shwepalin</option>
-      <option>Maung Aye</option>
-      <option>Tone Pan Hla</option>
-
-     </select> 
+    <label for="name"> Please, Fill the Restaurant you want to change for breakfast</label>
+    <input type="text" class="form-control" id="breakfast" name="breakfast" placeholder="restaurant name"  value="<%= data.breakfast %>" >
   </div>
 
   <div class="form-group">
-    <label for="name">Lunch</label>
-    <select class="form-control" name="lunch" id="lunch"  value="<%= data.lunch %>">
-      <option>Golden Duck</option>
-      <option>Indian Kitchen</option>
-      <option>Sein Sweli</option>
-
-     </select> 
+     <label for="name"> Please, Fill the Restaurant you want to change for lunch</label>
+    <input type="text" class="form-control" id="lunch" name="lunch" placeholder="restaurant name"  value="<%= data.lunch %>" >
   </div>
 
   <div class="form-group">
-    <label for="name">Dinner</label>
-    <select class="form-control" name="dinner" id="dinner"  value="<%= data.dinner %>">
-      <option>Shangrila</option>
-      <option>Indian Kitchen</option>
-      <option>Sein Sweli</option>
-
-     </select> 
+     <label for="name"> Please, Fill the Restaurant you want to change for dinner</label>
+    <input type="text" class="form-control" id="dinner" name="dinner" placeholder="restaurant name"  value="<%= data.dinner %>" >
   </div>
 
+ <h2>Hotel</h2>
   <div class="form-group">
-    <label for="name">Hotel</label>
-    <select class="form-control" name="hotel" id="hotel"  value="<%= data.hotel %>">
-      <option>Lotte</option>
-      <option>Sedona</option>
-      <option>Kan Taw mingalar</option>
-
-     </select> 
+     <label for="name"> Please, Fill the Hotel you want to change</label>
+    <input type="text" class="form-control" id="hotel" name="hotel" placeholder="restaurant name"  value="<%= data.hotel %>" >
   </div>
 
+ <h2>Your information</h2>
   <div class="form-group">
     <label for="name">Your name please</label>
     <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name" value="<%= data.name %>">    
@@ -106,6 +83,22 @@
   <div class="form-group">
     <label for="title">Mobile</label>
     <input type="text" class="form-control" id="mobile" name="mobile" placeholder="Title"  value="<%= data.mobile %>" >
+  </div>
+   <div class="form-group">
+    <label for="title">Company</label>
+    <input type="text" class="form-control" id="company" name="company" placeholder="1.2......." value="<%= data.company %>">
+  </div>
+  <div class="form-group">
+    <label for="title">E-mail</label>
+    <input type="text" class="form-control" id="e_mail" name="e_mail" placeholder="name@gmial.com" value="<%= data.e_mail %>">
+  </div>
+   <div class="form-group">
+    <label for="title">Arrived Date</label>
+    <input type="text" class="form-control" id="arriveddate" name="arriveddate" placeholder="dd/mm/yy" value="<%= data.arriveddate %>">
+  </div>
+  <div class="form-group">
+    <label for="title">Arrived Time</label>
+    <input type="text" class="form-control" id="arrivedtime" name="arrivedtime" placeholder="00:00" value="<%= data.arrivedtime %>">
   </div>
   <input type="hidden"  id="sender" name="doc_id" value="<%= data.doc_id %>"> 
   <input type="hidden"  id="sender" name="booking_ref" value="<%= data.booking_ref %>">    
