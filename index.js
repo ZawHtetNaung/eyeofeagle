@@ -875,7 +875,7 @@ app.post('/webhook', (req, res) => {
                                 "template_type": "generic",
                                 "elements": [{
                                         "title": "You want to change in your package if you aren't ok with that. Click the button!!!",
-                                        "image_url": "https://osugamyanmartravels.com/wp-content/uploads/2018/04/shwedagon-pagoda-yangon-burma-myanmar.jpg",
+                                        "image_url": "https://r-cf.bstatic.com/images/hotel/max1024x768/231/231769690.jpg",
                                         "subtitle": "Enjoy your package",
                                         "default_action": {
                                             "type": "web_url",
