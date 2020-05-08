@@ -906,7 +906,7 @@ app.post('/webhook', (req, res) => {
                             }
                         }
                     }
-                }
+                
                 send(welcomeMessage);
             }
 
