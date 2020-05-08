@@ -277,6 +277,10 @@ app.post('/parks_customize', function(req, res) {
     let hotel = req.body.hotel;
     let name = req.body.name;
     let mobile = req.body.mobile;
+    let company = req.body.company;
+    let e_mail = req.body.e_mail;
+    let arriveddate = req.body.arriveddate;
+    let arrivedtime = req.body.arrivedtime;
     let sender = req.body.sender;
 
     let booking_ref = generateRandom(5);
@@ -291,6 +295,10 @@ app.post('/parks_customize', function(req, res) {
         hotel: hotel,
         name: name,
         mobile: mobile,
+        company: company,
+        e_mail: e_mail,
+        arriveddate: arriveddate,
+        arrivedtime: arrivedtime,
         booking_ref: booking_ref,
     }).then(success => {
         console.log("DATASAVESHOWBOOKINGNUMBER");
