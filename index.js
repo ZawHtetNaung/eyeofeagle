@@ -104,6 +104,17 @@ app.get('/webview', function(req, res) {
     res.render('webview.ejs');
 });
 
+/****************
+//CHANGE PACKAGE
+*****************/
+app.get('/Change-Package/:change_package/:sender_id', function(req, res) {
+    const sender_id = req.params.sender_id;
+    const change_package = req.params.change_package;
+    res.render('change_package.ejs', {
+        title: "Change-Package",
+        sender_id: sender_id
+    });
+});
 /******************
 //PAGODAS_CUSTOMIZE
 ******************/
@@ -759,7 +770,7 @@ app.post('/webhook', (req, res) => {
 
 
 
-            if (userInput == 'yes') {
+           /* if (userInput == 'yes') {
                 let welcomeMessage = {
                     "recipient": {
                         "id": webhook_event.sender.id
@@ -782,11 +793,11 @@ app.post('/webhook', (req, res) => {
                 }
 
                 send(welcomeMessage);
-            }
+            }*/
             //end of yes answer
 
 
-            if (userInput == 'ok') {
+           /* if (userInput == 'ok') {
                 let welcomeMessage = {
                     "recipient": {
                         "id": webhook_event.sender.id
@@ -819,10 +830,10 @@ app.post('/webhook', (req, res) => {
                 }
 
                 send(welcomeMessage);
-            }
+            }*/
             //end of ok by yes answer
 
-            if (userInput == 'notok') {
+            /*if (userInput == 'notok') {
                 let welcomeMessage = {
                     "recipient": {
                         "id": webhook_event.sender.id
@@ -850,9 +861,54 @@ app.post('/webhook', (req, res) => {
                 }
 
                 send(welcomeMessage);
-            }
+            }*/
             //end of not ok by yes answer
+             if (userInput == "yes") {
+                let welcomeMessage = {
+                    "recipient": {
+                        "id": webhook_event.sender.id
+                    },
+                    "message": {
+                        "attachment": {
+                            "type": "template",
+                            "payload": {
+                                "template_type": "generic",
+                                "elements": [{
+                                        "title": "You want to change in your package if you aren't ok with that. Click the button!!!",
+                                        "image_url": "https://osugamyanmartravels.com/wp-content/uploads/2018/04/shwedagon-pagoda-yangon-burma-myanmar.jpg",
+                                        "subtitle": "Enjoy your package",
+                                        "default_action": {
+                                            "type": "web_url",
+                                            "url": "https://eyeofeagle.herokuapp.com/webview",
+                                            "webview_height_ratio": "tall",
+                                        },
+                                        "buttons": [
 
+                                           
+
+                                            {
+                                                "type": "web_url",
+                                                "title": "Change",
+                                                "url": "https://eyeofeagle.herokuapp.com/Change-Package/change_package/" + webhook_event.sender.id,
+                                                "webview_height_ratio": "full",
+                                                "messenger_extensions": true,
+                                            },
+
+
+                                        ],
+
+
+                                    }, 
+                                        ],
+                                    }
+
+                                ]
+                            }
+                        }
+                    }
+                }
+                send(welcomeMessage);
+            }
 
 
             if (userInput == "no") {
@@ -983,7 +1039,7 @@ app.post('/webhook', (req, res) => {
                 }
                 send(welcomeMessage);
             }
-            //end of customize by pagodas in yangon
+            //end of customize by activity in yangon
 
             console.log('USER INPUT BEFORE', userInput);
             if (userInput.includes("Change pago:")) {
