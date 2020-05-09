@@ -103,6 +103,7 @@
      </select> 
   </div>
 
+ <h2>Your information</h2>
   <div class="form-group">
     <label for="name">Your name please</label>
     <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name" value="<%= data.name %>">    
@@ -111,10 +112,26 @@
     <label for="title">Mobile</label>
     <input type="text" class="form-control" id="mobile" name="mobile" placeholder="Title"  value="<%= data.mobile %>" >
   </div>
+   <div class="form-group">
+    <label for="title">Company</label>
+    <input type="text" class="form-control" id="company" name="company" placeholder="1.2......." value="<%= data.company %>">
+  </div>
+  <div class="form-group">
+    <label for="title">E-mail</label>
+    <input type="text" class="form-control" id="e_mail" name="e_mail" placeholder="name@gmial.com" value="<%= data.e_mail %>">
+  </div>
+   <div class="form-group">
+    <label for="title">Arrived Date</label>
+    <input type="text" class="form-control" id="arriveddate" name="arriveddate" placeholder="dd/mm/yy" value="<%= data.arriveddate %>">
+  </div>
+  <div class="form-group">
+    <label for="title">Arrived Time</label>
+    <input type="text" class="form-control" id="arrivedtime" name="arrivedtime" placeholder="00:00" value="<%= data.arrivedtime %>">
+  </div>
   <input type="hidden"  id="sender" name="doc_id" value="<%= data.doc_id %>"> 
   <input type="hidden"  id="sender" name="booking_ref" value="<%= data.booking_ref %>">    
   <input type="hidden"  id="sender" name="sender" value="<%= sender_id %>">
-  <input type="submit" value="Confirm Booking"> 
+  <input class="btn btn-primary" type="submit" value="Confirm Booking"> 
   </form>
 
 
