@@ -153,91 +153,6 @@ app.post('/change_package' , function(req,res){
     });
 })
 
-/***************
-//CHANGE UPDATE
-****************/
-app.get('/change_update/:booking_ref/:sender_id/', function(req, res) {
-    const sender_id = req.params.sender_id;
-    const booking_ref = req.params.booking_ref;
-
-
-
-    db.collection("Change Packages").where("booking_ref", "==", booking_ref)
-        .get()
-        .then(function(querySnapshot) {
-            querySnapshot.forEach(function(doc) {
-
-                let data = {
-                    doc_id: doc.id,
-                    transportation: doc.data().transportation,
-                    breakfast: doc.data().breakfast,
-                    lunch: doc.data().lunch,
-                    dinner: doc.data().dinner,
-                    hotel: doc.data().hotel,
-                    name: doc.data().name,
-                    mobile: doc.data().mobile,
-                    company: doc.data().company,
-                    e_mail: doc.data().e_mail,
-                    booking_ref: doc.data().booking_ref,
-                }
-
-                console.log("BOOKING DATA", data);
-
-                res.render('change_update.ejs', {
-                    data: data,
-                    sender_id: sender_id
-                });
-
-
-            });
-        })
-        .catch(function(error) {
-            console.log("Error getting documents: ", error);
-        });
-
-
-
-
-});
-
-app.post('/change_update', function(req, res) {
-
-
-    let transportation = req.body.transportation;
-    let breakfast = req.body.breakfast;
-    let lunch = req.body.lunch;
-    let dinner = req.body.dinner;
-    let hotel = req.body.hotel;
-    let name = req.body.name;
-    let mobile = req.body.mobile;
-    let company = req.body.company;
-    let e_mail = req.body.e_mail;
-    let booking_ref = req.body.booking_ref;
-    let doc_id = req.body.doc_id;
-
-    console.log("DOC_ID", doc_id);
-    console.log("BOOKING NUMBER", booking_ref);
-
-
-    db.collection('Change Packages').doc(doc_id).update({
-
-        transportation: transportation,
-        breakfast: breakfast,
-        lunch: lunch,
-        dinner: dinner,
-        hotel: hotel,
-        name: name,
-        mobile: mobile,
-        company: company,
-        e_mail: e_mail,
-        booking_ref: booking_ref,
-    }).then(success => {
-        notifySave(req.body.sender);
-    }).catch(error => {
-        console.log(error);
-    });
-});
-
 /******************
 //PAGODAS_CUSTOMIZE
 ******************/
@@ -1355,7 +1270,7 @@ function notifySave(sender_psid) {
     send(response);
 }
 
-const change_update = (sender_psid, ref_num) => {
+const change_package = (sender_psid, ref_num) => {
     let welcomeMessage = {
         "recipient": {
             "id": sender_psid,
@@ -1366,11 +1281,11 @@ const change_update = (sender_psid, ref_num) => {
                 "payload": {
                     "template_type": "generic",
                     "elements": [{
-                        "title": "You are updating your change number:" + ref_num,
+                        "title": "You are updating your cahnge number:" + ref_num,
                         "buttons": [{
                                 "type": "web_url",
                                 "title": "Update",
-                                "url": "https://eyeofeagle.herokuapp.com/change_update/" + ref_num + "/" + sender_psid,
+                                "url": "https://eyeofeagle.herokuapp.com/change_package/" + ref_num + "/" + sender_psid,
                                 "webview_height_ratio": "full",
                                 "messenger_extensions": true,
                             },
