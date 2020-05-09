@@ -3,10 +3,14 @@
   <head>
     <meta charset="UTF-8">
     <title>ddmo</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
  </head>
 
-  <body>
+  <body class="w-auto p-3" style="background-color: #E4D824;">
   <script>
       (function(d, s, id){
       var js, fjs = d.getElementsByTagName(s)[0];
@@ -37,68 +41,40 @@
 
   <form id="form" method="post" action="https://eyeofeagle.herokuapp.com/eatinganddrinking_update/">
   
- <div class="form-group">
-    <label for="name">Where do you want to go</label>
-    <select class="form-control" name="eatinganddrinking_trip" id="eatinganddrinking_trip"  value="<%= data.eatinganddrinking_trip %>">
-       <option value="Mr Jerry-Hot Pot King-Herry">Mr Jerry-Hot Pot King-Herry</option>
-      <option value="Thai Pot-Kosan-Suzuki">Thai Pot-Kosan-Suzuki</option>
-      <option value="Shwekaung-Mala Pot-Terminal 5">Shwekaung-Mala Pot-Terminal 5</option>
-      
-    </select> 
+<div class="form-group">
+    <label for="name"> Please, Fill the Trip you want to change</label>
+    <input type="text" class="form-control" id="eatinganddrinking_trip" name="eatinganddrinking_trip" placeholder="Mr Jerry-Hot Pot King-Herry"  value="<%= data.eatinganddrinking_trip %>" >
   </div>
 
   <div class="form-group">
-    <label for="name">Choose your Transportation what you like</label>
-    <select class="form-control" name="transportation" id="transportation"  value="<%= data.transportation %>">
-      <option>12 seat minibus</option>
-      <option>10 seat</option>
-      <option>4 seat</option>
-
-     </select> 
+   <label for="name"> Please, Fill the Transportation you want to change</label>
+    <input type="text" class="form-control" id="transportation" name="transportation" placeholder="10 seat mini bus"  value="<%= data.transportation %>" >
   </div>
 
    <h2>Restaurants</h2>
 
   <div class="form-group">
-    <label for="name">Breakfast</label>
-    <select class="form-control" name="breakfast" id="breakfast"  value="<%= data.breakfast %>">
-      <option>Shwepalin</option>
-      <option>Maung Aye</option>
-      <option>Tone Pan Hla</option>
-
-     </select> 
+    <label for="name"> Please, Fill the Restaurant you want to change for breakfast</label>
+    <input type="text" class="form-control" id="breakfast" name="breakfast" placeholder="restaurant name"  value="<%= data.breakfast %>" >
   </div>
 
   <div class="form-group">
-    <label for="name">Lunch</label>
-    <select class="form-control" name="lunch" id="lunch"  value="<%= data.lunch %>">
-      <option>Golden Duck</option>
-      <option>Indian Kitchen</option>
-      <option>Sein Sweli</option>
-
-     </select> 
+     <label for="name"> Please, Fill the Restaurant you want to change for lunch</label>
+    <input type="text" class="form-control" id="lunch" name="lunch" placeholder="restaurant name"  value="<%= data.lunch %>" >
   </div>
 
   <div class="form-group">
-    <label for="name">Dinner</label>
-    <select class="form-control" name="dinner" id="dinner"  value="<%= data.dinner %>">
-      <option>Shangrila</option>
-      <option>Indian Kitchen</option>
-      <option>Sein Sweli</option>
-
-     </select> 
+     <label for="name"> Please, Fill the Restaurant you want to change for dinner</label>
+    <input type="text" class="form-control" id="dinner" name="dinner" placeholder="restaurant name"  value="<%= data.dinner %>" >
   </div>
 
+ <h2>Hotel</h2>
   <div class="form-group">
-    <label for="name">Hotel</label>
-    <select class="form-control" name="hotel" id="hotel"  value="<%= data.hotel %>">
-      <option>Lotte</option>
-      <option>Sedona</option>
-      <option>Kan Taw mingalar</option>
-
-     </select> 
+     <label for="name"> Please, Fill the Hotel you want to change</label>
+    <input type="text" class="form-control" id="hotel" name="hotel" placeholder="restaurant name"  value="<%= data.hotel %>" >
   </div>
 
+ <h2>Your information</h2>
   <div class="form-group">
     <label for="name">Your name please</label>
     <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name" value="<%= data.name %>">    
@@ -107,10 +83,26 @@
     <label for="title">Mobile</label>
     <input type="text" class="form-control" id="mobile" name="mobile" placeholder="Title"  value="<%= data.mobile %>" >
   </div>
+   <div class="form-group">
+    <label for="title">Company</label>
+    <input type="text" class="form-control" id="company" name="company" placeholder="1.2......." value="<%= data.company %>">
+  </div>
+  <div class="form-group">
+    <label for="title">E-mail</label>
+    <input type="text" class="form-control" id="e_mail" name="e_mail" placeholder="name@gmial.com" value="<%= data.e_mail %>">
+  </div>
+   <div class="form-group">
+    <label for="title">Arrived Date</label>
+    <input type="text" class="form-control" id="arriveddate" name="arriveddate" placeholder="dd/mm/yy" value="<%= data.arriveddate %>">
+  </div>
+  <div class="form-group">
+    <label for="title">Arrived Time</label>
+    <input type="text" class="form-control" id="arrivedtime" name="arrivedtime" placeholder="00:00" value="<%= data.arrivedtime %>">
+  </div>
   <input type="hidden"  id="sender" name="doc_id" value="<%= data.doc_id %>"> 
   <input type="hidden"  id="sender" name="booking_ref" value="<%= data.booking_ref %>">    
   <input type="hidden"  id="sender" name="sender" value="<%= sender_id %>">
-  <input type="submit" value="Confirm Booking"> 
+  <input class="btn btn-primary" type="submit" type="submit" value="Confirm Booking"> 
   </form>
 
 
