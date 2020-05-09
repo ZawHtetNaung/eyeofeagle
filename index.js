@@ -220,7 +220,7 @@ app.post('/change_update', function(req, res) {
     console.log("BOOKING NUMBER", booking_ref);
 
 
-    db.collection('Change Packages').doc(doc_id).update({
+     db.collection('Change Packages').doc(doc_id).update({
 
        
         transportation: transportation,
