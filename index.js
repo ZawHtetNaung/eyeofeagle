@@ -1366,7 +1366,7 @@ const change_update = (sender_psid, ref_num) => {
                 "payload": {
                     "template_type": "generic",
                     "elements": [{
-                        "title": "You are updating your cahnge number:" + ref_num,
+                        "title": "You are updating your change number:" + ref_num,
                         "buttons": [{
                                 "type": "web_url",
                                 "title": "Update",
