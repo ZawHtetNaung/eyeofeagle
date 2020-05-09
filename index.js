@@ -183,7 +183,7 @@ app.get('/change_package/:booking_ref/:sender_id/', function(req, res) {
 
                 console.log("BOOKING DATA", data);
 
-                res.render('change_package.ejs', {
+                res.render('change_update.ejs', {
                     data: data,
                     sender_id: sender_id
                 });
