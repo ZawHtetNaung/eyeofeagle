@@ -1207,7 +1207,7 @@ app.post('/webhook', (req, res) => {
                 let ref_num = userInput.slice(7);
                 ref_num = ref_num.trim();
                 console.log('REF NUM', ref_num);
-                change_package(sender_psid, ref_num);
+                change_update(sender_psid, ref_num);
             }
 
 
