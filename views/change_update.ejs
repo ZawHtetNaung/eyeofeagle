@@ -8,11 +8,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
  </head>
 
-  <body class="w-auto p-3" style="background-color: #E4D824;">
+  <body  class="w-auto p-3" style="background-color: #E4D824;">
   <script>
       (function(d, s, id){
       var js, fjs = d.getElementsByTagName(s)[0];
@@ -37,82 +35,63 @@
     };
   </script>
   
-	<h1><%= title %></h1>
+	<h1><%= data.booking_ref %></h1>
 
   
 
-  <form id="form" method="post" action="https://eyeofeagle.herokuapp.com/change_package/">
-  <div class="form-group">
-    <h2>Choose what you want to change in Transportation</h2>
-    <label for="name">Transportation</label>
-    <select class="form-control" name="transportation" id="transportation">
-      <option>4 seat</option>
-      <option>8 seat</option>
-      <option>16 seat</option>
-    </select> 
-  </div>
-
-  <h2>Choose what you want to change in Restaurant</h2>
-  <div class="form-group">
-    <label for="name">Breakfast</label>
-    <select class="form-control" name="breakfast" id="breakfast">
-      <option>Shwepalin</option>
-      <option>Maung Aye</option>
-      <option>Tone Pan Hla</option>
-
-     </select> 
-  </div>
-
-  <div class="form-group">
-    <label for="name">Lunch</label>
-    <select class="form-control" name="lunch" id="lunch">
-      <option>Golden Duck</option>
-      <option>Indian Kitchen</option>
-      <option>Sein Sweli</option>
-
-     </select> 
-  </div>
-
-  <div class="form-group">
-    <label for="name">Dinner</label>
-    <select class="form-control" name="dinner" id="dinner">
-      <option>Shangrila</option>
-      <option>Indian Kitchen</option>
-      <option>Sein Sweli</option>
-
-     </select> 
-  </div>
+  <form id="form" method="post" action="https://eyeofeagle.herokuapp.com/change_update/">
   
-  <h2>Choose what you want to change in Hotel</h2>
-  <div class="form-group">
-    <label for="name">Hotel</label>
-    <select class="form-control" name="hotel" id="hotel">
-      <option>Lotte</option>
-      <option>Sedona</option>
-      <option>Kan Taw mingalar</option>
+ 
 
-     </select> 
+  <div class="form-group">
+   <label for="name"> Please, Fill the Transportation you want to change again</label>
+    <input type="text" class="form-control" id="transportation" name="transportation" placeholder="10 seat mini bus"  value="<%= data.transportation %>" >
   </div>
-<h2>Your information</h2>
+
+   <h2>Restaurants</h2>
+
+  <div class="form-group">
+    <label for="name"> Please, Fill the Restaurant you want to change for breakfast agian</label>
+    <input type="text" class="form-control" id="breakfast" name="breakfast" placeholder="restaurant name"  value="<%= data.breakfast %>" >
+  </div>
+
+  <div class="form-group">
+     <label for="name"> Please, Fill the Restaurant you want to change for lunch agian</label>
+    <input type="text" class="form-control" id="lunch" name="lunch" placeholder="restaurant name"  value="<%= data.lunch %>" >
+  </div>
+
+  <div class="form-group">
+     <label for="name"> Please, Fill the Restaurant you want to change for dinner agian</label>
+    <input type="text" class="form-control" id="dinner" name="dinner" placeholder="restaurant name"  value="<%= data.dinner %>" >
+  </div>
+
+ <h2>Hotel</h2>
+  <div class="form-group">
+     <label for="name"> Please, Fill the Hotel you want to change</label>
+    <input type="text" class="form-control" id="hotel" name="hotel" placeholder="restaurant name"  value="<%= data.hotel %>" >
+  </div>
+
+ <h2>Your information</h2>
   <div class="form-group">
     <label for="name">Your name please</label>
-    <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name">    
+    <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name" value="<%= data.name %>">    
   </div>
   <div class="form-group">
     <label for="title">Mobile</label>
-    <input type="text" class="form-control" id="mobile" name="mobile" placeholder="09.........">
+    <input type="text" class="form-control" id="mobile" name="mobile" placeholder="Title"  value="<%= data.mobile %>" >
   </div>
    <div class="form-group">
     <label for="title">Company</label>
-    <input type="text" class="form-control" id="company" name="company" placeholder="1...2....">
+    <input type="text" class="form-control" id="company" name="company" placeholder="1.2......." value="<%= data.company %>">
   </div>
   <div class="form-group">
     <label for="title">E-mail</label>
-    <input type="text" class="form-control" id="e_mail" name="e_mail" placeholder="name@gmail.com">
+    <input type="text" class="form-control" id="e_mail" name="e_mail" placeholder="name@gmial.com" value="<%= data.e_mail %>">
   </div>
-    
+  
+  <input type="hidden"  id="sender" name="booking_ref" value="<%= data.booking_ref %>">    
   <input type="hidden"  id="sender" name="sender" value="<%= sender_id %>">
-  <input class="btn btn-primary" type="submit" value="Confirm Booking"> 
+  <input  class="btn btn-primary" type="submit" value="Confirm Booking"> 
   </form>
 
 

@@ -126,6 +126,7 @@ app.post('/change_package' , function(req,res){
   let hotel = req.body.hotel;
   let name = req.body.name;
   let mobile = req.body.mobile;
+  let company = req.body.company;
   let e_mail = req.body.e_mail;
   let sender = req.body.sender;
 
@@ -140,6 +141,7 @@ app.post('/change_package' , function(req,res){
     hotel: hotel,
     name: name,
     mobile: mobile,
+    company: company,
     e_mail: e_mail,
     booking_ref: booking_ref,
   }).then(success => {
@@ -1118,7 +1120,7 @@ app.post('/webhook', (req, res) => {
                 let ref_num = userInput.slice(8);
                 ref_num = ref_num.trim();
                 console.log('REF NUM', ref_num);
-                update_eatinganddrinking(sender_psid, ref_num);
+                change_package(sender_psid, ref_num);
             }
 
 
@@ -1267,6 +1269,35 @@ function notifySave(sender_psid) {
     send(response);
 }
 
+const change_package = (sender_psid, ref_num) => {
+    let welcomeMessage = {
+        "recipient": {
+            "id": sender_psid,
+        },
+        "message": {
+            "attachment": {
+                "type": "template",
+                "payload": {
+                    "template_type": "generic",
+                    "elements": [{
+                        "title": "You are updating your cahnge number:" + ref_num,
+                        "buttons": [{
+                                "type": "web_url",
+                                "title": "Update",
+                                "url": "https://eyeofeagle.herokuapp.com/change_package/" + ref_num + "/" + sender_psid,
+                                "webview_height_ratio": "full",
+                                "messenger_extensions": true,
+                            },
+
+                        ],
+                    }]
+                }
+            }
+        }
+
+    }
+    send(welcomeMessage);
+}
 
 const update_pagodas = (sender_psid, ref_num) => {
     let welcomeMessage = {
