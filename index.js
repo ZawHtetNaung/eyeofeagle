@@ -919,103 +919,9 @@ app.post('/webhook', (req, res) => {
 
                 send(welcomeMessage);
             }
+            //end of quick reply
 
-
-
-           /* if (userInput == 'yes') {
-                let welcomeMessage = {
-                    "recipient": {
-                        "id": webhook_event.sender.id
-                    },
-                    "messaging_type": "RESPONSE",
-                    "message": {
-                        "text": "Are you ok with that trip?",
-                        "quick_replies": [{
-                            "content_type": "text",
-                            "title": "Ok",
-                            "payload": "ok",
-                            "image_url": "http://example.com/img/red.png"
-                        }, {
-                            "content_type": "text",
-                            "title": "Not Ok",
-                            "payload": "notok",
-                            "image_url": "http://example.com/img/green.png"
-                        }]
-                    }
-                }
-
-                send(welcomeMessage);
-            }*/
-            //end of yes answer
-
-
-           /* if (userInput == 'ok') {
-                let welcomeMessage = {
-                    "recipient": {
-                        "id": webhook_event.sender.id
-                    },
-                    "messaging_type": "RESPONSE",
-                    "message": {
-                        "text": "If you aren't ok you can create package by your self, you can choose youractivity by your self and then I will suggest and you don't know your place where you are. So you can send your location and I will be show the package and you can choose each package. ",
-                        "quick_replies": [{
-                            "content_type": "text",
-                            "title": "Show  packages",
-                            "payload": "sp",
-                            "image_url": "http://example.com/img/red.png"
-                        }, {
-                            "content_type": "text",
-                            "title": "Customize Package",
-                            "payload": "cp",
-                            "image_url": "http://example.com/img/green.png"
-                        }, {
-                            "content_type": "text",
-                            "title": "Choose your activity",
-                            "payload": "cya",
-                            "image_url": "http://example.com/img/green.png"
-                        }, {
-                            "content_type": "text",
-                            "title": "detail",
-                            "payload": "detail",
-                            "image_url": "http://example.com/img/green.png"
-                        }]
-                    }
-                }
-
-                send(welcomeMessage);
-            }*/
-            //end of ok by yes answer
-
-            /*if (userInput == 'notok') {
-                let welcomeMessage = {
-                    "recipient": {
-                        "id": webhook_event.sender.id
-                    },
-                    "messaging_type": "RESPONSE",
-                    "message": {
-                        "text": "Sorry to hear that. Is there anything you want to change during your trip",
-                        "quick_replies": [{
-                            "content_type": "text",
-                            "title": "Hotel option",
-                            "payload": "hp",
-                            "image_url": "http://example.com/img/red.png"
-                        }, {
-                            "content_type": "text",
-                            "title": "Transportation option",
-                            "payload": "tp",
-                            "image_url": "http://example.com/img/green.png"
-                        }, {
-                            "content_type": "text",
-                            "title": "Restaurants option",
-                            "payload": "rp",
-                            "image_url": "http://example.com/img/green.png"
-                        }]
-                    }
-                }
-
-                send(welcomeMessage);
-            }*/
-            //end of not ok by yes answer
-             if (userInput == "yes") {
+            if (userInput == "yes") {
                 let welcomeMessage = {
                     "recipient": {
                         "id": webhook_event.sender.id
@@ -1061,7 +967,7 @@ app.post('/webhook', (req, res) => {
                 
                 send(welcomeMessage);
             }
-
+            //end of change package
 
             if (userInput == "no") {
                 let welcomeMessage = {
@@ -1191,7 +1097,7 @@ app.post('/webhook', (req, res) => {
                 }
                 send(welcomeMessage);
             }
-            //end of customize by activity in yangon
+            //end of customize by activity
 
             console.log('USER INPUT BEFORE', userInput);
             if (userInput.includes("Change pago:")) {
