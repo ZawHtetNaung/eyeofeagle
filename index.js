@@ -115,6 +115,41 @@ app.get('/Change-Package/:change_package/:sender_id', function(req, res) {
         sender_id: sender_id
     });
 });
+
+app.post('/change_package' , function(req,res){
+
+  console.log("FORMDATA" , req.body)
+  let transportation = req.body.transportation;
+  let breakfast = req.body.breakfast;
+  let lunch = req.body.lunch;
+  let dinner = req.body.dinner;
+  let hotel = req.body.hotel;
+  let name = req.body.name;
+  let mobile = req.body.mobile;
+  let e_mail = req.body.e_mail;
+  let sender = req.body.sender;
+
+  let booking_ref = generateRandom(5);
+
+  db.collection('Change Package').add({
+
+    transportation: transportation,
+    breakfast: breakfast,
+    lunch: lunch,
+    dinner: dinner,
+    hotel: hotel,
+    name: name,
+    mobile: mobile,
+    e_mail: e_mail,
+    booking_ref: booking_ref,
+  }).then(success => {
+        console.log("DATASAVESHOWBOOKINGNUMBER");
+        showBookingNumber(sender, booking_ref);
+
+    }).catch(error => {
+        console.log(error);
+    });
+})
 /******************
 //PAGODAS_CUSTOMIZE
 ******************/
