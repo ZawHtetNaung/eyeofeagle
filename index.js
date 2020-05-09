@@ -131,7 +131,7 @@ app.post('/change_package' , function(req,res){
 
   let booking_ref = generateRandom(5);
 
-  db.collection('Change Package').add({
+  db.collection('Change Packages').add({
 
     transportation: transportation,
     breakfast: breakfast,
