@@ -151,7 +151,7 @@ app.post('/change_package' , function(req,res){
     }).catch(error => {
         console.log(error);
     });
-})
+});
 
 /******************
 //PAGODAS_CUSTOMIZE
