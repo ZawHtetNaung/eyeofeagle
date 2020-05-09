@@ -833,7 +833,7 @@ app.post('/eatinganddrinking_update', function(req, res) {
         arrivedtime: arrivedtime,
         booking_ref: booking_ref,
     }).then(success => {
-        notifySave(sender_id);
+        notifySave(req.body.sender);
     }).catch(error => {
         console.log(error);
     });
