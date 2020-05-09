@@ -1112,6 +1112,15 @@ app.post('/webhook', (req, res) => {
                 update_eatinganddrinking(sender_psid, ref_num);
             }
 
+             console.log('USER INPUT BEFORE', userInput);
+            if (userInput.includes("Change:")) {
+                console.log('USER INPUT', userInput);
+                let ref_num = userInput.slice(8);
+                ref_num = ref_num.trim();
+                console.log('REF NUM', ref_num);
+                update_eatinganddrinking(sender_psid, ref_num);
+            }
+
 
         });
 
@@ -1236,7 +1245,7 @@ const changeNumber = (sender_psid, ref) => {
             "id": sender_psid,
         },
         "message": {
-            "text": `Thanks you!!! Your data is saved and you want to change again, text this(change:reference no) and your reference is ${ref}`,
+            "text": `Thanks you!!! Your data is saved and you want to change again, text this(Change:reference no) and your reference is ${ref}`,
         }
     }
 
