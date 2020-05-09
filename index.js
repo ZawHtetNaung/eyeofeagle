@@ -156,7 +156,7 @@ app.post('/change_package' , function(req,res){
 /***************
 //CHANGE UPDATE
 ****************/
-app.get('/change_package/:booking_ref/:sender_id/', function(req, res) {
+app.get('/change_update/:booking_ref/:sender_id/', function(req, res) {
     const sender_id = req.params.sender_id;
     const booking_ref = req.params.booking_ref;
 
@@ -183,7 +183,7 @@ app.get('/change_package/:booking_ref/:sender_id/', function(req, res) {
 
                 console.log("BOOKING DATA", data);
 
-                res.render('change_package.ejs', {
+                res.render('change_update.ejs', {
                     data: data,
                     sender_id: sender_id
                 });
@@ -200,7 +200,7 @@ app.get('/change_package/:booking_ref/:sender_id/', function(req, res) {
 
 });
 
-app.post('/change_package', function(req, res) {
+app.post('/change_update', function(req, res) {
 
 
     
