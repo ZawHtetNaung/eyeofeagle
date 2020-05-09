@@ -42,66 +42,38 @@
   <form id="form" method="post" action="https://eyeofeagle.herokuapp.com/traditional_update/">
   
  <div class="form-group">
-    <label for="name">Where do you want to go</label>
-    <select class="form-control" name="traditional_trip" id="traditional_trip"  value="<%= data.traditional_trip %>">
-       <option value="Shwe Gone Puppet Theatre-Myanmar Culture show-Karaweik palace">Shwe Gone Puppet Theatre-Myanmar Culture show-Karaweik palace</option>
-      <option value="Sein Satin-Htoo Chon-Kangyi Maung-Bokalay Hla myint">Sein Satin-Htoo Chon-Kangyi Maung-Bokalay Hla myint</option>
-      <option value="Sein Maha Tabin-Takhine Lone Shwe-Nan Win">Sein Maha Tabin-Takhine Lone Shwe-Nan Win</option>
-      
-    </select> 
+    <label for="name"> Please, Fill the Trip you want to change</label>
+    <input type="text" class="form-control" id="traditional_trip" name="traditional_trip" placeholder=">Shwe Gone Puppet Theatre-Myanmar Culture show-Karaweik palace"  value="<%= data.traditional_trip %>" >
   </div>
 
   <div class="form-group">
-    <label for="name">Choose your Transportation what you like</label>
-    <select class="form-control" name="transportation" id="transportation"  value="<%= data.transportation %>">
-      <option>12 seat minibus</option>
-      <option>10 seat</option>
-      <option>4 seat</option>
-
-     </select> 
+   <label for="name"> Please, Fill the Transportation you want to change</label>
+    <input type="text" class="form-control" id="transportation" name="transportation" placeholder="10 seat mini bus"  value="<%= data.transportation %>" >
   </div>
 
    <h2>Restaurants</h2>
 
   <div class="form-group">
-    <label for="name">Breakfast</label>
-    <select class="form-control" name="breakfast" id="breakfast"  value="<%= data.breakfast %>">
-      <option>Shwepalin</option>
-      <option>Maung Aye</option>
-      <option>Tone Pan Hla</option>
-
-     </select> 
+    <label for="name"> Please, Fill the Restaurant you want to change for breakfast</label>
+    <input type="text" class="form-control" id="breakfast" name="breakfast" placeholder="restaurant name"  value="<%= data.breakfast %>" >
   </div>
 
   <div class="form-group">
-    <label for="name">Lunch</label>
-    <select class="form-control" name="lunch" id="lunch"  value="<%= data.lunch %>">
-      <option>Golden Duck</option>
-      <option>Indian Kitchen</option>
-      <option>Sein Sweli</option>
-
-     </select> 
+     <label for="name"> Please, Fill the Restaurant you want to change for lunch</label>
+    <input type="text" class="form-control" id="lunch" name="lunch" placeholder="restaurant name"  value="<%= data.lunch %>" >
   </div>
 
   <div class="form-group">
-    <label for="name">Dinner</label>
-    <select class="form-control" name="dinner" id="dinner"  value="<%= data.dinner %>">
-      <option>Shangrila</option>
-      <option>Indian Kitchen</option>
-      <option>Sein Sweli</option>
-
-     </select> 
+     <label for="name"> Please, Fill the Restaurant you want to change for dinner</label>
+    <input type="text" class="form-control" id="dinner" name="dinner" placeholder="restaurant name"  value="<%= data.dinner %>" >
   </div>
 
+ <h2>Hotel</h2>
   <div class="form-group">
-    <label for="name">Hotel</label>
-    <select class="form-control" name="hotel" id="hotel"  value="<%= data.hotel %>">
-      <option>Lotte</option>
-      <option>Sedona</option>
-      <option>Kan Taw mingalar</option>
-
-     </select> 
+     <label for="name"> Please, Fill the Hotel you want to change</label>
+    <input type="text" class="form-control" id="hotel" name="hotel" placeholder="restaurant name"  value="<%= data.hotel %>" >
   </div>
+
 
  <h2>Your information</h2>
   <div class="form-group">
