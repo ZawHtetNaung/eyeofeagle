@@ -144,7 +144,7 @@ app.post('/change_package' , function(req,res){
     booking_ref: booking_ref,
   }).then(success => {
         console.log("DATASAVESHOWBOOKINGNUMBER");
-        showBookingNumber(sender, booking_ref);
+        changeNumber(sender, booking_ref);
 
     }).catch(error => {
         console.log(error);
@@ -1229,6 +1229,21 @@ const showBookingNumber = (sender_psid, ref) => {
     send(response);
 }
 
+const changeNumber = (sender_psid, ref) => {
+
+    let response = {
+        "recipient": {
+            "id": sender_psid,
+        },
+        "message": {
+            "text": `Thanks you!!! Your data is saved and you want to change again, text this(change:reference no) and your reference is ${ref}`,
+        }
+    }
+
+
+
+    send(response);
+}
 console.log('NOTIFYSAVE', notifySave);
 
 function notifySave(sender_psid) {
