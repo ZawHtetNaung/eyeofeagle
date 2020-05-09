@@ -1355,7 +1355,7 @@ function notifySave(sender_psid) {
     send(response);
 }
 
-const change_package = (sender_psid, ref_num) => {
+const change_update = (sender_psid, ref_num) => {
     let welcomeMessage = {
         "recipient": {
             "id": sender_psid,
@@ -1370,7 +1370,7 @@ const change_package = (sender_psid, ref_num) => {
                         "buttons": [{
                                 "type": "web_url",
                                 "title": "Update",
-                                "url": "https://eyeofeagle.herokuapp.com/change_package/" + ref_num + "/" + sender_psid,
+                                "url": "https://eyeofeagle.herokuapp.com/change_update/" + ref_num + "/" + sender_psid,
                                 "webview_height_ratio": "full",
                                 "messenger_extensions": true,
                             },
