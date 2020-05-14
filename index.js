@@ -147,6 +147,7 @@ app.post('/change_package' , function(req,res){
   }).then(success => {
         console.log("DATASAVESHOWBOOKINGNUMBER");
         changeNumber(sender, booking_ref);
+        res.render('close.ejs');
 
     }).catch(error => {
         console.log(error);
@@ -235,6 +236,7 @@ app.post('/change_update', function(req, res) {
         booking_ref: booking_ref,
     }).then(success => {
         notifySave(req.body.sender);
+        res.render('close.ejs');
     }).catch(error => {
         console.log(error);
     });
@@ -383,6 +385,7 @@ app.post('/pagodas_update', function(req, res) {
         booking_ref: booking_ref,
     }).then(success => {
         notifySave(req.body.sender);
+        res.render('close.ejs');
     }).catch(error => {
         console.log(error);
     });
@@ -533,6 +536,7 @@ app.post('/parks_update', function(req, res) {
         booking_ref: booking_ref,
     }).then(success => {
         notifySave(req.body.sender);
+        res.render('close.ejs');
     }).catch(error => {
         console.log(error);
     });
@@ -588,6 +592,7 @@ app.post('/traditional_customize', function(req, res) {
     }).then(success => {
         console.log("DATASAVESHOWBOOKINGNUMBER");
         showBookingNumber(sender, booking_ref);
+        res.render('close.ejs');
 
     }).catch(error => {
         console.log(error);
@@ -683,6 +688,7 @@ app.post('/traditional_update', function(req, res) {
         booking_ref: booking_ref,
     }).then(success => {
         notifySave(req.body.sender);
+        res.render('close.ejs');
     }).catch(error => {
         console.log(error);
     });
@@ -738,6 +744,7 @@ app.post('/eatinganddrinking_customize', function(req, res) {
     }).then(success => {
         console.log("DATASAVESHOWBOOKINGNUMBER");
         showBookingNumber(sender, booking_ref);
+        res.render('close.ejs');
 
     }).catch(error => {
         console.log(error);
@@ -834,6 +841,7 @@ app.post('/eatinganddrinking_update', function(req, res) {
         booking_ref: booking_ref,
     }).then(success => {
         notifySave(req.body.sender);
+        res.render('close.ejs');
     }).catch(error => {
         console.log(error);
     });
